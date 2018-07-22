@@ -1,8 +1,7 @@
-Subject: Laporan ditutup - "{PM_SUBJECT}"
+Subject: Report closed - "{PM_SUBJECT}"
 
-Hallo {USERNAME},
+Hello {USERNAME},
 
- anda memperoleh notifikasi ini karena laporan yang ajukan mengenai pesan pribadi "{PM_SUBJECT}" di "{SITENAME}" sudah ditujukan pada moderator ataupun administrarot. Laporan tersebut sekarang ditutup. Jika anda memiliki pertanyaan lebih lanjut, silahkan hubungi {CLOSER_NAME} dengan pesan pribadi.
-
+You are receiving this notification because the report you filed regarding the private message "{PM_SUBJECT}" at "{SITENAME}" has been tended to by a moderator or administrator. The report is now closed. If you have further questions, please contact {CLOSER_NAME} by private message.
 
 {EMAIL_SIG}

@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* acp_ban [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: ban.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -37,48 +38,47 @@ if (empty($lang) || !is_array($lang))
 
 // Banning
 $lang = array_merge($lang, array(
-	'1_HOUR'		=> '1 jam',
-	'30_MINS'		=> '30 menit',
-	'6_HOURS'		=> '6 jam',
+	'1_HOUR'		=> '1 hour',
+	'30_MINS'		=> '30 minutes',
+	'6_HOURS'		=> '6 hours',
 
-	'ACP_BAN_EXPLAIN'	=> 'Di sini anda dapat mengatur larangan untuk pengguna berdasarkan nama, alamat IP atau e-mail. Hal ini dibuat untuk mencegah pengguna masuk ke halaman manapun. Anda dapat memberikan alasan yang singkat (maksimum 3000 karakter) atas larangan jika anda ingin dan akan ditampilkan di log admin. Lamanya waktu larangan juga dapat ditentukan. Jika anda ingin mengakhiri larangan untuk jangka waktu yang telah ditentukan, pilih <span style="text-decoration: underline;">Sampai -&gt;</span> untuk panjang larangan dan masukkan tanggal dengan format <kbd>TTTT-BB-HH, contoh: 1999-12-31</kbd>.',
+	'ACP_BAN_EXPLAIN'	=> 'Here you can control the banning of users by name, IP or email address. These methods prevent a user reaching any part of the board. You can give a short (maximum 3000 characters) reason for the ban if you wish. This will be displayed in the admin log. The duration of a ban can also be specified. If you want the ban to end on a specific date rather than after a set time period select <span style="text-decoration: underline;">Until -&gt;</span> for the ban length and enter a date in <kbd>YYYY-MM-DD</kbd> format.',
 
-	'BAN_EXCLUDE'			=> 'Keluarkan dari larangan',
-	'BAN_LENGTH'			=> 'Panjang larangan',
-	'BAN_REASON'			=> 'Alasan larangan',
-	'BAN_GIVE_REASON'		=> 'Alasan yang akan ditampilkan untuk larangan',
-	'BAN_UPDATE_SUCCESSFUL'	=> 'Daftar larangan telah barhasil diperbarui.',
-	'BANNED_UNTIL_DATE'		=> 'sampai %s', // Example: "until Mon 13.Jul.2009, 14:44"
-	'BANNED_UNTIL_DURATION'	=> '%1$s (sampai %2$s)', // Example: "7 days (until Tue 14.Jul.2009, 14:44)"
+	'BAN_EXCLUDE'			=> 'Exclude from banning',
+	'BAN_LENGTH'			=> 'Length of ban',
+	'BAN_REASON'			=> 'Reason for ban',
+	'BAN_GIVE_REASON'		=> 'Reason shown to the banned',
+	'BAN_UPDATE_SUCCESSFUL'	=> 'The banlist has been updated successfully.',
+	'BANNED_UNTIL_DATE'		=> 'until %s', // Example: "until Mon 13.Jul.2009, 14:44"
+	'BANNED_UNTIL_DURATION'	=> '%1$s (until %2$s)', // Example: "7 days (until Tue 14.Jul.2009, 14:44)"
 
-	'EMAIL_BAN'					=> 'Larang satu atau lebih alamat e-mail',
-	'EMAIL_BAN_EXCLUDE_EXPLAIN'	=> 'Gunakan ini untuk menyingkirkan alamat e-mail yang dimasukkan dari larangan sekarang.',
-	'EMAIL_BAN_EXPLAIN'			=> 'Untuk memilih lebih dari satu alamat e-mail, masukkan pada setiap baris baru. Untuk mencocokkan sebagian alamat, gunakan * sebagai wildcard, contoh: <samp>*@hotmail.com</samp>, <samp>*@*.domain.tld</samp>, dsb.',
-	'EMAIL_NO_BANNED'			=> 'Tidak ada alamat e-mail yang dilarang',
-	'EMAIL_UNBAN'				=> 'Jangan larang atau jangan singkirkan e-mail',
-	'EMAIL_UNBAN_EXPLAIN'		=> 'Anda dapat mengijinkan beberapa alamat e-mail dengan sekali perintah dengan menggunakan kombinasi mouse dan keyboard untuk komputer dan browser anda. Penyingkiran alamat e-mail ditekankan.',
+	'EMAIL_BAN'					=> 'Ban one or more email addresses',
+	'EMAIL_BAN_EXCLUDE_EXPLAIN'	=> 'Enable this to exclude the entered email address from all current bans.',
+	'EMAIL_BAN_EXPLAIN'			=> 'To specify more than one email address enter each on a new line. To match partial addresses use * as the wildcard, e.g. <samp>*@hotmail.com</samp>, <samp>*@*.domain.tld</samp>, etc.',
+	'EMAIL_NO_BANNED'			=> 'No banned email addresses',
+	'EMAIL_UNBAN'				=> 'Un-ban or un-exclude emails',
+	'EMAIL_UNBAN_EXPLAIN'		=> 'You can unban (or un-exclude) multiple email addresses in one go using the appropriate combination of mouse and keyboard for your computer and browser. Excluded email addresses are emphasised.',
 
-	'IP_BAN'					=> 'Larang satu atau lebih alamat IP',
-	'IP_BAN_EXCLUDE_EXPLAIN'	=> 'Gunakan ini untuk menyingkirkan alamat IP yang dimasukkan dari semua larangan.',
-	'IP_BAN_EXPLAIN'			=> 'Gunakan baris baru untuk memasukkan beberapa alamat IP ataupun nama host. Gunakan juga tanda sambung (-) dengan memisahkan yang awal dan akhir untuk memasukkan rentang alamat IP), untuk memakai wildcard gunakan tanda “*”.',
-	'IP_HOSTNAME'				=> 'Alamat IP atau nama host',
-	'IP_NO_BANNED'				=> 'Tidak ada alamat IP yang dilarang',
-	'IP_UNBAN'					=> 'Ijinkan alamat IP',
-	'IP_UNBAN_EXPLAIN'			=> 'Anda dapat mengijinkan beberapa alamat IP untuk sekali perintah dengan menggunakan kombinasi mouse dan keyboard pada komputer dan browser anda. Penyingkiran alamat e-mail ditekankan.',
+	'IP_BAN'					=> 'Ban one or more IPs',
+	'IP_BAN_EXCLUDE_EXPLAIN'	=> 'Enable this to exclude the entered IP from all current bans.',
+	'IP_BAN_EXPLAIN'			=> 'To specify several different IPs or hostnames enter each on a new line. To specify a range of IP addresses separate the start and end with a hyphen (-), to specify a wildcard use “*”.',
+	'IP_HOSTNAME'				=> 'IP addresses or hostnames',
+	'IP_NO_BANNED'				=> 'No banned IP addresses',
+	'IP_UNBAN'					=> 'Un-ban or un-exclude IPs',
+	'IP_UNBAN_EXPLAIN'			=> 'You can unban (or un-exclude) multiple IP addresses in one go using the appropriate combination of mouse and keyboard for your computer and browser. Excluded IPs are emphasised.',
 
-	'LENGTH_BAN_INVALID'		=> 'Tanggal sudah diformat menjadi <kbd>TTTT-BB-HH</kbd>.',
+	'LENGTH_BAN_INVALID'		=> 'The date has to be formatted <kbd>YYYY-MM-DD</kbd>.',
 
-	'PERMANENT'		=> 'Tetap',
-	
-	'UNTIL'						=> 'Sampai',
-	'USER_BAN'					=> 'Larang satu atau lebih nama pengguna',
-	'USER_BAN_EXCLUDE_EXPLAIN'	=> 'Gunakan ini untuk mengeluarkan pengguna yang dimasukkan dari semua larangan yang sekarang.',
-	'USER_BAN_EXPLAIN'			=> 'Anda dapat melarang beberapa pengguna dengan sekali perintah dengan cara memasukkan nama di setiap baris baru. Gunakan fasilitas <span style="text-decoration: underline;">Cari anggota</span> untuk melihat dan menambah satu atau lebih pengguna secara otomatis.',
-	'USER_NO_BANNED'			=> 'Tidak ada nama pengguna yang dilarang',
-	'USER_UNBAN'				=> 'Ijinkan nama pengguna',
-	'USER_UNBAN_EXPLAIN'		=> 'Anda dapat mengijinkan beberapa pengguna dengan sekali perintah dengan menggunakan kombinasi mouse dan keyboard untuk komputer dan browser anda. Penyingkiran alamat e-mail ditekankan.',
-	
+	'OPTIONS_BANNED'			=> 'Banned',
+	'OPTIONS_EXCLUDED'			=> 'Excluded',
 
+	'PERMANENT'		=> 'Permanent',
+
+	'UNTIL'						=> 'Until',
+	'USER_BAN'					=> 'Ban one or more users by username',
+	'USER_BAN_EXCLUDE_EXPLAIN'	=> 'Enable this to exclude the entered users from all current bans.',
+	'USER_BAN_EXPLAIN'			=> 'You can ban multiple users in one go by entering each name on a new line. Use the <span style="text-decoration: underline;">Find a member</span> facility to look up and add one or more users automatically.',
+	'USER_NO_BANNED'			=> 'No banned usernames',
+	'USER_UNBAN'				=> 'Un-ban or un-exclude users by username',
+	'USER_UNBAN_EXPLAIN'		=> 'You can unban (or un-exclude) multiple users in one go using the appropriate combination of mouse and keyboard for your computer and browser. Excluded users are emphasised.',
 ));
-
-?>

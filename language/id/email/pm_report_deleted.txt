@@ -1,8 +1,7 @@
-Subject: Laporan dihapus - "{PM_SUBJECT}"
+Subject: Report deleted - "{PM_SUBJECT}"
 
-Hallo {USERNAME},
+Hello {USERNAME},
 
- anda menerima notifikasi ni karena laporan yang anda ajukan mengenai pesan pribadi "{PM_SUBJECT}" di "{SITENAME}" sudah dihapus oleh moderator atau administrator.
-
+You are receiving this notification because the report you filed regarding the private message "{PM_SUBJECT}" at "{SITENAME}" was deleted by a moderator or administrator.
 
 {EMAIL_SIG}

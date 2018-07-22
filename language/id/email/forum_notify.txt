@@ -1,18 +1,18 @@
-Subject: Pemberitahuan Post Forum - "{FORUM_NAME}"
+Subject: Forum post notification - "{FORUM_NAME}"
 
-Hallo {USERNAME},
+Hello {USERNAME},
 
-Anda menerima pemberitahuan ini karena anda sedang memperhatikan forum , "{FORUM_NAME}" di "{SITENAME}". Forum ini telah menerima sebuah balasan dari topik "{TOPIC_TITLE}" sejak kunjungan terakhir anda. Anda dapat menggunakan link berikut ini untuk melihat balasan terakhir yang belum terbaca, tidak ada pemberitahuan lagi yang akan dikirim sebelum anda mengunjungi topik tersebut.
+You are receiving this notification because you are watching the forum "{FORUM_NAME}" at "{SITENAME}". This forum has received a new reply to the topic "{TOPIC_TITLE}"<!-- IF AUTHOR_NAME != '' --> by {AUTHOR_NAME}<!-- ENDIF --> since your last visit. You can use the following link to view the last unread reply, no more notifications will be sent until you visit the topic.
 
 {U_NEWEST_POST}
 
-Jika anda ingin melihat topik tersebut, silahkan klik di link berikut ini:
+If you want to view the topic, click the following link:
 {U_TOPIC}
 
-Jika anda ingin melihat forum tersebut, silahkan klik di link berikut ini:
+If you want to view the forum, click the following link:
 {U_FORUM}
 
-Jika anda tidak lagi menginginkan untuk memperhatikan forum ini, anda dapat mengklik link "Berhenti berlangganan" yang terdapat dibawah forum, atau dengan mengklik link berikut ini:
+If you no longer wish to watch this forum you can either click the "Unsubscribe forum" link found in the forum above, or by clicking the following link:
 
 {U_STOP_WATCHING_FORUM}
 

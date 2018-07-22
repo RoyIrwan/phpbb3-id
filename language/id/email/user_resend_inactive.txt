@@ -1,20 +1,19 @@
-Subject: Selamat datang di "{SITENAME}"
+Subject: Welcome to "{SITENAME}"
 
 {WELCOME_MSG}
 
-Silahkan simpan e-mail ini sebagai catatan anda. Berikut ini adalah informasi account anda:
+Please keep this email for your records. Your account information is as follows:
 
 ----------------------------
-Nama Pengguna: {USERNAME}
+Username: {USERNAME}
 ----------------------------
 
-Kata sandi anda telah dienkripsi di database kami. Jika anda lupa kata sandi anda, anda dapat meminta kata sandi yang baru yang akan diaktifkan seperti account anda ini.
+Your password has been securely stored in our database and cannot be retrieved. In the event that it is forgotten, you will be able to reset it using the email address associated with your account.
 
-Account anda dinonaktifkan sekarang ini. Anda tidak dapat menggunakannya sebelum anda mengunjung link berikut ini:
+Please visit the following link in order to activate your account:
 
 {U_ACTIVATE}
 
-
-Terima kasih atas pendaftarannya.
+Thank you for registering.
 
 {EMAIL_SIG}

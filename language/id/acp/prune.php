@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* acp_prune [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: prune.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -37,55 +38,58 @@ if (empty($lang) || !is_array($lang))
 
 // User pruning
 $lang = array_merge($lang, array(
-	'ACP_PRUNE_USERS_EXPLAIN'	=> 'Di sini anda dapat menghapus (atau menonaktifkan) pengguna dari halaman anda. Hal ini dapat dilaksanakan dengan beberapa cara yaitu; dengan jumlah post, saat aktif terakhir kali dsb. Setiap kriteria ini bisa dikombinasikan, sebagi contoh anda dapat mengurangi pengguna yang terkhir aktif sebelum 2002-01-01 dengan jumlah post yang lebih kecil dari 10. Sebagai alternatif anda bisa memasukkan daftar pengguna secara langsung ke dalam kotak teks, kriteria lain yang dimasukkan akan diabaikan. Mohon berhati-hati untuk menggunakan fasilitas ini! Jika pengguna dihapus maka tidak ada satupun cara untuk mengembalikannya.',
+	'ACP_PRUNE_USERS_EXPLAIN'	=> 'This section allows you to delete or deactivate users on your board. Accounts can be filtered in a variety of ways; by post count, most recent activity, etc. Criteria may be combined to narrow down which accounts are affected. For example, you can prune users with fewer than 10 posts, who were also inactive after 2002-01-01. Use * as a wildcard for text fields. Alternatively, you may skip the criteria selection completely by entering a list of users (each on a separate line) into the text field. Take care with this facility! Once a user is deleted, there is no way to reverse the action.',
 
-	'DEACTIVATE_DELETE'			=> 'Nonaktifkan atau hapus',
-	'DEACTIVATE_DELETE_EXPLAIN'	=> 'Pilihlah pengguna yang ingin dinonaktifkan atau dihapus seluruhnya, mohon dicatat bahwa ini tidak bisa diulangi!',
-	'DELETE_USERS'				=> 'Hapus',
-	'DELETE_USER_POSTS'			=> 'Hapus atau kurangi post pengguna',
-	'DELETE_USER_POSTS_EXPLAIN' => 'Singkirkan post yang dibuat oleh pengguna yang dihapus, tidak ada efek apa-apa apabila pengguna ini dinonaktifkan.',
+	'CRITERIA'				=> 'Criteria',
 
-	'JOINED_EXPLAIN'			=> 'Masukkan tanggal dalam format <kbd>TTTT-BB-HH</kbd>.',
+	'DEACTIVATE_DELETE'			=> 'Deactivate or delete',
+	'DEACTIVATE_DELETE_EXPLAIN'	=> 'Choose whether to deactivate users or delete them entirely. Please note that deleted users cannot be restored!',
+	'DELETE_USERS'				=> 'Delete',
+	'DELETE_USER_POSTS'			=> 'Delete pruned user posts',
+	'DELETE_USER_POSTS_EXPLAIN' => 'Removes posts made by deleted users, has no effect if users are deactivated.',
 
-	'LAST_ACTIVE_EXPLAIN'		=> 'Masukkan tanggal dalam format <kbd>TTTT-BB-HH</kbd>.',
+	'JOINED_EXPLAIN'			=> 'Enter a date in <kbd>YYYY-MM-DD</kbd> format. You may use both fields to specify an interval, or leave one blank for an open date range.',
 
-	'PRUNE_USERS_LIST'				=> 'Pengguna yang akan dikurangi',
-	'PRUNE_USERS_LIST_DELETE'		=> 'Dengan ktiteria yang dipilih untuk pengurangan pengguna maka account akan disingkirkan.',
-	'PRUNE_USERS_LIST_DEACTIVATE'	=> 'Dengan kriteria yang dipilih untuk pengurangan pengguna, account berikut ini akan dinonaktifkan.',
+	'LAST_ACTIVE_EXPLAIN'		=> 'Enter a date in <kbd>YYYY-MM-DD</kbd> format. Enter <kbd>0000-00-00</kbd> to prune users who never logged in, <em>Before</em> and <em>After</em> conditions will be ignored.',
 
-	'SELECT_USERS_EXPLAIN'		=> 'Masukkan nama pengguna yang ditentukan di sini, nama tersebut akan digunakan dalam pilihan kriteria di bwah ini.',
+	'POSTS_ON_QUEUE'			=> 'Posts Awaiting Approval',
+	'PRUNE_USERS_GROUP_EXPLAIN'	=> 'Limit to users within the selected group.',
+	'PRUNE_USERS_GROUP_NONE'	=> 'All groups',
+	'PRUNE_USERS_LIST'				=> 'Users to be pruned',
+	'PRUNE_USERS_LIST_DELETE'		=> 'With the selected critera for pruning users the following accounts will be removed. You can remove individual users from the deletion list by unchecking the box next to their username.',
+	'PRUNE_USERS_LIST_DEACTIVATE'	=> 'With the selected critera for pruning users the following accounts will be deactivated. You can remove individual users from the deactivation list by unchecking the box next to their username.',
 
-	'USER_DEACTIVATE_SUCCESS'	=> 'Pengguna yang dipilih telah berhasil dinonaktifkan.',
-	'USER_DELETE_SUCCESS'		=> 'Pengguna yang dipilih telah berhasil dihapus.',
-	'USER_PRUNE_FAILURE'		=> 'Tidak ada pengguna yang cocok dengan kriteria tersebut.',
+	'SELECT_USERS_EXPLAIN'		=> 'Enter specific usernames here. They will be used in preference to the criteria above. Founders cannot be pruned.',
 
-	'WRONG_ACTIVE_JOINED_DATE'	=> 'Tanggal yang dimasukkan salah, format yang diharapkan adalah <kbd>TTTT-BB-HH</kbd>.',
+	'USER_DEACTIVATE_SUCCESS'	=> 'The selected users have been deactivated successfully.',
+	'USER_DELETE_SUCCESS'		=> 'The selected users have been deleted successfully.',
+	'USER_PRUNE_FAILURE'		=> 'No users fit the selected criteria.',
+
+	'WRONG_ACTIVE_JOINED_DATE'	=> 'The date entered is wrong, it is expected in <kbd>YYYY-MM-DD</kbd> format.',
 ));
 
 // Forum Pruning
 $lang = array_merge($lang, array(
-	'ACP_PRUNE_FORUMS_EXPLAIN'	=> 'Ini akan menghapus semua topik yang belum dipost atau dilihat dalam jumlah hari yang anda pilih. Jika anda tidak memasukkan jumlah hari maka semua topik akan dihapus. Secara defaultnya, topik tidak akan disingkirkan apabila ada pemungutan suara yang sedang berjalan ataupun masih ada stiky dan pengumuman.',
+	'ACP_PRUNE_FORUMS_EXPLAIN'	=> 'This will delete any topic which has not been posted to or viewed within the number of days you select. If you do not enter a number then all topics will be deleted. By default, it will not remove topics in which polls are still running nor will it remove stickies and announcements.',
 
-	'FORUM_PRUNE'		=> 'Kurangi forum',
+	'FORUM_PRUNE'		=> 'Forum prune',
 
-	'NO_PRUNE'			=> 'Tidak ada forum yang dikurangi.',
+	'NO_PRUNE'			=> 'No forums pruned.',
 
-	'SELECTED_FORUM'	=> 'Forum terpilih',
-	'SELECTED_FORUMS'	=> 'Forum-forum terpilih',
+	'SELECTED_FORUM'	=> 'Selected forum',
+	'SELECTED_FORUMS'	=> 'Selected forums',
 
-	'POSTS_PRUNED'					=> 'Post dikurangiPosts pruned',
-	'PRUNE_ANNOUNCEMENTS'			=> 'Kurangi pengumuman',
-	'PRUNE_FINISHED_POLLS'			=> 'Proses pengurangan menutup pemungutan suara',
-	'PRUNE_FINISHED_POLLS_EXPLAIN'	=> 'Singkirkan topik dengan pemungutan suara yang memiliki batas waktu.',
-	'PRUNE_FORUM_CONFIRM'			=> 'Apakah anda yakin ingin mrngurangi forum yang dipilih dengan pengaturan yang telah ditentukan? Tidak ada cara lain untuk mengembalikan post ataupun topik yang telah dikurangi untuk sekali penyingkirkan.',
-	'PRUNE_NOT_POSTED'				=> 'Hari sejak post terakhir',
-	'PRUNE_NOT_VIEWED'				=> 'Hari sejak dilihat terakhir kali',
-	'PRUNE_OLD_POLLS'				=> 'Kurangi pemungutan suara yang sudah lama',
-	'PRUNE_OLD_POLLS_EXPLAIN'		=> 'Singkirkan topik dengan pemungutan suara yang sudah lama.',
-	'PRUNE_STICKY'					=> 'Kurangi sticky',
-	'PRUNE_SUCCESS'					=> 'Pengurangan forum telah berhasil.',
+	'POSTS_PRUNED'					=> 'Posts pruned',
+	'PRUNE_ANNOUNCEMENTS'			=> 'Prune announcements',
+	'PRUNE_FINISHED_POLLS'			=> 'Prune closed polls',
+	'PRUNE_FINISHED_POLLS_EXPLAIN'	=> 'Removes topics with polls which have ended.',
+	'PRUNE_FORUM_CONFIRM'			=> 'Are you sure you want to prune the selected forums with the settings specified? Once removed, there is no way to recover the pruned posts and topics.',
+	'PRUNE_NOT_POSTED'				=> 'Days since last posted',
+	'PRUNE_NOT_VIEWED'				=> 'Days since last viewed',
+	'PRUNE_OLD_POLLS'				=> 'Prune old polls',
+	'PRUNE_OLD_POLLS_EXPLAIN'		=> 'Removes topics with polls not voted in for post age days.',
+	'PRUNE_STICKY'					=> 'Prune stickies',
+	'PRUNE_SUCCESS'					=> 'Pruning of forums was successful.',
 
-	'TOPICS_PRUNED'		=> 'Topik dikurangi',
+	'TOPICS_PRUNED'		=> 'Topics pruned',
 ));
-
-?>

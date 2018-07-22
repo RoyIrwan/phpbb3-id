@@ -1,14 +1,13 @@
-Subject: Aktifkan account pengguna
+Subject: Activate user account
 
-Hallo,
+Hello,
 
-Account yang dimiliki oleh "{USERNAME}" telah dinonaktifkan atau baru diciptakan, anda harus memeriksa keterangan-keterangan dari pengguna ini (jika dibutuhkan) dan menangani sewajarnya.
+The account owned by "{USERNAME}" has been deactivated or newly created, you should check the details of this user (if required) and handle it appropriately.
 
-Gunakan link ini untuk melihat profil dari pengguna:
+Use this link to view the user's profile:
 {U_USER_DETAILS}
 
-Gunakan link ini untuk mengaktifkan account tersebut:
+Use this link to activate the account:
 {U_ACTIVATE}
-
 
 {EMAIL_SIG}

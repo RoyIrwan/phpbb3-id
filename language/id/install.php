@@ -1,18 +1,19 @@
 <?php
 /**
-*
-* install [Bahasa Indonesia]
-*
-* @package language
-* @version $Id: install.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
-*
-*/
+ *
+ * This file is part of the phpBB Forum Software package.
+ *
+ * @copyright (c) phpBB Limited <https://www.phpbb.com>
+ * @license GNU General Public License, version 2 (GPL-2.0)
+ *
+ * For full copyright and license information, please see
+ * the docs/CREDITS.txt file.
+ *
+ */
 
 /**
-* DO NOT CHANGE
-*/
+ * DO NOT CHANGE
+ */
 if (!defined('IN_PHPBB'))
 {
 	exit;
@@ -35,605 +36,540 @@ if (empty($lang) || !is_array($lang))
 // equally where a string contains only two placeholders which are used to wrap text
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
+// Common installer pages
 $lang = array_merge($lang, array(
-	'ADMIN_CONFIG'				=> 'Konfigurasi administrator',
-	'ADMIN_PASSWORD'			=> 'Kata sandi administrator',
-	'ADMIN_PASSWORD_CONFIRM'	=> 'Konfirmasikan kata sandi administrator',
-	'ADMIN_PASSWORD_EXPLAIN'	=> 'Silahkan memasukkan kata sandi dengan panjang antara 6 sampai 30 karakter.',
-	'ADMIN_TEST'				=> 'Periksa pengaturan administrator',
-	'ADMIN_USERNAME'			=> 'Nama pengguna administrator',
-	'ADMIN_USERNAME_EXPLAIN'	=> 'Silahkan memasukkan nama pengguna dengan panjang antara 6 sampai 20 karakter.',
-	'APP_MAGICK'				=> 'Imagemagick support [ Lampiran ]',
-	'AUTHOR_NOTES'				=> 'Catatan pengarang<br />» %s',
-	'AVAILABLE'					=> 'Tersedia',
-	'AVAILABLE_CONVERTORS'		=> 'Konvertor yang tersedia',
+	'INSTALL_PANEL'	=> 'Installation Panel',
+	'SELECT_LANG'	=> 'Select language',
 
-	'BEGIN_CONVERT'					=> 'Mulai percakapan',
-	'BLANK_PREFIX_FOUND'			=> 'Penelitian atas daftar anda telah menunjukkan instalasi yang benar tanpa menggunakan daftar awalan.',
-	'BOARD_NOT_INSTALLED'			=> 'Tidak ditemukan instalasi',
-	'BOARD_NOT_INSTALLED_EXPLAIN'	=> 'Agar berfungsi, phpBB Unified Convertor Framework membutuhkan instalasi phpBB3 standar, silahkan <a href="%s"> melanjutkan setelah phpBB3 terinstal</a>.',
+	'STAGE_INSTALL'	=> 'Installing phpBB',
 
-	'CATEGORY'					=> 'Kategori',
-	'CACHE_STORE'				=> 'Tipe cache',
-	'CACHE_STORE_EXPLAIN'		=> 'Lokasi fisik tempat data di-cache, lokasi filesystem lebih dianjurkan.',
-	'CAT_CONVERT'				=> 'Konversikan',
-	'CAT_INSTALL'				=> 'Instal',
-	'CAT_OVERVIEW'				=> 'Ikhtisar',
-	'CAT_UPDATE'				=> 'Update',
-	'CHANGE'					=> 'Ubah',
-	'CHECK_TABLE_PREFIX'		=> 'Silahkan periksa daftar awalan anda dan coba lagi.',
-	'CLEAN_VERIFY'				=> 'Membersihakn dan memverifikasi struktur terakhir',
-	'CLEANING_USERNAMES'		=> 'Membersihkan nama pengguna',
-	'COLLIDING_CLEAN_USERNAME'	=> '<strong>%s</strong> nama pengguna yang bersih untuk:',
-	'COLLIDING_USERNAMES_FOUND'	=> 'Bentrokan nama pengguna ditemukan di halaman anda yang lama. Untuk menyelesaikan konversi tersebut silahkan hapus atau ganti nama-nama pengguna ini sehingga hanya ada satu nama pengguna yang bersih di halaman anda.',
-	'COLLIDING_USER'			=> '» id pengguna: <strong>%d</strong> nama pengguna: <strong>%s</strong> (%d posts)',
-	'CONFIG_CONVERT'			=> 'Mengkonversikan konfigurasi',
-	'CONFIG_FILE_UNABLE_WRITE'	=> 'Tidak memungkinkan untuk menulis file konfigurasi. Metode alternatif untuk menciptakan file ini di tampilkan dibawah.',
-	'CONFIG_FILE_WRITTEN'		=> 'File konfigurasi telah ditulis. Sekarang anda dapat melangkah ke tahap instalasi selanjutnya.',
-	'CONFIG_PHPBB_EMPTY'		=> 'Variable konfigurasi phpBB3 untuk “%s” kosong.',
-	'CONFIG_RETRY'				=> 'Coba lagi',
-	'CONTACT_EMAIL_CONFIRM'		=> 'Konfirmasikan e-mail kontak',
-	'CONTINUE_CONVERT'			=> 'Lanjutkan konversi',
-	'CONTINUE_CONVERT_BODY'		=> 'Percobaan konversi sebelumnya telah ditentukan. Sekarang anda dapat memilih antara memulai konversi yang baru atau melanjutkan konversi.',
-	'CONTINUE_LAST'				=> 'Lanjutkan pernyataan terakhir',
-	'CONTINUE_OLD_CONVERSION'	=> 'Lanjutkan konversi yang dimulai sebelumnya',
-	'CONVERT'					=> 'Konversikan',
-	'CONVERT_COMPLETE'			=> 'Konversi selesai',
-	'CONVERT_COMPLETE_EXPLAIN'	=> 'Sekarang anda telah berhasil mengkonversikan halaman anada menjadi phpBB 3.0. Sekarang anda bisa masuk <a href="../">mengakses halaman</a>. Mohon diperiksa apakah pengaturan yang ditransfer sudah benar sebelum mengaktifkan halaman anda dengan menghapus direktori instal. Ingatlah bahwa bantuan untuk menggunakan phpBB tersedia online melalui <a href="http://www.phpbb.com/support/documentation/3.0/">Documentation</a> and the <a href="http://www.phpbb.com/community/viewforum.php?f=46">support forums</a>.',
-	'CONVERT_INTRO'				=> 'Selamat datang di phpBB Unified Convertor Framework',
-	'CONVERT_INTRO_BODY'		=> 'Di sini anda dapat mengimport data dari sistem halaman lain yang sudah terinstal. Daftar berikut menunjukkan modul yang sudah tersedia. Jika tidak ada konvertor yang ditampilkan pada daftar ini yang bisa dikonversikan, silahkan lihat website kami untuk modul konversi lebih lanjut yang bisa didownload.',
-	'CONVERT_NEW_CONVERSION'	=> 'Konversi baru',
-	'CONVERT_NOT_EXIST'			=> 'Konvertor yang dipilih tidak ada.',
-	'CONVERT_OPTIONS'			=> 'Pilihan-pilihan',
-	'CONVERT_SETTINGS_VERIFIED'	=> 'Informasi yang anda masukkan telah diverifikasi. Untuk memulai proses konversi, silahkan tekan tombol berikut ini.',
-	'CONV_ERR_FATAL'			=> 'Konversi error fatal',
+	// Introduction page
+	'INTRODUCTION_TITLE'	=> 'Introduction',
+	'INTRODUCTION_BODY'		=> 'Welcome to phpBB3!<br /><br />phpBB® is the most widely used open source bulletin board solution in the world. phpBB3 is the latest installment in a package line started in 2000. Like its predecessors, phpBB3 is feature-rich, user-friendly, and fully supported by the phpBB Team. phpBB3 greatly improves on what made phpBB2 popular, and adds commonly requested features that were not present in previous versions. We hope it exceeds your expectations.<br /><br />This installation system will guide you through installing phpBB3, updating to the latest version of phpBB3 from past releases, as well as converting to phpBB3 from a different discussion board system (including phpBB2). For more information, we encourage you to read <a href="../docs/INSTALL.html">the installation guide</a>.<br /><br />To read the phpBB3 license or learn about obtaining support and our stance on it, please select the respective options from the side menu. To continue, please select the appropriate tab above.',
 
-	'CONV_ERROR_ATTACH_FTP_DIR'			=> 'FTP upload untuk lampiran diaktifkan pada halaman yang lama. Silahkan nonaktifkan pilihan FTP upload dan periksa direktori upload yang ditentukan sudah benar, lalu salin semua file lampiran ke direktori web yang bisa diakses. Lakukan restart konvertor setelah anda selesai melakukannya.',
-	'CONV_ERROR_CONFIG_EMPTY'			=> 'Tidak ada informasi konfigurasi yang tersedia untuk konversi tersebut.',
-	'CONV_ERROR_FORUM_ACCESS'			=> 'Tidak bisa mengakses informasi.',
-	'CONV_ERROR_GET_CATEGORIES'			=> 'Tidak bisa mendapatkan kategori.',
-	'CONV_ERROR_GET_CONFIG'				=> 'Tidak bisa mendapatkan kembali konfigurasi halaman.',
-	'CONV_ERROR_COULD_NOT_READ'			=> 'Tidak bisa mengakses/membaca “%s”.',
-	'CONV_ERROR_GROUP_ACCESS'			=> 'Tidak bisa mendapatkan informasi otentifikasi grup.',
-	'CONV_ERROR_INCONSISTENT_GROUPS'	=> 'Tabel grup yang tidak tetap dideteksi di add_bots() - anda harus menambahkan semua grup spesial jika anda melakukannya secara manual.',
-	'CONV_ERROR_INSERT_BOT'				=> 'Tidak dapat memasukkan bot ke tabel pengguna.',
-	'CONV_ERROR_INSERT_BOTGROUP'		=> 'Tidak dapat memasukkan bot ke tabel bot.',
-	'CONV_ERROR_INSERT_USER_GROUP'		=> 'Tidak dapat memasukkan pengguna ke table user_group.',
-	'CONV_ERROR_MESSAGE_PARSER'			=> 'Pemisah pesan error',
-	'CONV_ERROR_NO_AVATAR_PATH'			=> 'Catatan untuk pengembang: anda harus menentukan $convertor[\'avatar_path\'] untuk digunakan sebagai %s.',
-	'CONV_ERROR_NO_FORUM_PATH'			=> 'Lokasi relatif ke sumber halaman belum ditentukan.',
-	'CONV_ERROR_NO_GALLERY_PATH'		=> 'Catatan untuk pengembang: anda harus menentukan $convertor[\'avatar_gallery_path\'] untuk digunakan sebagai %s.',
-	'CONV_ERROR_NO_GROUP'				=> 'Grup “%1$s” tidak ditemukan di %2$s.',
-	'CONV_ERROR_NO_RANKS_PATH'			=> 'Catatan untuk pengembang: anda harus menentukan $convertor[\'ranks_path\'] untuk digunakan sebagai %s.',
-	'CONV_ERROR_NO_SMILIES_PATH'		=> 'Catatan untuk pengembang: anda harus menentukan $convertor[\'smilies_path\'] untuk digunakan sebagai %s.',
-	'CONV_ERROR_NO_UPLOAD_DIR'			=> 'Catatan untuk pengembang: anda harus menentukan $convertor[\'upload_path\'] untuk digunakan sebagai %s.',
-	'CONV_ERROR_PERM_SETTING'			=> 'Tidak dapat memasukkan/memperbaharui pengaturan perijinan.',
-	'CONV_ERROR_PM_COUNT'				=> 'Tidak dapat memilih folder penghitungan pesan pribadi.',
-	'CONV_ERROR_REPLACE_CATEGORY'		=> 'Tidak dapat memasukkan forum baru yang menggantikan kategori yang lama.',
-	'CONV_ERROR_REPLACE_FORUM'			=> 'Tidak dapat memasukkan forum baru yang menggantikan forum yang lama.',
-	'CONV_ERROR_USER_ACCESS'			=> 'Tidak dapat mengambil informasi otentifikasi pengguna.',
-	'CONV_ERROR_WRONG_GROUP'			=> 'Grup “%1$s” yang ditentukan dalam %2$s salah.',
-	'CONV_OPTIONS_BODY'					=> 'Halaman ini mengumpulkan data yang dibuthkan untuk mengakses ke sumber halaman. Masukkan keterangan database Masukkan keterangan database halaman anda yang terdahulu; konverter tidak akan mengubah apapun dalam database yang diberikan di bawah ini. Sumbar halaman seharusnya dinonaktifkan untuk mengijinkan konversi yang konsisten.',
-	'CONV_SAVED_MESSAGES'				=> 'Pesan yang disimpan',
+	// Support page
+	'SUPPORT_TITLE'		=> 'Support',
+	'SUPPORT_BODY'		=> 'Full support will be provided for the current stable release of phpBB3, free of charge. This includes:</p><ul><li>installation</li><li>configuration</li><li>technical questions</li><li>problems relating to potential bugs in the software</li><li>updating from Release Candidate (RC) versions to the latest stable version</li><li>converting from phpBB 2.0.x to phpBB3</li><li>converting from other discussion board software to phpBB3 (please see the <a href="https://www.phpbb.com/community/viewforum.php?f=486">Convertors Forum</a>)</li></ul><p>We encourage users still running beta versions of phpBB3 to replace their installation with a fresh copy of the latest version.</p><h2>Extensions / Styles</h2><p>For issues relating to Extensions, please post in the appropriate <a href="https://www.phpbb.com/community/viewforum.php?f=451">Extensions Forum</a>.<br />For issues relating to styles, templates and themes, please post in the appropriate <a href="https://www.phpbb.com/community/viewforum.php?f=471">Styles Forum</a>.<br /><br />If your question relates to a specific package, please post directly in the topic dedicated to the package.</p><h2>Obtaining Support</h2><p><a href="https://www.phpbb.com/community/viewtopic.php?f=14&amp;t=571070">The phpBB Welcome Package</a><br /><a href="https://www.phpbb.com/support/">Support Section</a><br /><a href="https://www.phpbb.com/support/docs/en/3.1/ug/quickstart/">Quick Start Guide</a><br /><br />To ensure you stay up to date with the latest news and releases, why not <a href="https://www.phpbb.com/support/">subscribe to our mailing list</a>?<br /><br />',
 
-	'COULD_NOT_COPY'			=> 'Tidak dapat menyalin file <strong>%1$s</strong> ke <strong>%2$s</strong><br /><br />Silahkan periksa direktori target ada dan bisa ditulis oleh webserver.',
-	'COULD_NOT_FIND_PATH'		=> 'Lokasi ke halaman anda terdahulu tidak dapat ditemukan. Silahkan periksa pengaturan anda dan coba lagi.<br />» %s ditentukan sebagai lokasi sumber.',
+	// License
+	'LICENSE_TITLE'		=> 'General Public License',
 
-	'DBMS'						=> 'Tipe database',
-	'DB_CONFIG'					=> 'Konfigurasi database',
-	'DB_CONNECTION'				=> 'Koneksi database',
-	'DB_ERR_INSERT'				=> 'Error pada saat memproses query <code>INSERT</code>.',
-	'DB_ERR_LAST'				=> 'Error pada saat memproses query <var>query_last</var>.',
-	'DB_ERR_QUERY_FIRST'		=> 'Error pada saat mengeksekusi <var>query_first</var>.',
-	'DB_ERR_QUERY_FIRST_TABLE'	=> 'Error pada saat mengeksekusi <var>query_first</var>, %s (“%s”).',
-	'DB_ERR_SELECT'				=> 'Error pada saat menjalankan query <code>SELECT</code>.',
-	'DB_HOST'					=> 'Nama host server database atau DSN',
-	'DB_HOST_EXPLAIN'			=> 'DSN adalah kepanjangan dari Data Source Name dan hanya bertalian untuk instal ODBC. Pada PostgreSQL, gunakan localhost untuk koneksi ke server lokal via soket domain UNIX dan 127.0.0.1 untuk koneksi via TCP. Untuk SQLite, masukkan alamat lengkap ke berkas database anda.',
-	'DB_NAME'					=> 'Nama database name',
-	'DB_PASSWORD'				=> 'Kata sandi database',
-	'DB_PORT'					=> 'Port server database',
-	'DB_PORT_EXPLAIN'			=> 'Biarkan ini kosong kecuali jika anda mengetahui bahwa server tersebut beroperasi pada port non-standard.',
-	'DB_UPDATE_NOT_SUPPORTED'	=> 'Maaf, skrip ini tidak mendukung proses pembaruan dari versi phpBB karena “%1$s”. Versi yang anda gunakan sekrang adalah “%2$s”. Silahkan perbarui dengan bersi sebelumnya sebelum menjalankan skrip ini.Bantuan untuk hal ini tersedia pada Support Forum di phpBB.com.',
-	'DB_USERNAME'				=> 'Nama pengguna database',
-	'DB_TEST'					=> 'Coba koneksi',
-	'DEFAULT_LANG'				=> 'Bahasa default halaman',
-	'DEFAULT_PREFIX_IS'			=> 'Konvertor tidak dapat menemukan tabel dengan prefix yang ditentukan. Please make sure you have entered the correct details for the board you are converting from. The default table prefix for %1$s is <strong>%2$s</strong>.',
-	'DEV_NO_TEST_FILE'			=> 'Tidak ada nilai yang ditentukan untukk variabel test_file di konvertor. Jika anda pengguna konvertor ini, anda seharusnya tidak melihat error ini, silahkan laporkan pesan ini kepada pembuat konvertor, anda harus menentukan nama file yang ada pada sumber halaman untuk mengijinkan lokasi untuk diverifikasi.',
-	'DIRECTORIES_AND_FILES'		=> 'Direktori dan setup file',
-	'DISABLE_KEYS'				=> 'Menonaktifkan kunci',
-	'DLL_FIREBIRD'				=> 'Firebird',
-	'DLL_FTP'					=> 'Dukungan Remote FTP [ Instalasi ]',
-	'DLL_GD'					=> 'Dukungan GD graphic [ Konfirmasi visual ]',
-	'DLL_MBSTRING'				=> 'Dukungan karakter Multi-byte',
-	'DLL_MSSQL'					=> 'MSSQL Server 2000+',
-	'DLL_MSSQL_ODBC'			=> 'MSSQL Server 2000+ via ODBC',
-	'DLL_MSSQLNATIVE'         	=> 'MSSQL Server 2005+ [ Asli ]',
-	'DLL_MYSQL'					=> 'MySQL',
-	'DLL_MYSQLI'				=> 'MySQL dengan ekstensi MySQLi',
-	'DLL_ORACLE'				=> 'Oracle',
-	'DLL_POSTGRES'				=> 'PostgreSQL 7.x/8.x',
-	'DLL_SQLITE'				=> 'SQLite',
-	'DLL_XML'					=> 'Dukungan XML [ Jabber ]',
-	'DLL_ZLIB'					=> 'Dukungan Kompresi zlib [ gz, .tar.gz, .zip ]',
-	'DL_CONFIG'					=> 'Download konfigurasi',
-	'DL_CONFIG_EXPLAIN'			=> 'Anda boleh mendownload config.php secara lengkap ke PC anda. Kemudian anda harus mengupload file tersebut secara manual, menimpa config.php pada direktori phpBB 3.0 anda. Mohon diingat untuk mengupload file tersebuta dalam format ASCII (see your FTP application documentation if you are unsure how to achieve this). When you have uploaded the config.php please click “Done” to move to the next stage.',
-	'DL_DOWNLOAD'				=> 'Download',
-	'DONE'						=> 'Selesai',
-
-	'ENABLE_KEYS'				=> 'Mengaktifkan ulang kunci. Ini bisa memakan waktu yang agak lama.',
-
-	'FILES_OPTIONAL'			=> 'File-file dan direktori opsional',
-	'FILES_OPTIONAL_EXPLAIN'	=> '<strong>Opsional</strong> - File-file ini, direktori ataupun pengaturan perijinan tidak dibutuhkan. Sistem instalasi akan mencoba membuat dengan menggunakan teknik yang berbeda jika tidak ada ataupun tidak bisa ditulis. Akan tetapi, jika ini ada maka kecepatan instalasi akan bertambah.',
-	'FILES_REQUIRED'			=> 'File Dan Direktori',
-	'FILES_REQUIRED_EXPLAIN'	=> '<strong>Dibuthkan</strong> - Untuk memfungsikan phpBB secara benar dibutuhkan akses untuk menulis dibutuhkan akses untuk menulis ke file dan direktori tertentu. Jika anda melihat “Tidak Ditemukan” maka anda harus membuat file dan direktori yang relevan. Jika anda melihat “Tidak Bisa Ditulisi” maka anda harus mengubah perijinan untuk file atau direktori agar bisa ditulis oleh phpBB.',
-	'FILLING_TABLE'				=> 'Tabel isian <strong>%s</strong>',
-	'FILLING_TABLES'			=> 'Tabel-tabel isian',
-
-	'FIREBIRD_DBMS_UPDATE_REQUIRED'		=> 'phpBB tidak lagi mendukung Firebird/Interbase versi 2.1. Silahkan perbarui instalasi Firebird anda paling tidak dengan versi 2.1.0 sebelum melanjutkan pembaruan.',
-	
-	'FINAL_STEP'				=> 'Langkah terakhir proses',
-	'FORUM_ADDRESS'				=> 'Alamat halaman',
-	'FORUM_ADDRESS_EXPLAIN'		=> 'Ini adalah URL halaman anda yang terdahulu, sebagai contoh <samp>http://www.example.com/phpBB2/</samp>. Jika alamat diisi di sini dan tidak ditinggalkan kosong untuk setiap hal maka alamat tersebut akan digantikan dengan alamat halaman anda yang baru dalam pesan, pesan pribadi dan tanda tangan.',
-	'FORUM_PATH'				=> 'Path halaman',
-	'FORUM_PATH_EXPLAIN'		=> 'Ini adalah path <strong>relative</strong> di disk ke halaman terdahulu anda dari <strong>root instalasi phpBB ini</strong>.',
-	'FOUND'						=> 'Ditemukan',
-	'FTP_CONFIG'				=> 'Mentransfer config dengan FTP',
-	'FTP_CONFIG_EXPLAIN'		=> 'phpBB mendeteksi adanya modul FTP di server ini. Anda bisa mencoba menginstal config.php anda dengan ini jika anda mau. Anda harus menyediakan informasi yang diberikan di bawah ini. Ingatlah bahwa nama pengguna dan kata sandi anda ada di server anda! (silahkan tanya hosting provider anda untuk keterangan lebih lanjut jika anda tidak yakin dengan hal ini).',
-	'FTP_PATH'					=> 'Path FTP',
-	'FTP_PATH_EXPLAIN'			=> 'Ini adala path dari direktori root phpBB anda, e.g. <samp>htdocs/phpBB3/</samp>.',
-	'FTP_UPLOAD'				=> 'Upload',
-
-	'GPL'						=> 'General Public License',
-
-	'INITIAL_CONFIG'			=> 'konfigurasi dasar',
-	'INITIAL_CONFIG_EXPLAIN'	=> 'Sekarang proses instal sudah menentukan bahwa server anda bisa menjalankan phpBB, anda harus menyediakan beberapa informasi yang spesifik. Jika anda tidak mengetahui cara untuk mengkoneksikan ke database anda, silahkan hubungi provider hosting anda (pada saat pertama) atau gunakan support forum phpBB. Pada saat memasukkan data silahkan periksa sebelum melanjutkan.',
-	'INSTALL_CONGRATS'			=> 'Selamat!',
-	'INSTALL_CONGRATS_EXPLAIN'	=> '
-		<p>Anda telah berhasil menginstal %1$s. Silahkan dilanjutkan dengan pilihan berikut ini:</p>
-		<h2>Konversikan halaman sudah ada menjadi phpBB3</h2>
-		<p>phpBB Unified Convertor Framework mendukung untuk konversi dari phpBB 2.0.x dan sistem lainnya menjadi phpBB3. Jika anda memiliki halaman yang sebelumnya sudah ada dan ingin melakukan konversi, silahkan <a href="%2$s">proses ke konvertor</a>.</p>
-		<h2>Jalankan phpBB3 anda!</h2>
-		<p>Dengan mengklik tombol di bawah ini akan mengantarkan anda ke Papan Pengaturan Administrasi. Ambil beberapa waktu untuk pilihan yang tersedia untuk anda. Mohon diingat bahwa bantuan tersedia secara online melalui <a href="http://www.phpbb.com/support/documentation/3.0/">Documentation</a> dan <a href="http://www.phpbb.com/community/viewforum.php?f=46">support forums</a>, silahkan lihat <a href="%3$s">README</a> untuk informasi lebih lanjut.</p><p><strong>Silahkan hapus, singkirkan atau namai ulang sekarang direktori instal sebelum menggunakan halaman anda. Jika direktori ini masih tetap ada, maka hanya Papan Pengaturan Administrasi (PPA) yang bisa diaksese.</strong></p>',
-	'INSTALL_INTRO'				=> 'Selamat Datang Ke Instalasi',
-
-	'INSTALL_INTRO_BODY'		=> 'Dengan pilihan ini adalah memungkinkan untuk menginstall phpBB3 ke server anda.</p><p>Untuk memproses, anda membutuhkan pengaturan database. Jika anda tidak mengetahui pengaturan database anda, silahkan hubungi host anda dan tanyakan mereka. Anda tidak akan bisa melanjutkan tanpa pengaturan tersebut. Anda harus:</p>
+	// Install page
+	'INSTALL_INTRO'			=> 'Welcome to Installation',
+	'INSTALL_INTRO_BODY'	=> 'With this option, it is possible to install phpBB3 onto your server.</p><p>In order to proceed, you will need your database settings. If you do not know your database settings, please contact your host and ask for them. You will not be able to continue without them. You need:</p>
 
 	<ul>
-		<li>Tipe Database - database yang akan anda gunakan.</li>
-		<li>Nama host server database atau DSN - alamat dari server database.</li>
-		<li>Port Server Database - port dari server database (biasanya tidak dibutuhkan).</li>
-		<li>Nama Database - nama database di server tersebut.</li>
-		<li>Nama Pengguna dan Kata Sandi Database - masukan untuk mengakses database.</li>
+		<li>The Database Type - the database you will be using.</li>
+		<li>The Database server hostname or DSN - the address of the database server.</li>
+		<li>The Database server port - the port of the database server (most of the time this is not needed).</li>
+		<li>The Database name - the name of the database on the server.</li>
+		<li>The Database username and Database password - the login data to access the database.</li>
 	</ul>
 
-	<p><strong>Catatan:</strong> jika anda menggunakan SQLite untuk instalasi, anda harus memasukkan alamat lengkap ke file database anda pada DSN isian dan biarkan kosong isian untuk nama pengguna dan kata sandinya. Untuk alasan keamanan, anda harus yakin bahwa file database tersebut tidak disimpan di lokasi web yang dapat diakses.</p>
+	<p><strong>Note:</strong> if you are installing using SQLite, you should enter the full path to your database file in the DSN field and leave the username and password fields blank. For security reasons, you should make sure that the database file is not stored in a location accessible from the web.</p>
 
-	<p>phpBB3 mendukung beberapa database berikut ini:</p>
+	<p>phpBB3 supports the following databases:</p>
 	<ul>
-		<li>MySQL 3.23 atau di bawahnya (Mendukung MySQLi)</li>
-		<li>PostgreSQL 7.3+</li>
-		<li>SQLite 2.8.2+</li>
-		<li>Firebird 2.0+</li>
-		<li>MS SQL Server 2000 atau di bawahnya (langsung ataupun via ODBC)</li>
-		<li>MS SQL Server 2005 atau ke atas (asli)</li>
+		<li>MySQL 3.23 or above (MySQLi supported)</li>
+		<li>PostgreSQL 8.3+</li>
+		<li>SQLite 3.6.15+</li>
+		<li>MS SQL Server 2000 or above (directly or via ODBC)</li>
+		<li>MS SQL Server 2005 or above (native)</li>
 		<li>Oracle</li>
 	</ul>
 
-	<p>Hanya database yang didukung pada server anda yang akan ditampilkan.',
-	'INSTALL_INTRO_NEXT'		=> 'Untuk memulai instalasi, silahkan tekan tombol di bawah ini.',
-	'INSTALL_LOGIN'				=> 'Masuk',
-	'INSTALL_NEXT'				=> 'Tahap selanjutnya',
-	'INSTALL_NEXT_FAIL'			=> 'Beberapa percobaan gagal dan anda harus membetulkan permasalahan ini sebelum melanjutkan ke tahap sebelumnya.',
-	'INSTALL_NEXT_PASS'			=> 'Semua percobaan telah berhasil dan anda anda bisa melanjutkan ke tahap instalasi selanjutnya. Jika anda telah mengubah beberapa perijinan, modul-modul, dsb. dan ingin mengulangi percobaan tersebut anda bisa melakukannya lagi jika dikehendaki.',
-	'INSTALL_PANEL'				=> 'Papan Instalasi',
-	'INSTALL_SEND_CONFIG'		=> 'phpBB tidak bisa menulis konfigurasi informasi secara langsung ke config.php. Hal ini mungkin disebabkan karena file tersebut tidak ada atau tidak bisa ditulis. Sejumlah pilihan akan ditampilkan di bawah ini yang akan memampukan anda untuk menyelesaikan instalasi dari config.php.',
-	'INSTALL_START'				=> 'Mulai instal',
-	'INSTALL_TEST'				=> 'Coba lagi',
-	'INST_ERR'					=> 'Instalasi error',
-	'INST_ERR_DB_CONNECT'		=> 'Tidak dapat menghubungkan ke database, lihat pesan error di bawah ini.',
-	'INST_ERR_DB_FORUM_PATH'	=> 'File database yang anda tentukan dalam susunan direktori halaman anda. Anda harus meletakkan file ini pada lokasi web yang tidak bisa diakses.',
-	'INST_ERR_DB_NO_ERROR'		=> 'Tidak ada pesan error yang diberikan.',
-	'INST_ERR_DB_NO_MYSQLI'		=> 'Versi dari MySQL yang terinstal pada mesin ini tidak cocok dengan pilihan “MySQL dengan Ekstensi MySQLi” yang anda gunakan. Silahkan coba pilihan “MySQL”.',
-	'INST_ERR_DB_NO_SQLITE'		=> 'Versi dari ekstensi SQLite yang anda miliki terlalu lama, harus di upgrade paling tidak ke versi 2.8.2.',
-	'INST_ERR_DB_NO_ORACLE'		=> 'Versi dari of Oracle yang diinstal pada mesin ini membutuhkan anda untuk membuat parameter <var>NLS_CHARACTERSET</var> untuk <var>UTF8</var>. Upgrade juga instalasi anda ke versi 9.2+ atau ubah parameternya.',
-	'INST_ERR_DB_NO_FIREBIRD'	=> 'Versi dari Firebird yang diinstal pada mesin di bawah 2.0, silahkan upgrade versi yang terbaru.',
-	'INST_ERR_DB_NO_FIREBIRD_PS'=> 'Database yang anda pilih untuk Firebird memiliki ukuran halaman kurang dari 8192, palng sedikitnya harus 8192.',
-	'INST_ERR_DB_NO_POSTGRES'	=> 'Database yang anda pilih tidak dibuat dalam coding <var>UNICODE</var> atau <var>UTF8</var>. Cobalah instal dengan database coding <var>UNICODE</var> atau <var>UTF8</var>.',
-	'INST_ERR_DB_NO_NAME'		=> 'Tidak ada database yang ditentukan.',
-	'INST_ERR_EMAIL_INVALID'	=> 'Alamat e-mail yang anda masukkan salah.',
-	'INST_ERR_EMAIL_MISMATCH'	=> 'Alamat e-mail yang anda masukkan tidak cocok.',
-	'INST_ERR_FATAL'			=> 'Instalasi error fatal',
-	'INST_ERR_FATAL_DB'			=> 'Sebuah kejadian fatal dan tidak dapat tertolong lagi pada error database telah terjadi. Hal ini mingkin terjadi karena pengguna tidak memiliki perijinan yang sesuai untuk <code>CREATE TABLES</code> atau <code>INSERT</code> data, dsb. Informasi lebih lanjut diberikan dibawah ini. Silahkan hubungi pengembang hosting anda atau hubungi support forums phpBB untuk pertolongan lebih lanjut.',
-	'INST_ERR_FTP_PATH'			=> 'Tidak dapat mengubah ke direktori yang diberikan, silahkan periksa path tersebut.',
-	'INST_ERR_FTP_LOGIN'		=> 'Tidak dapat masuk ke server FTP, silahkan periksa nama pengguna dan kata sandi anda.',
-	'INST_ERR_MISSING_DATA'		=> 'Anda harus mengisikan semua isian yang ada di bagian ini.',
-	'INST_ERR_NO_DB'			=> 'Tidak dapat memanggik modul PHP untuk jenis database yang dipilih.',
-	'INST_ERR_PASSWORD_MISMATCH'	=> 'Kata sandi yang anda masukkan tidak tepat.',
-	'INST_ERR_PASSWORD_TOO_LONG'	=> 'Kata sandi yang anda masukkan terlalu panjang. Panjang maksimum adalah 30 karakter.',
-	'INST_ERR_PASSWORD_TOO_SHORT'	=> 'Kata sandi yang anda masukkan terlalu pendek. Panjang minimum adalah 6 karakter.',
-	'INST_ERR_PREFIX'			=> 'Tabel prefik yang ditentukan sudah ada, silahkan gunakan alternatif lain.',
-	'INST_ERR_PREFIX_INVALID'	=> 'Tabel prefik yang ditentukan tidak bisa digunakan untuk database anda. Silahkan Please try another, removing characters such as the hyphen.',
-	'INST_ERR_PREFIX_TOO_LONG'	=> 'Tabel prefik yang ditentukan terlalu besar. Panjang maksimumnya adalah %d karakter.',
-	'INST_ERR_USER_TOO_LONG'	=> 'Nama pengguna yang anda masukkan terlalu panjang. Panjang maksimumnya adalah 20 karakter.',
-	'INST_ERR_USER_TOO_SHORT'	=> 'Nama pengguna yang anda masukkan terlalu pendek. Panjang minimum adalah 3 karakter.',
-	'INVALID_PRIMARY_KEY'		=> 'Kunci primer tidak berlaku : %s',
+	<p>Only those databases supported on your server will be displayed.',
 
-	'LONG_SCRIPT_EXECUTION'		=> 'Mohon dicatat bahwa proses ini akan membutuhkan waktu untuk beberapa saat... Dimohon agar tidak menghentikan skrip ini.',
+	'ACP_LINK'	=> 'Take me to <a href="%1$s">the ACP</a>',
 
-	// mbstring
-	'MBSTRING_CHECK'						=> '<samp>mbstring</samp> pemeriksaan ekstensi',
-	'MBSTRING_CHECK_EXPLAIN'				=> '<strong>Dibutuhkan</strong> - <samp>mbstring</samp> adalah sebuah ekstensi dari PHP yang menyediakan fungsi string multibyte. Beberapa fitur dari mbstring tidak cocok dengan phpBB dan harus dinonaktifkan.',
-	'MBSTRING_FUNC_OVERLOAD'				=> 'Fungsi melampaui batas',
-	'MBSTRING_FUNC_OVERLOAD_EXPLAIN'		=> '<var>mbstring.func_overload</var> harus di atur salah satunya menjadi 0 atau 4.',
-	'MBSTRING_ENCODING_TRANSLATION'			=> 'Enkoding karakter transparan',
-	'MBSTRING_ENCODING_TRANSLATION_EXPLAIN'	=> '<var>mbstring.encoding_translation</var> harus dibuat menjadi 0.',
-	'MBSTRING_HTTP_INPUT'					=> 'Konversi input karakter HTTP',
-	'MBSTRING_HTTP_INPUT_EXPLAIN'			=> '<var>mbstring.http_input</var> harus dibuat menjadi <samp>pass</samp>.',
-	'MBSTRING_HTTP_OUTPUT'					=> 'Konversi output karakter HTTP',
-	'MBSTRING_HTTP_OUTPUT_EXPLAIN'			=> '<var>mbstring.http_output</var> harus di ubah menjadi <samp>pass</samp>.',
-
-	'MAKE_FOLDER_WRITABLE'			=> 'Mohon diperiksa apakah folder tersebut ada dan bisa ditulis oleh lalu coba lagi:<br />»<strong>%s</strong>.',
-	'MAKE_FOLDERS_WRITABLE'			=> 'Mohon diperiksa apakah folder-folder tersebut tersebut ada dan bisa ditulis oleh lalu coba lagi:<br />»<strong>%s</strong>.',
-
-    'MYSQL_SCHEMA_UPDATE_REQUIRED'  => 'Skema database MySQL anda untuk phpBB sudah lama. phpBB mendeteksi skema untuk MySQL 3.x/4.x, tetapi server berjalan dengan MySQL %2s.<br /><strong>Sebelum melakukan pembaruan, anda harus membarui skemanya terlebih dulu.</strong><br /><br />Silahkan lihat di <a href="http://www.phpbb.com/kb/article/doesnt-have-a-default-value-errors/">Knowledge Base article about upgrading the MySQL schema</a>. Jika anda mengalami masalah, silahkan menggunakan <a href="http://www.phpbb.com/community/viewforum.php?f=46">forum support kami</a>.',
-
-	'NAMING_CONFLICT'				=> 'Konflik penamaan: %s dan %s adalah sama-sama alias<br /><br />%s',
-	'NEXT_STEP'						=> 'Lanjutkan ke langkap selanjutnya',
-	'NOT_FOUND'						=> 'Tidak dapat ditemukan',
-	'NOT_UNDERSTAND'				=> 'Tidak dapat dimengerti %s #%d, tabel %s (“%s”)',
-	'NO_CONVERTORS'					=> 'Tidak ada konvertor yang tersedia.',
-	'NO_CONVERT_SPECIFIED'			=> 'Tidak ada konvertor yang ditentukan.',
-	'NO_LOCATION'					=> 'Tidak dapat menentukan lokasi. Jika anda mengetahui Imagemagick sudah terinstal, anda boleh menetukan lokasinya nanti pada papan pengaturan administrasi',
-	'NO_TABLES_FOUND'				=> 'Tidak ada tabel ditemukan.',
-
-	'OVERVIEW_BODY'					=> 'Selamat datang di phpBB3!<br /><br />phpBB™ adalah solusi halaman bulletin open source yang paling banyak digunakan di dunia. phpBB3 adalah instalasi terakhir yang dimulai pada tahun 2000. Seperti predecessornya, phpBB3 kaya akan fitur, mudah digunakan, dan dikung penuh oleh Team phpBB. phpBB3 lebih dikembangkan lagi dari hal-hal yang membuat phpBB2 popular, dan menambahkan fitur-fitur permintaan yang tidak disediakan di versi sebelumnya. Kami harap ini bisa mencapai harapan anda.<br /><br />Sistem instalasi ini akan mamandu anda dalam melakukan instalasi phpBB, memperbaharui ke versi yang terbaru dari phpBB3 dari versi sebelumnya, seperti mengkonversikan phpBB3 dari discussion board system yang berbeda (termasuk phpBB2). Untuk informasi lebih lanjut, we menyarankan agar anda membaca <a href="../docs/INSTALL.html">panduan instalasi</a>.<br /><br />Untuk membaca lisensi atau mempelajari tentang cara mendapatkan dukungan phpBB3, silahkan pilih masing-masing pilihan dari menu disamping. Untuk melanjutkan, silahkan pilih tab yang cocok diatas.',
-
-	'PCRE_UTF_SUPPORT'				=> 'PCRE UTF-8 support',
-	'PCRE_UTF_SUPPORT_EXPLAIN'		=> 'phpBB <strong>tidak</strong> akan berjalan apabila instalasi PHP anda tidak dikompilasi dengan dukungan UTF-8 pada ekstensi PCRE.',
-	'PHP_GETIMAGESIZE_SUPPORT'			=> 'Fungsi PHP getimagesize() tersedia',
-	'PHP_GETIMAGESIZE_SUPPORT_EXPLAIN'	=> '<strong>Dibutuhkan</strong> - Agar phpBB dapat berfungsi dengan baik, fungsi getimagesize harus disediakan.',
-	'PHP_OPTIONAL_MODULE'			=> 'Modul-modul opsional',
-	'PHP_OPTIONAL_MODULE_EXPLAIN'	=> '<strong>Opsional</strong> - Modul atau aplikasi ini adalah opsional. akan tetapi, jika tersedia akan mengaktifkan fitur tambahan.',
-	'PHP_SUPPORTED_DB'				=> 'Databases yang disupport',
-	'PHP_SUPPORTED_DB_EXPLAIN'		=> '<strong>Dibutuhkan</strong> - anda harus memiliki support paling tidak satu database yang cocok dengan PHP. Jika tidak ada modul database yang tersedia ditampilkan, anda harus menghubungi pengembang hosting anda atau tinjau dokumentasi instalasi PHP yang relevan sebagai masukan.',
-	'PHP_REGISTER_GLOBALS'			=> 'Pengaturan PHP <var>register_globals</var> tidak aktif',
-	'PHP_REGISTER_GLOBALS_EXPLAIN'	=> 'phpBB akan tetap berjalan jika pengaturan ini diaktifkan, tetapi jika memungkinkan, dan disarankan fungsi register_globals dinonaktifkan pada instal PHP anda untuk alasan keamanan.',
-	'PHP_SAFE_MODE'					=> 'Safe mode',
-	'PHP_SETTINGS'					=> 'Versi PHP dan pengaturan',
-	'PHP_SETTINGS_EXPLAIN'			=> '<strong>Dibutuhkan</strong> - Setidaknya anda harus berjalan dengan PHP versi 4.3.3 untuk menginstal phpBB. Jika <var>safe mode</var> ditampilkan pada bagian bawah instalasi PHP anda berarti anda sedang menjalankan mode tersebut. Ini akan menyebabkan pembatasan pada administarsi remote dan fitur-fitur yang serupa.',
-	'PHP_URL_FOPEN_SUPPORT'			=> 'Pengaturan PHP <var>allow_url_fopen</var> aktif',
-	'PHP_URL_FOPEN_SUPPORT_EXPLAIN'	=> '<strong>Opsional</strong> - Pengaturan ini adalah opsional, akan tetapi fungsi phpBB tertentu seperti avatar off-site tidak akan berfungsi dengan baik tanpanya. ',
-	'PHP_VERSION_REQD'				=> 'Versi PHP >= 4.3.3',
-	'POST_ID'						=> 'ID Post',
-	'PREFIX_FOUND'					=> 'Sebuah pemeriksaan terhadap telah menunjukkan instalsi yang benar menggunakan <strong>%s</strong> sebagai prefik tabel.',
-	'PREPROCESS_STEP'				=> 'Mengeksekusi fungsi/query pra-proses',
-	'PRE_CONVERT_COMPLETE'			=> 'Semua tahap pra-konversi sudah berhasil diselesaikan. Sekarang anda boleh memulai proses konversi aktualnya. Mohon dicatat bahwa anda harus melakukannya secara manual dan mengatur beberapa hal. Setelah konversi, silahkan periksa perijinan yang diberikan, bangun kembali indeks pencarian anda yang tidak dikonversikan dan periksa file-file tersalin dengan benar, sebagai contoh avatar dan tanda senyuman.',
-	'PROCESS_LAST'					=> 'Memproses pernyataan terakhir',
-
-	'REFRESH_PAGE'				=> 'Refresh halaman untuk melanjutkan konversi',
-	'REFRESH_PAGE_EXPLAIN'		=> 'Jika dipilih ya, konvertor akan melakukan refresh halaman untuk melanjutkan konversi setelah suatu tahap diselesaikan. Jika ini merupakan konversi pertama anda, untuk tujuan percobaan dan menentukan beberapa kesalahan nantinya, kami menyarankan untuk membuat ini menjadi Tidak.',
-	'REQUIREMENTS_TITLE'		=> 'Kecocokan Instalasi',
-	'REQUIREMENTS_EXPLAIN'		=> 'Sebelum memproses dengan instalasi penuh, phpBB akan melakukan beberapa percobaan pada konfigurasi server dan file-file ana untuk meyakinkan bahwa anda bisa menginstal dan menjalankan phpBB. Silahkan baca keseluruhan hasil dan jangan jangan melanjutkan sampai semua tes selesai. Jika anda berniat untuk menggunakan beberapa fitur, tergantung dari tes opsionalnya, anda harus yakinkan juga bahwa semua test ini telah selesai dilaksanakan.',
-	'RETRY_WRITE'				=> 'Mencoba ulang menulis config',
-	'RETRY_WRITE_EXPLAIN'		=> 'Jika anda mau, anda bisa mengubah perijinan pada config.php untuk membolehkan phpBB menulisnya. Klik tombol coba lagi jika ingin mencoba kembali. Mohon diingat untuk mengembalikan perijinan dari config.php setelah phpBB selesai diinstal.',
-
-	'SCRIPT_PATH'				=> 'Lokasi skrip',
-	'SCRIPT_PATH_EXPLAIN'		=> 'Lokasi dimana phpBB ditempatkan relatif ke nama domain, contoh: <samp>/phpBB3</samp>.',
-	'SELECT_LANG'				=> 'Pilih bahasa',
-	'SERVER_CONFIG'				=> 'Konfigurasi server',
-	'SEARCH_INDEX_UNCONVERTED'	=> 'Indeks pencarian tidak dikonversikan',
-	'SEARCH_INDEX_UNCONVERTED_EXPLAIN'	=> 'Indeks pencarian anda yang lama tidak dikonversikan. Pencarian akan selalu memberikan hasil yang kosong. Untuk membuat indeks pencarian yang baru, kunjungi Papan Pengaturan Administrator, pilih Perawatan dan Indeks pencarian dari sub menunya.',
-	'SOFTWARE'					=> 'Perangkat Lunak Halaman',
-	'SPECIFY_OPTIONS'			=> 'Tentukan pilihan konversi',
-	'STAGE_ADMINISTRATOR'		=> 'Keterangan administrator',
-	'STAGE_ADVANCED'			=> 'Pengaturan Lanjutan',
-	'STAGE_ADVANCED_EXPLAIN'	=> 'Pengaturan pada halaman ini hanya diperlukan untuk diubah jika anda tahu anda membutuhkan sesuatu yang berbeda dari defaultnya. Jika anda tidak yakin, silahkan proses ke halaman berikutnya, karena pengaturan ini bisa diubah dari Papan Pengaturan Administrasi nantinya.',
-	'STAGE_CONFIG_FILE'			=> 'File konfigurasi',
-	'STAGE_CREATE_TABLE'		=> 'Menbuat tabel database',
-	'STAGE_CREATE_TABLE_EXPLAIN'	=> 'Tabel database yang digunakan 3.0 telah dibuat dan dikumpulkan beberapa data asalnya. Lanjutkan ke halaman selanjutnya untuk menyelesaikan instalasi phpBB.',
-	'STAGE_DATABASE'			=> 'Pengaturan database',
-	'STAGE_FINAL'				=> 'Tahap akhir',
-	'STAGE_INTRO'				=> 'Pengenalan',
-	'STAGE_IN_PROGRESS'			=> 'Konversi sedang dalam progres',
-	'STAGE_REQUIREMENTS'		=> 'Yang dibutuhkan',
-	'STAGE_SETTINGS'			=> 'Pengaturan',
-	'STARTING_CONVERT'			=> 'Memulai proses konversi',
-	'STEP_PERCENT_COMPLETED'	=> 'Tahap <strong>%d</strong> dari <strong>%d</strong>',
-	'SUB_INTRO'					=> 'Pengenalan',
-	'SUB_LICENSE'				=> 'Lisensi',
-	'SUB_SUPPORT'				=> 'Support',
-	'SUCCESSFUL_CONNECT'		=> 'Koneksi berhasil',
-	'SUPPORT_BODY'				=> 'Dukungan penuh akan diberikan untuk rilis sekarang yang stabil dari phpBB3, gratis. Ini termasuk :</p><ul><li>instalasi</li><li>konfigurasi</li><li>pertanyaan teknikal</li><li>permasalah yang berhubungan dengan bug-bug potensial pada perangkat lunak ini</li><li>memperbarui dari versi Release Candidate (RC) ke versi yang stabil</li><li>mengkonversikan dari phpBB 2.0.x ke phpBB3</li><li>mengkonversikan dari halaman diskusi yang lain ke phpBB3 (silahkan lihat <a href="http://www.phpbb.com/community/viewforum.php?f=65">Convertors Forum</a>)</li></ul><p>Kami menyarankan pengguna masih menjalankan versi beta dari phpBB3 untuk mengganti instalasi mereka dengan salinan yang fresh dari versi terbaru.</p><h2>MODs / Styles</h2><p>Untuk sesuatu yang berhubungan dengan MOD, silahkan post yang sesuai di <a href="http://www.phpbb.com/community/viewforum.php?f=81">Modifications Forum</a>.<br />Untuk sesuatu yang berhubungan dengan gaya, template dan imageset, silahkan post yang sesuai di <a href="http://www.phpbb.com/community/viewforum.php?f=80">Styles Forum</a>.<br /><br />Jika pertanyaan anda berhubungan dengan paket tertentu, silahkan post secara langsung pada topic untuk paket yang dimasksud.</p><h2>Obtaining Support</h2><p><a href="http://www.phpbb.com/community/viewtopic.php?f=14&amp;t=571070">The phpBB Welcome Package</a><br /><a href="http://www.phpbb.com/support/">Support Section</a><br /><a href="http://www.phpbb.com/support/documentation/3.0/quickstart/">Quick Start Guide</a><br /><br />Untuk meyakinkan anda tetap terbarukan dengan berita dan rilis terbaru, kenapa tidak <a href="http://www.phpbb.com/support/">berlangganan milis kami</a>?<br /><br />',
-	'SYNC_FORUMS'				=> 'Memulai menyinkronisasi forum',
-	'SYNC_POST_COUNT'			=> 'Menyinkronisasi post_counts',
-	'SYNC_POST_COUNT_ID'		=> 'Menyinkronisasi post_counts dari <var>masukan</var> %1$s ke %2$s.',
-	'SYNC_TOPICS'				=> 'Memulai menyinkron topik',
-	'SYNC_TOPIC_ID'				=> 'Menyinkron topik dari <var>topic_id</var> %1$s ke %2$s.',
-
-	'TABLES_MISSING'			=> 'Tidak bisa menemukan table-table ini<br />» <strong>%s</strong>.',
-	'TABLE_PREFIX'				=> 'Prefiks untuk tabel dalam database',
-	'TABLE_PREFIX_SAME'			=> 'Prefik tabel harus digunakan oleh perangkat lunak yang anda konversikan.<br />» Prefik tabel yang ditentukan adalah %s.',
-	'TESTS_PASSED'				=> 'Percobaan dilalui',
-	'TESTS_FAILED'				=> 'Percobaan gagal',
-
-	'UNABLE_WRITE_LOCK'			=> 'Tidak dapat menulis file yang terkkunci.',
-	'UNAVAILABLE'				=> 'Tidak tersedia',
-	'UNWRITABLE'				=> 'Tidak dapat ditulis',
-	'UPDATE_TOPICS_POSTED'		=> 'Menggenerasikan topik yang dipost',
-	'UPDATE_TOPICS_POSTED_ERR'	=> 'Sebuah error terjadi pada saat menggenerasikan informasi topik yang dipost. Anda masih dapat mencoba tahap ini pada Papan Pengaturan Pengguna setelah proses konversi selesai.',
-	'VERIFY_OPTIONS'			=> 'Memverifikasi pilihan-pilihan konversi',
-	'VERSION'					=> 'Versi',
-
-	'WELCOME_INSTALL'			=> 'Selamat Datang di Instalasi phpBB3',
-	'WRITABLE'					=> 'Bisa ditulis',
+	'INSTALL_PHPBB_INSTALLED'		=> 'phpBB is already installed.',
+	'INSTALL_PHPBB_NOT_INSTALLED'	=> 'phpBB is not installed yet.',
 ));
 
-// Updater
+// Requirements translation
 $lang = array_merge($lang, array(
-	'ALL_FILES_UP_TO_DATE'      => 'Semua berkas sudah terbarukan dengan versi phpBB yang terbaru. Anda sebaiknya <a href="../ucp.php?mode=login">masuk ke papan pengaturan</a> sekarang dan periksalah apakah semua bekerja dengan baik. Jangan lupa untuk menghapus, mengganti nama atau memindahkan direktori install anda! Silahkan kirim informasi pembaruan tentang server dan pengaturan papan anda dari modul <a href="../ucp.php?mode=login&amp;redirect=adm/index.php%3Fi=send_statistics%26mode=send_statistics">Kirim statistik</a> di ACP.',
-	'ARCHIVE_FILE'				=> 'File sumber dalam arsip',
+	// Filesystem requirements
+	'FILE_NOT_EXISTS'						=> 'File does not exist',
+	'FILE_NOT_EXISTS_EXPLAIN'				=> 'To be able to install phpBB the %1$s file needs to exist.',
+	'FILE_NOT_EXISTS_EXPLAIN_OPTIONAL'		=> 'It is recommended that the %1$s file exist for a better forum user experience.',
+	'FILE_NOT_WRITABLE'						=> 'File is not writable',
+	'FILE_NOT_WRITABLE_EXPLAIN'				=> 'To be able to install phpBB the %1$s file needs to be writable.',
+	'FILE_NOT_WRITABLE_EXPLAIN_OPTIONAL'	=> 'It is recommended that the %1$s file be writable for a better forum user experience.',
 
-	'BACK'				=> 'Kembali',
-	'BINARY_FILE'		=> 'File biner',
-	'BOT'				=> 'Spider/Robot',
+	'DIRECTORY_NOT_EXISTS'						=> 'Directory does not exist',
+	'DIRECTORY_NOT_EXISTS_EXPLAIN'				=> 'To be able to install phpBB the %1$s directory needs to exist.',
+	'DIRECTORY_NOT_EXISTS_EXPLAIN_OPTIONAL'		=> 'It is recommended that the %1$s directory exist for a better forum user experience.',
+	'DIRECTORY_NOT_WRITABLE'					=> 'Directory is not writable',
+	'DIRECTORY_NOT_WRITABLE_EXPLAIN'			=> 'To be able to install phpBB the %1$s directory needs to be writable.',
+	'DIRECTORY_NOT_WRITABLE_EXPLAIN_OPTIONAL'	=> 'It is recommended that the %1$s directory be writable for a better forum user experience.',
 
-	'CHANGE_CLEAN_NAMES'			=> 'Metode tersebut digunakan untuk meyakinkan bahwa nama pengguna tidak digunakan oleh berbagai pengguna yang telah diganti. Ada beberapa pengguna yang memiliki nama yang sama bila dibandingkan dengan metode yang baru. Anda harus menghapus atau menamai pengguna tersebut untuk meyakinkan setiap nama hanya digunakan oleh satu pengguna saja sebelum anda bisa memproses.',
-	'CHECK_FILES'					=> 'Periksa file',
-	'CHECK_FILES_AGAIN'				=> 'Periksa file lagi',
-	'CHECK_FILES_EXPLAIN'			=> 'Dalam tahapa selanjutnya semua file akan diperiksa dengan file-file terbaru - ini bisa memakan waktu jika hal ini merupakan pemeriksaan yang pertama.',
-	'CHECK_FILES_UP_TO_DATE'		=> 'Menurut database anda, versi anda adalah yang terbarukan. Anda boleh melanjutkan dengan memeriksa file untuk meyakinkan bahwa data anda sudah terbarukan degan versi terbaru phpBB.',
-	'CHECK_UPDATE_DATABASE'			=> 'Lanjutkan ke proses pembaruan',
-	'COLLECTED_INFORMATION'			=> 'Informasi file',
-	'COLLECTED_INFORMATION_EXPLAIN'	=> 'Daftar di bawah ini menunjukkan informasi tentang file-file yang memerlukan pembaruan. Silahkan baca informasi di depan semua blok status untuk melihat apa yang dimaksud dan yang anda inginkan agar pembaruan berhasil.',
-	'COLLECTING_FILE_DIFFS'			=> 'Mengumpulkan perbedaan file',
-	'COMPLETE_LOGIN_TO_BOARD'		=> 'Sekarang anda harus <a href="../ucp.php?mode=login">masuk ke halaman</a> dan periksa apakah semua berjalan lancar. Jangan lupa untuk menghapus, menamai atau memindahkan direktori install!',
-	'CONTINUE_UPDATE_NOW'			=> 'Lanjutkan untuk memproses pembaruan sekarang',		// Shown within the database update script at the end if called from the updater
-	'CONTINUE_UPDATE'				=> 'Lanjutkan pembaruan sekarang',						// Shown after file upload to indicate the update process is not yet finished
-	'CURRENT_FILE'					=> 'Permulaan konflik - Kode file asli sebelum pembaruan',
-	'CURRENT_VERSION'				=> 'Versi sekarang',
+	// Server requirements
+	'PHP_VERSION_REQD'					=> 'PHP version',
+	'PHP_VERSION_REQD_EXPLAIN'			=> 'phpBB requires PHP version 5.4.0 or higher.',
+	'PHP_GETIMAGESIZE_SUPPORT'			=> 'PHP getimagesize() function is required',
+	'PHP_GETIMAGESIZE_SUPPORT_EXPLAIN'	=> 'In order for phpBB to function correctly, the getimagesize function needs to be available.',
+	'PCRE_UTF_SUPPORT'					=> 'PCRE UTF-8 support',
+	'PCRE_UTF_SUPPORT_EXPLAIN'			=> 'phpBB will not run if your PHP installation is not compiled with UTF-8 support in the PCRE extension.',
+	'PHP_JSON_SUPPORT'					=> 'PHP JSON support',
+	'PHP_JSON_SUPPORT_EXPLAIN'			=> 'In order for phpBB to function correctly, the PHP JSON extension needs to be available.',
+	'PHP_XML_SUPPORT'					=> 'PHP XML/DOM support',
+	'PHP_XML_SUPPORT_EXPLAIN'			=> 'In order for phpBB to function correctly, the PHP XML/DOM extension needs to be available.',
+	'PHP_SUPPORTED_DB'					=> 'Supported databases',
+	'PHP_SUPPORTED_DB_EXPLAIN'			=> 'You must have support for at least one compatible database within PHP. If no database modules are shown as available you should contact your hosting provider or review the relevant PHP installation documentation for advice.',
 
-	'DATABASE_TYPE'						=> 'Tipe database',
-	'DATABASE_UPDATE_INFO_OLD'			=> 'File pembaruan database dalam direktori install sudah usang. Mohon periksa bahwa anda mengupload versi file yang benar.',
-	'DELETE_USER_REMOVE'				=> 'Hapus pengguna dan singkirkan post',
-	'DELETE_USER_RETAIN'				=> 'Hapus pengguna tetapi tinggalkan postnya',
-	'DESTINATION'						=> 'File tujuan',
-	'DIFF_INLINE'						=> 'Inline',
-	'DIFF_RAW'							=> 'Raw unified diff',
-	'DIFF_SEP_EXPLAIN'					=> 'Blok kode yang digunakan pada pembaruan/file baru',
-	'DIFF_SIDE_BY_SIDE'					=> 'Sisi demi sisi',
-	'DIFF_UNIFIED'						=> 'Menyamakan perbedaan',
-	'DO_NOT_UPDATE'						=> 'Jangan perbarui file ini',
-	'DONE'								=> 'Selesai',
-	'DOWNLOAD'							=> 'Download',
-	'DOWNLOAD_AS'						=> 'Download sebagai',
-	'DOWNLOAD_UPDATE_METHOD_BUTTON'		=> 'Download file-file arsip yang dimodifikasi (disarankan)',
-    'DOWNLOAD_CONFLICTS'				=> 'Download konflik untuk file ini',
-    'DOWNLOAD_CONFLICTS_EXPLAIN'		=> 'Cari &lt;&lt;&lt; untuk menyoroti konflik',
-	'DOWNLOAD_UPDATE_METHOD'			=> 'Download file-file arsip yang dimodifikasi',
-	'DOWNLOAD_UPDATE_METHOD_EXPLAIN'	=> 'Setelah selesai di donwnload anda harus membuka file arsip. Anda akan menemukan file-file yang dimodifikasi yang harus anda upload ke direktori phpBB root directory anda. Silahkan upload file tersebut ke lokasi yang sesuai setelahnya. Setelah anda mengupload semua file, silahkan periksa lagi file dengan tombol lainnya di bawah ini.',
+	'RETEST_REQUIREMENTS'	=> 'Retest requirements',
 
-	'ERROR'			=> 'Error',
-	'EDIT_USERNAME'	=> 'Ubah nama pengguna',
+	'STAGE_REQUIREMENTS'	=> 'Check requirements',
+));
 
-	'FILE_ALREADY_UP_TO_DATE'		=> 'File sudah yang terbarukan.',
-	'FILE_DIFF_NOT_ALLOWED'			=> 'File tidak diijinkan untuk dibedakan.',
-	'FILE_USED'						=> 'Informasi yang digunakan dari',			// Single file
-	'FILES_CONFLICT'				=> 'File-file konflik',
-	'FILES_CONFLICT_EXPLAIN'		=> 'File berikut dimodifikasi dan bukan sebagai file asli dari versi yang lama. phpBB menentukan bahwa file-file ini menimbulkan konflik jika dicoba digabungkan. Silahkan diperiksa konflik tersebut dan cobalah menyelesaikan secara manual atau lanjutkan pembaruan dengan memilih metode penggabungan yang dikehendaki. Jika anda menyelesaikan konflik tersebut secara manual, silahkan periksa file-file tersebut kembali setelah anda memodifikasinya. Anda juga boleh memilih metode yang dikehendaki untuk menggabungkan setiap file. Yang pertama akan menghasilkan sebuah file dimana baris konflik dari file lama anda akan dihapus, sedangkan metode yang lain akan menghilangkan perubahan dari file yang baru.',
-	'FILES_MODIFIED'				=> 'File-file yang dimodifikasi',
-	'FILES_MODIFIED_EXPLAIN'		=> 'File-file berikut dimodifikasi yang tidak menunjukkan file-file asli anda dari versi yang lama. File yang diperbarui akan digabungkan antara modifikasi anda dan file yang baru.',
-	'FILES_NEW'						=> 'File-file baru',
-	'FILES_NEW_EXPLAIN'				=> 'File-file berikut tidak ada lagi pada instalasi anda. File-file ini akan ditambahkan ke pada instalasi anda.',
-	'FILES_NEW_CONFLICT'			=> 'File-file konflik yang baru',
-	'FILES_NEW_CONFLICT_EXPLAIN'	=> 'File-file berikut ini baru pada versi terakhir anda, akan tetapi sudah ada nama file yang sama pada lokasi yang sama. File-file ini akan ditulis ulang menjadi file yang baru.',
-	'FILES_NOT_MODIFIED'			=> 'Bukan file-file yang dimodifikasi',
-	'FILES_NOT_MODIFIED_EXPLAIN'	=> 'File-file berikut ini tidak dimodifikasi dan merupakan file phpBB yang asli dari versi yang ingin anda perbarui.',
-	'FILES_UP_TO_DATE'				=> 'Sudah merupakan file-file yang terbarukan',
-	'FILES_UP_TO_DATE_EXPLAIN'		=> 'File-file berikut ini sudah merupakan file-file yang terbarukan tidak memerlukan pembaruan.',
-	'FTP_SETTINGS'					=> 'Pengaturan FTP',
-	'FTP_UPDATE_METHOD'				=> 'FTP upload',
+// General error messages
+$lang = array_merge($lang, array(
+	'INST_ERR_MISSING_DATA'		=> 'You must fill out all fields in this block.',
 
-	'INCOMPATIBLE_UPDATE_FILES'		=> 'File-file update yang ditemukan tidak cocok dengan versi yang anda instal. Versi yang anda instal adalah %1$s dan file pembaruannya untuk pembaruan phpBB %2$s ke %3$s.',
-	'INCOMPLETE_UPDATE_FILES'		=> 'File-file pembaruan tidak lengkap.',
-	'INLINE_UPDATE_SUCCESSFUL'		=> 'Pembaruan database berhasil. Sekarang anda harus melanjutkan proses pembaruan.',
+	'TIMEOUT_DETECTED_TITLE'	=> 'The installer detected a timeout',
+	'TIMEOUT_DETECTED_MESSAGE'	=> 'The installer has detected a timeout, you may try to refresh the page, which may lead to data corruption. We suggest that you either increase your timeout settings or try to use the CLI.',
+));
 
-	'KEEP_OLD_NAME'		=> 'Simpan nama pengguna',
+// Data obtaining translations
+$lang = array_merge($lang, array(
+	'STAGE_OBTAIN_DATA'	=> 'Set installation data',
 
-	'LATEST_VERSION'		=> 'Versi terbaru',
-	'LINE'					=> 'Baris',
-	'LINE_ADDED'			=> 'Ditambahkan',
-	'LINE_MODIFIED'			=> 'Dimodifikasi',
-	'LINE_REMOVED'			=> 'Disingkirkan',
-	'LINE_UNMODIFIED'		=> 'Tidak dimodifikasi',
-	'LOGIN_UPDATE_EXPLAIN'	=> 'Untuk memperbarui instalasi anda harus masuk terlebih dahulu.',
+	//
+	// Admin data
+	//
+	'STAGE_ADMINISTRATOR'	=> 'Administrator details',
 
-	'MAPPING_FILE_STRUCTURE'	=> 'Untuk mempermudah, ini adalah lokasi-lokasi file anda yang memetakan instalsi phpBB anda.',
+	// Form labels
+	'ADMIN_CONFIG'				=> 'Administrator configuration',
+	'ADMIN_PASSWORD'			=> 'Administrator password',
+	'ADMIN_PASSWORD_CONFIRM'	=> 'Confirm administrator password',
+	'ADMIN_PASSWORD_EXPLAIN'	=> 'Please enter a password between 6 and 30 characters in length.',
+	'ADMIN_USERNAME'			=> 'Administrator username',
+	'ADMIN_USERNAME_EXPLAIN'	=> 'Please enter a username between 3 and 20 characters in length.',
 
-	'MERGE_MODIFICATIONS_OPTION'	=> 'Gabungkan modifikasi',
+	// Errors
+	'INST_ERR_EMAIL_INVALID'		=> 'The email address you entered is invalid.',
+	'INST_ERR_PASSWORD_MISMATCH'	=> 'The passwords you entered did not match.',
+	'INST_ERR_PASSWORD_TOO_LONG'	=> 'The password you entered is too long. The maximum length is 30 characters.',
+	'INST_ERR_PASSWORD_TOO_SHORT'	=> 'The password you entered is too short. The minimum length is 6 characters.',
+	'INST_ERR_USER_TOO_LONG'		=> 'The username you entered is too long. The maximum length is 20 characters.',
+	'INST_ERR_USER_TOO_SHORT'		=> 'The username you entered is too short. The minimum length is 3 characters.',
 
-	'MERGE_NO_MERGE_NEW_OPTION'	=> 'Jangan gabungkan - gunakan file baru',
-	'MERGE_NO_MERGE_MOD_OPTION'	=> 'Jangan gabungkan - gunakan file yang sudah di instal',
-	'MERGE_MOD_FILE_OPTION'		=> 'Gabungkan modifikasi (Lepaskan phpBB yang baru pada blok konflik)',
-	'MERGE_NEW_FILE_OPTION'		=> 'Gabungkan modifikasi (Lepaskan kode modifikasi pada blok konflik)',
-	'MERGE_SELECT_ERROR'		=> 'Mode penggabungan file konflik tidak dipilih dengan benar.',
-	'MERGING_FILES'				=> 'Menggabungkan perbedaan',
-	'MERGING_FILES_EXPLAIN'		=> 'Mengumpulkan perubahan file terakhir sekarang.<br /><br />Silahkan tunggu sampai phpBB menyelesaikan semua operasi pada file yang diubah.',
+	//
+	// Board data
+	//
+	// Form labels
+	'BOARD_CONFIG'		=> 'Bulletin board configuration',
+	'DEFAULT_LANGUAGE'	=> 'Default language',
+	'BOARD_NAME'		=> 'Title of the board',
+	'BOARD_DESCRIPTION'	=> 'Short description of the board',
 
-	'NEW_FILE'						=> 'Akhir dari konflik',
-	'NEW_USERNAME'					=> 'Nama pengguna yang baru',
-	'NO_AUTH_UPDATE'				=> 'Tidak diijinkan untuk memperbarui',
-	'NO_ERRORS'						=> 'Tidak ada error',
-	'NO_UPDATE_FILES'				=> 'Tidak memperbarui file-file berikut ini',
-	'NO_UPDATE_FILES_EXPLAIN'		=> 'File-file berikut baru dan dimodifikasi, tetapi direktori yang biasa ditempatkan tidak  dapat ditemukan pada instalasi anda. Jika daftar ini mengandung file-file ke direktori yang lain selain direktori language/ atau styles/ maka anda harus memodifikasi struktur direktori anda dan pembaruan mungkin tidak lengkap.',
-	'NO_UPDATE_FILES_OUTDATED'		=> 'Tidak ada direktori pembaruan yang ditemukan, silahkan periksa anda mengupload file-file yang berhubungan.<br /><br />Instalasi sepertinya <strong>bukan</strong> yang terbarukan. Pembaruan tersedia untuk versi phpBB %1$s anda, silahkan kunjungi <a href="http://www.phpbb.com/downloads/" rel="external">http://www.phpbb.com/downloads/</a> untuk memperoleh paket yang benar untuk memperbarui dari versi %2$s ke versi %3$s.',
-	'NO_UPDATE_FILES_UP_TO_DATE'	=> 'Versi anda sudah terbarukan. Tidak perlu untuk melakukan pembaruan. Jika anda ingin membuat sebuah pemeriksaan integritas pada file anda, silahkan upload file pembaruan yang benar.',
-	'NO_UPDATE_INFO'				=> 'File informasi pembaruan tidak dapat ditemukan.',
-	'NO_UPDATES_REQUIRED'			=> 'Tidak ada pembaruan yang diperlukan',
-	'NO_VISIBLE_CHANGES'			=> 'Tidak ada perubahan yang terlihat',
-	'NOTICE'						=> 'Pesan',
-	'NUM_CONFLICTS'					=> 'Jumlah konflik',
-	'NUMBER_OF_FILES_COLLECTED'		=> 'Perbedaan %1$d dari %2$d file sudah diperiksa.<br />Silahkan tunggu sampai semua file diperiksa.',
+	//
+	// Database data
+	//
+	'STAGE_DATABASE'	=> 'Database settings',
 
-	'OLD_UPDATE_FILES'		=> 'File-file pembaruan sudah usang. File pembaruan yang ditemukan adalah untuk pembaruan dari phpBB %1$s ke phpBB %2$s tetapi versi terbaru dari phpBB adalah %3$s.',
+	// Form labels
+	'DB_CONFIG'				=> 'Database configuration',
+	'DBMS'					=> 'Database type',
+	'DB_HOST'				=> 'Database server hostname or DSN',
+	'DB_HOST_EXPLAIN'		=> 'DSN stands for Data Source Name and is relevant only for ODBC installs. On PostgreSQL, use localhost to connect to the local server via UNIX domain socket and 127.0.0.1 to connect via TCP. For SQLite, enter the full path to your database file.',
+	'DB_PORT'				=> 'Database server port',
+	'DB_PORT_EXPLAIN'		=> 'Leave this blank unless you know the server operates on a non-standard port.',
+	'DB_PASSWORD'			=> 'Database password',
+	'DB_NAME'				=> 'Database name',
+	'DB_USERNAME'			=> 'Database username',
+	'DATABASE_VERSION'		=> 'Database version',
+	'TABLE_PREFIX'			=> 'Prefix for tables in database',
+	'TABLE_PREFIX_EXPLAIN'	=> 'The prefix must start with a letter and must only contain letters, numbers and underscores.',
 
-	'PACKAGE_UPDATES_TO'				=> 'Paket pembaruan sekarang ke versi',
-	'PERFORM_DATABASE_UPDATE'			=> 'Lakukan pembaruan database',
-	'PERFORM_DATABASE_UPDATE_EXPLAIN'	=> 'Di bawah ini anda akan menentukan sebuah tombol menuju skrip pembaruan database. Pembaruan database dapat berlangsung lama, di mohon untuk tidak menghentikan jika kelihatan sepeti hang. Setelah pembaruan database selesai dilaksanakan, ikutilah instruksi untuk melanjutkan proses pembaruan.',
-	'PREVIOUS_VERSION'					=> 'Versi sebelumnya',
-	'PROGRESS'							=> 'Progres',
+	// Database options
+	'DB_OPTION_MSSQL_ODBC'	=> 'MSSQL Server 2000+ via ODBC',
+	'DB_OPTION_MSSQLNATIVE'	=> 'MSSQL Server 2005+ [ Native ]',
+	'DB_OPTION_MYSQL'		=> 'MySQL',
+	'DB_OPTION_MYSQLI'		=> 'MySQL with MySQLi Extension',
+	'DB_OPTION_ORACLE'		=> 'Oracle',
+	'DB_OPTION_POSTGRES'	=> 'PostgreSQL',
+	'DB_OPTION_SQLITE3'		=> 'SQLite 3',
 
-	'RESULT'					=> 'Hasil',
-	'RUN_DATABASE_SCRIPT'		=> 'Perbarui database saya sekarang',
+	// Errors
+	'INST_ERR_NO_DB'				=> 'Cannot load the PHP module for the selected database type.',
+	'INST_ERR_DB_INVALID_PREFIX'	=> 'The prefix you entered is invalid. It must start with a letter and must only contain letters, numbers and underscores.',
+	'INST_ERR_PREFIX_TOO_LONG'		=> 'The table prefix you have specified is too long. The maximum length is %d characters.',
+	'INST_ERR_DB_NO_NAME'			=> 'No database name specified.',
+	'INST_ERR_DB_FORUM_PATH'		=> 'The database file specified is within your board directory tree. You should put this file in a non web-accessible location.',
+	'INST_ERR_DB_CONNECT'			=> 'Could not connect to the database, see error message below.',
+	'INST_ERR_DB_NO_WRITABLE'		=> 'Both the database and the directory containing it must be writable.',
+	'INST_ERR_DB_NO_ERROR'			=> 'No error message given.',
+	'INST_ERR_PREFIX'				=> 'Tables with the specified prefix already exist, please choose an alternative.',
+	'INST_ERR_DB_NO_MYSQLI'			=> 'The version of MySQL installed on this machine is incompatible with the “MySQL with MySQLi Extension” option you have selected. Please try the “MySQL” option instead.',
+	'INST_ERR_DB_NO_SQLITE3'		=> 'The version of the SQLite extension you have installed is too old, it must be upgraded to at least 3.6.15.',
+	'INST_ERR_DB_NO_ORACLE'			=> 'The version of Oracle installed on this machine requires you to set the <var>NLS_CHARACTERSET</var> parameter to <var>UTF8</var>. Either upgrade your installation to 9.2+ or change the parameter.',
+	'INST_ERR_DB_NO_POSTGRES'		=> 'The database you have selected was not created in <var>UNICODE</var> or <var>UTF8</var> encoding. Try installing with a database in <var>UNICODE</var> or <var>UTF8</var> encoding.',
+	'INST_SCHEMA_FILE_NOT_WRITABLE'	=> 'The schema file is not writable',
 
-	'SELECT_DIFF_MODE'			=> 'Pilih mode pembedaan',
-	'SELECT_DOWNLOAD_FORMAT'	=> 'Pilih format arsip download',
-	'SELECT_FTP_SETTINGS'		=> 'Pilih pengaturan FTP',
-	'SHOW_DIFF_CONFLICT'		=> 'Tampilkan perbedaan/konflik',
-	'SHOW_DIFF_FINAL'			=> 'Tampilkan file hasil',
-	'SHOW_DIFF_MODIFIED'		=> 'Tampilkan perbedaan yang digabungkan',
-	'SHOW_DIFF_NEW'				=> 'Tampilkan isi file',
-	'SHOW_DIFF_NEW_CONFLICT'	=> 'Tampilkan perbedaan-perbedaan',
-	'SHOW_DIFF_NOT_MODIFIED'	=> 'Tampilkan perbedaan',
-	'SOME_QUERIES_FAILED'		=> 'Beberapa query gagal, pernyataan dan error dilampirkan di bawah ini.',
-	'SQL'						=> 'SQL',
-	'SQL_FAILURE_EXPLAIN'		=> 'Ini bukanlah sesuatu yang harus dicemaskan, pembaruan akan dilanjutkan. Kegagalan ini harus diselesaikan dan anda perlu untuk mencari bantuan pada forum dukungan kamu. Lihat <a href="../docs/README.html">README</a> untuk keterangan tentang bagaimana mendapatkan saran.',
-	'STAGE_FILE_CHECK'			=> 'Periksa file',
-	'STAGE_UPDATE_DB'			=> 'Perbarui database',
-	'STAGE_UPDATE_FILES'		=> 'Perbarui file-file',
-	'STAGE_VERSION_CHECK'		=> 'Periksa versi',
-	'STATUS_CONFLICT'			=> 'File yang dimodifikasi menghasilkan konflik',
-	'STATUS_MODIFIED'			=> 'File dimodifikasi',
-	'STATUS_NEW'				=> 'File baru',
-	'STATUS_NEW_CONFLICT'		=> 'Mengkonflik file baru',
-	'STATUS_NOT_MODIFIED'		=> 'Bukan file modifikasi',
-	'STATUS_UP_TO_DATE'			=> 'Sudah file terbarukan',
+	//
+	// Email data
+	//
+	'EMAIL_CONFIG'	=> 'E-mail configuration',
 
-	'TOGGLE_DISPLAY'			=> 'Tampilkan/Sembunyikan daftar file',
-	'TRY_DOWNLOAD_METHOD'		=> 'Anda boleh mencoba untuk metode download file-file yang dimodifikasi.<br />Metode ini selalu berhasil dan juga path pembaruan yang disarankan.',
-	'TRY_DOWNLOAD_METHOD_BUTTON'=> 'Cobalah metode ini sekarang',
+	// Package info
+	'PACKAGE_VERSION'					=> 'Package version installed',
+	'UPDATE_INCOMPLETE'				=> 'Your phpBB installation has not been correctly updated.',
+	'UPDATE_INCOMPLETE_MORE'		=> 'Please read the information below in order to fix this error.',
+	'UPDATE_INCOMPLETE_EXPLAIN'		=> '<h1>Incomplete update</h1>
 
-	'UPDATE_COMPLETED'				=> 'Pembaruan selesai',
-	'UPDATE_DATABASE'				=> 'Perbarui database',
-	'UPDATE_DATABASE_EXPLAIN'		=> 'Pada tahap selanjutnya database akan diperbarui.',
-	'UPDATE_DATABASE_SCHEMA'		=> 'Memperbarui skema database',
-	'UPDATE_FILES'					=> 'File-file pembaruan',
-	'UPDATE_FILES_NOTICE'			=> 'Silahkan periksa anda sudah memperbarui file-file halaman anda juga, file ini hanya memperbarui database anda.',
-	'UPDATE_INSTALLATION'			=> 'Perbarui instalasi phpBB',
-	'UPDATE_INSTALLATION_EXPLAIN'	=> 'Dengan pilihan ini, adalah memungkinkan untuk memperbarui instalasi phpBB anda ke versi yang terbaru.<br />Selama proses tersebut semua file anda akan diperiksa untuk integritasnya. Anda boleh meninjau semua perbedaan dan file sebelum memperbarui.<br /><br />File update tersebut bisa dilakukan dengan dua cara yang berbeda.</p><h2>Pembaruan Secara Manual</h2><p>Dengan pembaruan ini anda hanya mendownload sekumpulan pengaturan pribadi anda untuk file yang diganti untuk memastikan file modifikasi anda sudah selesai. Setelah anda mendownload paket ini, anda perlu mengupload secara manual masing-masing ke lokasi yang benar pada direktori root phpBB. Setelah selesai, anda bisa melaksanakan tahap pemeriksaan file lagi untuk melihat apakah anda sudah memindahkan file-file tersebut kelokasinya yang benar masing-masing.</p><h2>Pembaruan Otomatis dengan FTP</h2><p>Metode ini sama dengan metode yang pertama tetapi tanpa perlu mendownload file yang diganti dan menguploadnya ke tempat anda. Ini akan diselesaikan dengan sendirinya. Untuk menggunakan metode ini anda harus mengetahui informasi masuk ke FTP anda pada saat ditanyakan. Setelah selesai anda akan dialihkan ke pemeriksaan file kembali untuk memastikan semuanya sudah diperbarui dengan benar.<br /><br />',
-	'UPDATE_INSTRUCTIONS'			=> '
+		<p>We noticed that the last update of your phpBB installation hasn’t been completed. Visit the <a href="%1$s" title="%1$s">database updater</a>, ensure <em>Update database only</em> is selected and click on <strong>Submit</strong>. Don\'t forget to delete the "install"-directory after you have updated the database sucessfully.</p>',
 
-		<h1>Pengumuman Rilis</h1>
-
-		<p>Silahkan baca <a href="%1$s" title="%1$s"><strong>pengumuman rilis untuk versi terbaru</strong></a> sebelum anda melanjutkan proses pembaruan anda, hal tersebut mungkin mengandung informasi yang penting. Juga mengandung link download lengkap sesuai dengan log perubahannya.</p>
-
-		<br />
-
-		<h1>Bagaimana membarui instalasi anda dengan Paket Pembaruan Otomatis</h1>
-
-		<p>Cara yang disarankan untuk memperbarui instalasi anda yang dijelaskan di sini hanya berguna untuk automatic update package. Anda juga bisa memperbarui instalasi anda dengan metode yang diberikan pada dokument INSTALL.html document. Tahap-tahap untuk memperbarui phpBB3 secara otomatis adalah:</p>
-
-		<ul style="margin-left: 20px; font-size: 1.1em;">
-			<li>Kunjungi <a href="http://www.phpbb.com/downloads/" title="http://www.phpbb.com/downloads/">phpBB.com downloads page</a> dan download arsip "Automatic Update Package".<br /><br /></li>
-			<li>Buka/unpack file arsip.<br /><br /></li>
-			<li>Upload folder install yang yang sudah dibuka/unpack seluruhnya ke direktori root phpBB anda (dimana file config.php ditempatkan).<br /><br /></li>
-		</ul>
-
-		<p>Setelah diupload halaman anda akan menjadi offline untuk pengguna biasa yang disebabkan oleh adanya direktori install yang anda upload.<br /><br />
-		<strong><a href="%2$s" title="%2$s">Mulailah proses pembaruan sekarang dengan mengarahkan browser anda ke folder install</a>.</strong><br />
-		<br />
-		Untuk selanjutnya anda akan dibimbing selama proses pembaruan. Anda akan segera diberitahu jika pembaruan tersebut sudah selesai.
-		</p>
-	',
-	'UPDATE_INSTRUCTIONS_INCOMPLETE'	=> '
-
-		<h1>Pembaruan yang tidak lengkap dideteksi</h1>
-
-		<p>phpBB mendeteksi adanya pembaruan otomatis yang tidak lengkap. Silahkan periksa apakah anda sudah mengikuti semua langkah pada alat pembaruan otomatis. Berikut ini anda akan melihat tersebut lagi, atau langsung pada direktori install anda.</p>
-	',
-	'UPDATE_METHOD'					=> 'Metode pembaruan',
-	'UPDATE_METHOD_EXPLAIN'			=> 'Anda dapat memilih metode yang anda senangi. Dengan menggunakan upload FTP akan menghadapkan anda dengan formulir isian yang harus anda lengkapi dengan memasukkan keterangan account anda. Dengan metode ini file-file secara otomatis akan dipindahkan ke lokasi yang baru dan membuat salinan dari file yang lama dengan menambahkan .bak ke nama file tersebut. Jika anda memilih untuk mendownload file yang dimodifikasi tersebut maka anda dapat membuka paket file itu dan menguploadnya ke lokasi yang benar nantinya.',
-	'UPDATE_REQUIRES_FILE'			=> 'The updater requires that the following file is present: %s',
-	'UPDATE_SUCCESS'				=> 'Pembaruan telah berhasil',
-	'UPDATE_SUCCESS_EXPLAIN'		=> 'Berhasil memperbarui semua file. Langkah selanjutnya adalah memeriksa kembali semua file apakah file diperbarui dengan benar.',
-	'UPDATE_VERSION_OPTIMIZE'		=> 'Memperbarui versi dan optimasi tabel',
-	'UPDATING_DATA'					=> 'Memperbarui data',
-	'UPDATING_TO_LATEST_STABLE'		=> 'Pembaruan database ke versi terbaru yang stabil',
-	'UPDATED_VERSION'				=> 'Versi terbarukan',
-	'UPGRADE_INSTRUCTIONS'         	=> 'Sebuah fitur baru rilis <strong>%1$s</strong> telah tersedia. Silahkan baca <a href="%2$s" title="%2$s"><strong>pengumuman rilis</strong></a> untuk mempelajari apa-apa saja yang ditawarkan, dan cara pembaruannya.',
-
-	'UPLOAD_METHOD'					=> 'Metode upload',
-
-	'UPDATE_DB_SUCCESS'				=> 'Pembaruan database telah berhasil.',
-	'USER_ACTIVE'					=> 'Pengguna aktif',
-	'USER_INACTIVE'					=> 'Pengguna nonaktif',
-
-	'VERSION_CHECK'					=> 'Periksa versi',
-	'VERSION_CHECK_EXPLAIN'			=> 'Periksa untuk melihat apakah versi phpBB yang sedang anda merupakan versi yang terbaru.',
-	'VERSION_NOT_UP_TO_DATE'		=> 'Versi instalasi anda belum terbarukan. Silahkan melanjutkan proses update.',
-	'VERSION_NOT_UP_TO_DATE_ACP'	=> 'Versi instalasi anda belum terbarukan.<br />Di bawah ini akan anda temukan sebuah link mengenai pemberitahuan telah keluarnya versi yang baru beserta dengan instruksi tentang cara melakukan update.',
-	'VERSION_NOT_UP_TO_DATE_TITLE'	=> 'Instalasi phpBB belum terbarukan.',
-	'VERSION_UP_TO_DATE'			=> 'Versi instalasi anda sudah terbarukan, tidak ada pembaruan yang tersedia untuk versi phpBB anda tersebut. Anda boleh lanjut melaksanakan pemeriksaan validasi file.',
-	'VERSION_UP_TO_DATE_ACP'		=> 'Versi instalasi anda sudah terbarukan, tidak ada pembaruan yang tersedia untuk versi phpBB anda tersebut. Anda tidak perlu memperbarui instalasi anda.',
-	'VIEWING_FILE_CONTENTS'			=> 'Melihat isi file',
-	'VIEWING_FILE_DIFF'				=> 'Memeriksa perbedaan file',
-
-	'WRONG_INFO_FILE_FORMAT'	=> 'Keterangan format file salah',
+	//
+	// Server data
+	//
+	// Form labels
+	'UPGRADE_INSTRUCTIONS'			=> 'A new feature release <strong>%1$s</strong> is available. Please read <a href="%2$s" title="%2$s"><strong>the release announcement</strong></a> to learn about what it has to offer, and how to upgrade.',
+	'SERVER_CONFIG'				=> 'Server configuration',
+	'SCRIPT_PATH'				=> 'Script path',
+	'SCRIPT_PATH_EXPLAIN'		=> 'The path where phpBB is located relative to the domain name, e.g. <samp>/phpBB3</samp>.',
 ));
 
 // Default database schema entries...
 $lang = array_merge($lang, array(
-	'CONFIG_BOARD_EMAIL_SIG'		=> 'Terima kasih, Manajemen',
-	'CONFIG_SITE_DESC'				=> 'Teks singkat untuk menjelaskan forum anda',
-	'CONFIG_SITENAME'				=> 'domainanda.com',
+	'CONFIG_BOARD_EMAIL_SIG'		=> 'Thanks, The Management',
+	'CONFIG_SITE_DESC'				=> 'A short text to describe your forum',
+	'CONFIG_SITENAME'				=> 'yourdomain.com',
 
-	'DEFAULT_INSTALL_POST'			=> 'Ini adalah post percontohan pada instalsi phpBB3 anda. Sepertinya semua berjalan lancar. Anda bisa menghapus post ini jika diingini dan melanjutkan pengaturan halaman anda. Selama proses instalasi, kategori dan forum pertama anda diberikan sekumpulan perijinan untuk pengguna yang sudah dikenal seperti administrators, bots, global moderator, tamu, pengguna terdaftar dan pengguna terdaftar COPPA. Jika anda memilih untuk menghapus kategori dan forum pertama anda, jangan lupa untuk memberikan perijinan untuk semua grup pengguna untuk semua kategori dan forum yang sudah dibuat. Disarankan agar mengganti nama kategori dan forum pertama anda dan menyalin perijinannya pada saat membuat kategori dan forum yang baru. Selamat bersenang-senang!',
+	'DEFAULT_INSTALL_POST'			=> 'This is an example post in your phpBB3 installation. Everything seems to be working. You may delete this post if you like and continue to set up your board. During the installation process your first category and your first forum are assigned an appropriate set of permissions for the predefined usergroups administrators, bots, global moderators, guests, registered users and registered COPPA users. If you also choose to delete your first category and your first forum, do not forget to assign permissions for all these usergroups for all new categories and forums you create. It is recommended to rename your first category and your first forum and copy permissions from these while creating new categories and forums. Have fun!',
 
-	'EXT_GROUP_ARCHIVES'			=> 'Arsip',
-	'EXT_GROUP_DOCUMENTS'			=> 'Dokomen-dokumen',
-	'EXT_GROUP_DOWNLOADABLE_FILES'	=> 'File Yang Dapat Didownloadable',
-	'EXT_GROUP_FLASH_FILES'			=> 'File Flash',
-	'EXT_GROUP_IMAGES'				=> 'Gambar-gambar',
-	'EXT_GROUP_PLAIN_TEXT'			=> 'Teks Biasa',
-	'EXT_GROUP_QUICKTIME_MEDIA'		=> 'Quicktime Media',
-	'EXT_GROUP_REAL_MEDIA'			=> 'Real Media',
-	'EXT_GROUP_WINDOWS_MEDIA'		=> 'Windows Media',
-
-	'FORUMS_FIRST_CATEGORY'			=> 'Kategori pertama anda',
-	'FORUMS_TEST_FORUM_DESC'		=> 'Penjelasan tentang forum pertama anda.',
-	'FORUMS_TEST_FORUM_TITLE'		=> 'Forum pertama anda',
+	'FORUMS_FIRST_CATEGORY'			=> 'Your first category',
+	'FORUMS_TEST_FORUM_DESC'		=> 'Description of your first forum.',
+	'FORUMS_TEST_FORUM_TITLE'		=> 'Your first forum',
 
 	'RANKS_SITE_ADMIN_TITLE'		=> 'Site Admin',
-	'REPORT_WAREZ'					=> 'Post tersebut mengandung link ke perangkat lunak ilegal ataupun bajakan.',
-	'REPORT_SPAM'					=> 'Post yand dilaporkan hanya mempunyai tujuan untuk mengiklankan sebuah website atau produk lain.',
-	'REPORT_OFF_TOPIC'				=> 'Post yand dilaporkan diluar dari pembicaraan topik.',
-	'REPORT_OTHER'					=> 'Post yand dilaporkan tidak cocok di kategori manapun, mohon gunakan isian untuk informasi lebih jelas.',
+	'REPORT_WAREZ'					=> 'The post contains links to illegal or pirated software.',
+	'REPORT_SPAM'					=> 'The reported post has the only purpose to advertise for a website or another product.',
+	'REPORT_OFF_TOPIC'				=> 'The reported post is off topic.',
+	'REPORT_OTHER'					=> 'The reported post does not fit into any other category, please use the further information field.',
 
-	'SMILIES_ARROW'					=> 'Panah',
-	'SMILIES_CONFUSED'				=> 'Bingung',
-	'SMILIES_COOL'					=> 'Keren',
-	'SMILIES_CRYING'				=> 'Menangis atau Sangat Sedih',
-	'SMILIES_EMARRASSED'			=> 'Bingung',
-	'SMILIES_EVIL'					=> 'Jahat atau Sangat Marah',
-	'SMILIES_EXCLAMATION'			=> 'Seruan',
-	'SMILIES_GEEK'					=> 'Canggung',
-	'SMILIES_IDEA'					=> 'Ide',
-	'SMILIES_LAUGHING'				=> 'Tertawa',
-	'SMILIES_MAD'					=> 'Marah',
+	'SMILIES_ARROW'					=> 'Arrow',
+	'SMILIES_CONFUSED'				=> 'Confused',
+	'SMILIES_COOL'					=> 'Cool',
+	'SMILIES_CRYING'				=> 'Crying or Very Sad',
+	'SMILIES_EMARRASSED'			=> 'Embarrassed',
+	'SMILIES_EVIL'					=> 'Evil or Very Mad',
+	'SMILIES_EXCLAMATION'			=> 'Exclamation',
+	'SMILIES_GEEK'					=> 'Geek',
+	'SMILIES_IDEA'					=> 'Idea',
+	'SMILIES_LAUGHING'				=> 'Laughing',
+	'SMILIES_MAD'					=> 'Mad',
 	'SMILIES_MR_GREEN'				=> 'Mr. Green',
-	'SMILIES_NEUTRAL'				=> 'Netral',
-	'SMILIES_QUESTION'				=> 'Bertanya',
+	'SMILIES_NEUTRAL'				=> 'Neutral',
+	'SMILIES_QUESTION'				=> 'Question',
 	'SMILIES_RAZZ'					=> 'Razz',
 	'SMILIES_ROLLING_EYES'			=> 'Rolling Eyes',
 	'SMILIES_SAD'					=> 'Sad',
-	'SMILIES_SHOCKED'				=> 'Terkejut',
-	'SMILIES_SMILE'					=> 'Senyum',
-	'SMILIES_SURPRISED'				=> 'Kejutan',
-	'SMILIES_TWISTED_EVIL'			=> 'Setan Belit',
-	'SMILIES_UBER_GEEK'				=> 'Sangat Canggung',
-	'SMILIES_VERY_HAPPY'			=> 'Sangat Senang',
-	'SMILIES_WINK'					=> 'Berkedip',
+	'SMILIES_SHOCKED'				=> 'Shocked',
+	'SMILIES_SMILE'					=> 'Smile',
+	'SMILIES_SURPRISED'				=> 'Surprised',
+	'SMILIES_TWISTED_EVIL'			=> 'Twisted Evil',
+	'SMILIES_UBER_GEEK'				=> 'Uber Geek',
+	'SMILIES_VERY_HAPPY'			=> 'Very Happy',
+	'SMILIES_WINK'					=> 'Wink',
 
-	'TOPICS_TOPIC_TITLE'			=> 'Selamat datang di phpBB3',
+	'TOPICS_TOPIC_TITLE'			=> 'Welcome to phpBB3',
 ));
 
-?>
+// Common navigation items' translation
+$lang = array_merge($lang, array(
+	'MENU_OVERVIEW'		=> 'Overview',
+	'MENU_INTRO'		=> 'Introduction',
+	'MENU_LICENSE'		=> 'License',
+	'MENU_SUPPORT'		=> 'Support',
+));
+
+// Task names
+$lang = array_merge($lang, array(
+	// Install filesystem
+	'TASK_CREATE_CONFIG_FILE'	=> 'Creating configuration file',
+
+	// Install database
+	'TASK_ADD_CONFIG_SETTINGS'			=> 'Adding configuration settings',
+	'TASK_ADD_DEFAULT_DATA'				=> 'Adding default settings to the database',
+	'TASK_CREATE_DATABASE_SCHEMA_FILE'	=> 'Creating database schema file',
+	'TASK_SETUP_DATABASE'				=> 'Setting up database',
+	'TASK_CREATE_TABLES'				=> 'Creating tables',
+
+	// Install data
+	'TASK_ADD_BOTS'				=> 'Registering bots',
+	'TASK_ADD_LANGUAGES'		=> 'Installing available languages',
+	'TASK_ADD_MODULES'			=> 'Installing modules',
+	'TASK_CREATE_SEARCH_INDEX'	=> 'Creating search index',
+
+	// Install finish tasks
+	'TASK_INSTALL_EXTENSIONS'	=> 'Installing packaged extensions',
+	'TASK_NOTIFY_USER'			=> 'Sending notification e-mail',
+	'TASK_POPULATE_MIGRATIONS'	=> 'Populating migrations',
+
+	// Installer general progress messages
+	'INSTALLER_FINISHED'	=> 'The installer has finished successfully',
+));
+
+// Installer's general messages
+$lang = array_merge($lang, array(
+	'MODULE_NOT_FOUND'				=> 'Module not found',
+	'MODULE_NOT_FOUND_DESCRIPTION'	=> 'A module could not be found because the service, %s, is undefined.',
+
+	'TASK_NOT_FOUND'				=> 'Task not found',
+	'TASK_NOT_FOUND_DESCRIPTION'	=> 'A task could not be found because the service, %s, is undefined.',
+
+	'SKIP_MODULE'	=> 'Skip “%s” module',
+	'SKIP_TASK'		=> 'Skip “%s” task',
+
+	'TASK_SERVICE_INSTALLER_MISSING'	=> 'All installer task services should start with “installer”',
+	'TASK_CLASS_NOT_FOUND'				=> 'Installer task service definition is invalid. Service name “%1$s” given, the expected class namespace is “%2$s” for that. For more information please see the documentation of task_interface.',
+
+	'INSTALLER_CONFIG_NOT_WRITABLE'	=> 'The installer config file is not writable.',
+));
+
+// CLI messages
+$lang = array_merge($lang, array(
+	'CLI_INSTALL_BOARD'				=> 'Install phpBB',
+	'CLI_UPDATE_BOARD'				=> 'Update phpBB',
+	'CLI_INSTALL_SHOW_CONFIG'		=> 'Show the configuration which will be used',
+	'CLI_INSTALL_VALIDATE_CONFIG'	=> 'Validate a configuration file',
+	'CLI_CONFIG_FILE'				=> 'Config file to use',
+	'MISSING_FILE'					=> 'Unable to access file %1$s',
+	'MISSING_DATA'					=> 'Config file is missing data or might contain invalid settings.',
+	'INVALID_YAML_FILE'				=> 'Could not parse YAML file %1$s',
+	'CONFIGURATION_VALID'			=> 'The configuration file is valid',
+));
+
+// Common updater messages
+$lang = array_merge($lang, array(
+	'UPDATE_INSTALLATION'			=> 'Update phpBB installation',
+	'UPDATE_INSTALLATION_EXPLAIN'	=> 'With this option, it is possible to update your phpBB installation to the latest version.<br />During the process all of your files will be checked for their integrity. You are able to review all differences and files before the update.<br /><br />The file update itself can be done in two different ways.</p><h2>Manual Update</h2><p>With this update you only download your personal set of changed files to make sure you do not lose your file modifications you may have done. After you downloaded this package you need to manually upload the files to their correct position under your phpBB root directory. Once done, you are able to do the file check stage again to see if you moved the files to their correct location.</p><h2>Automatic Update with FTP</h2><p>This method is similar to the first one but without the need to download the changed files and uploading them on your own. This will be done for you. In order to use this method you need to know your FTP login details since you will be asked for them. Once finished you will be redirected to the file check again to make sure everything got updated correctly.<br /><br />',
+	'UPDATE_INSTRUCTIONS'			=> '
+
+		<h1>Release announcement</h1>
+
+		<p>Please read the release announcement for the latest version before you continue your update process, it may contain useful information. It also contains full download links as well as the change log.</p>
+
+		<br />
+
+		<h1>How to update your installation with the Automatic Update Package</h1>
+
+		<p>The recommended way of updating your installation listed here is only valid for the automatic update package. You are also able to update your installation using the methods listed within the INSTALL.html document. The steps for updating phpBB3 automatically are:</p>
+
+		<ul style="margin-left: 20px; font-size: 1.1em;">
+			<li>Go to the <a href="https://www.phpbb.com/downloads/" title="https://www.phpbb.com/downloads/">phpBB.com downloads page</a> and download the "Automatic Update Package" archive.<br /><br /></li>
+			<li>Unpack the archive.<br /><br /></li>
+			<li>Upload the complete uncompressed "install" and "vendor" folders to your phpBB root directory (where your config.php file is).<br /><br /></li>
+		</ul>
+
+		<p>Once uploaded your board will be offline for normal users due to the install directory you uploaded now present.<br /><br />
+		<strong><a href="%1$s" title="%1$s">Now start the update process by pointing your browser to the install folder</a>.</strong><br />
+		<br />
+		You will then be guided through the update process. You will be notified once the update is complete.
+		</p>
+	',
+));
+
+// Updater forms
+$lang = array_merge($lang, array(
+	// Updater types
+	'UPDATE_TYPE'			=> 'Type of update to run',
+
+	'UPDATE_TYPE_ALL'		=> 'Update filesystem and database',
+	'UPDATE_TYPE_DB_ONLY'	=> 'Update database only',
+
+	// File updater methods
+	'UPDATE_FILE_METHOD_TITLE'		=> 'File updater methods',
+
+	'UPDATE_FILE_METHOD'			=> 'File updater method',
+	'UPDATE_FILE_METHOD_DOWNLOAD'	=> 'Download modified files in an archive',
+	'UPDATE_FILE_METHOD_FTP'		=> 'Update files via FTP (Automatic)',
+	'UPDATE_FILE_METHOD_FILESYSTEM'	=> 'Update files via direct file access (Automatic)',
+
+	// File updater archives
+	'SELECT_DOWNLOAD_FORMAT'	=> 'Select download archive format',
+
+	// FTP settings
+	'FTP_SETTINGS'			=> 'FTP settings',
+));
+
+// Requirements messages
+$lang = array_merge($lang, array(
+	'UPDATE_FILES_NOT_FOUND'	=> 'No valid update directory was found, please make sure you uploaded the relevant files.',
+
+	'NO_UPDATE_FILES_UP_TO_DATE'	=> 'Your version is up to date. There is no need to run the update tool. If you want to make an integrity check on your files make sure you uploaded the correct update files.',
+	'OLD_UPDATE_FILES'				=> 'Update files are out of date. The update files found are for updating from phpBB %1$s to phpBB %2$s but the latest version of phpBB is %3$s.',
+	'INCOMPATIBLE_UPDATE_FILES'		=> 'The update files found are incompatible with your installed version. Your installed version is %1$s and the update file is for updating phpBB %2$s to %3$s.',
+));
+
+// Update files
+$lang = array_merge($lang, array(
+	'STAGE_UPDATE_FILES'		=> 'Update files',
+
+	// Check files
+	'UPDATE_CHECK_FILES'	=> 'Check files to update',
+
+	// Update file differ
+	'FILE_DIFFER_ERROR_FILE_CANNOT_BE_READ'	=> 'The file differ failed to open %s.',
+
+	'UPDATE_FILE_DIFF'		=> 'Diffing changed files',
+	'ALL_FILES_DIFFED'		=> 'All modified files has been diffed.',
+
+	// File status
+	'UPDATE_CONTINUE_FILE_UPDATE'	=> 'Update files',
+
+	'DOWNLOAD'							=> 'Download',
+	'DOWNLOAD_CONFLICTS'				=> 'Download merge conflicts archive',
+	'DOWNLOAD_CONFLICTS_EXPLAIN'		=> 'Search for &lt;&lt;&lt; to spot conflicts',
+	'DOWNLOAD_UPDATE_METHOD'			=> 'Download modified files archive',
+	'DOWNLOAD_UPDATE_METHOD_EXPLAIN'	=> 'Once downloaded you should unpack the archive. You will find the modified files you need to upload to your phpBB root directory within it. Please upload the files to their respective locations then. After you have uploaded all files, you may continue with the update process.',
+
+	'FILE_ALREADY_UP_TO_DATE'		=> 'File is already up to date.',
+	'FILE_DIFF_NOT_ALLOWED'			=> 'File not allowed to be diffed.',
+	'FILE_USED'						=> 'Information used from',			// Single file
+	'FILES_CONFLICT'				=> 'Conflict files',
+	'FILES_CONFLICT_EXPLAIN'		=> 'The following files are modified and do not represent the original files from the old version. phpBB determined that these files create conflicts if they are tried to be merged. Please investigate the conflicts and try to manually resolve them or continue the update choosing the preferred merging method. If you resolve the conflicts manually check the files again after you modified them. You are also able to choose between the preferred merge method for every file. The first one will result in a file where the conflicting lines from your old file will be lost, the other one will result in losing the changes from the newer file.',
+	'FILES_DELETED'					=> 'Deleted files',
+	'FILES_DELETED_EXPLAIN'			=> 'The following files do not exist in the new version. These files have to be deleted from your installation.',
+	'FILES_MODIFIED'				=> 'Modified files',
+	'FILES_MODIFIED_EXPLAIN'		=> 'The following files are modified and do not represent the original files from the old version. The updated file will be a merge between your modifications and the new file.',
+	'FILES_NEW'						=> 'New files',
+	'FILES_NEW_EXPLAIN'				=> 'The following files currently do not exist within your installation. These files will be added to your installation.',
+	'FILES_NEW_CONFLICT'			=> 'New conflicting files',
+	'FILES_NEW_CONFLICT_EXPLAIN'	=> 'The following files are new within the latest version but it has been determined that there is already a file with the same name within the same position. This file will be overwritten by the new file.',
+	'FILES_NOT_MODIFIED'			=> 'Not modified files',
+	'FILES_NOT_MODIFIED_EXPLAIN'	=> 'The following files are not modified and represent the original phpBB files from the version you want to update from.',
+	'FILES_UP_TO_DATE'				=> 'Already updated files',
+	'FILES_UP_TO_DATE_EXPLAIN'		=> 'The following files are already up to date and do not need to be updated.',
+	'FILES_VERSION'					=> 'Files Version',
+	'TOGGLE_DISPLAY'				=> 'View/Hide file list',
+
+	// File updater
+	'UPDATE_UPDATING_FILES'	=> 'Updating files',
+
+	'UPDATE_FILE_UPDATER_HAS_FAILED'	=> 'File updater “%1$s“ has failed. The installer will try to fallback to “%2$s“.',
+	'UPDATE_FILE_UPDATERS_HAVE_FAILED'	=> 'The file updater failed. No further fallback methods are available.',
+
+	'UPDATE_CONTINUE_UPDATE_PROCESS'	=> 'Continue update process',
+	'UPDATE_RECHECK_UPDATE_FILES'		=> 'Check files again',
+));
+
+// Update database
+$lang = array_merge($lang, array(
+	'STAGE_UPDATE_DATABASE'		=> 'Update database',
+
+	'INLINE_UPDATE_SUCCESSFUL'		=> 'The database update was successful.',
+
+	'TASK_UPDATE_EXTENSIONS'	=> 'Updating extensions',
+));
+
+// Converter
+$lang = array_merge($lang, array(
+	// Common converter messages
+	'CONVERT_NOT_EXIST'			=> 'The specified convertor does not exist.',
+	'DEV_NO_TEST_FILE'			=> 'No value has been specified for the test_file variable in the convertor. If you are a user of this convertor, you should not be seeing this error, please report this message to the convertor author. If you are a convertor author, you must specify the name of a file which exists in the source board to allow the path to it to be verified.',
+	'COULD_NOT_FIND_PATH'		=> 'Could not find path to your former board. Please check your settings and try again.<br />» %s was specified as the source path.',
+	'CONFIG_PHPBB_EMPTY'		=> 'The phpBB3 config variable for “%s” is empty.',
+
+	'MAKE_FOLDER_WRITABLE'		=> 'Please make sure that this folder exists and is writable by the webserver then try again:<br />»<strong>%s</strong>.',
+	'MAKE_FOLDERS_WRITABLE'		=> 'Please make sure that these folders exist and are writable by the webserver then try again:<br />»<strong>%s</strong>.',
+
+	'INSTALL_TEST'				=> 'Test again',
+
+	'NO_TABLES_FOUND'			=> 'No tables found.',
+	'TABLES_MISSING'			=> 'Could not find these tables<br />» <strong>%s</strong>.',
+	'CHECK_TABLE_PREFIX'		=> 'Please check your table prefix and try again.',
+
+	// Conversion in progress
+	'CONTINUE_CONVERT'			=> 'Continue conversion',
+	'CONTINUE_CONVERT_BODY'		=> 'A previous conversion attempt has been determined. You are now able to choose between starting a new conversion or continuing the conversion.',
+	'CONVERT_NEW_CONVERSION'	=> 'New conversion',
+	'CONTINUE_OLD_CONVERSION'	=> 'Continue previously started conversion',
+
+	// Start conversion
+	'SUB_INTRO'					=> 'Introduction',
+	'CONVERT_INTRO'				=> 'Welcome to the phpBB Unified Convertor Framework',
+	'CONVERT_INTRO_BODY'		=> 'From here, you are able to import data from other (installed) board systems. The list below shows all the conversion modules currently available. If there is no convertor shown in this list for the board software you wish to convert from, please check our website where further conversion modules may be available for download.',
+	'AVAILABLE_CONVERTORS'		=> 'Available convertors',
+	'NO_CONVERTORS'				=> 'No convertors are available for use.',
+	'CONVERT_OPTIONS'			=> 'Options',
+	'SOFTWARE'					=> 'Board software',
+	'VERSION'					=> 'Version',
+	'CONVERT'					=> 'Convert',
+
+	// Settings
+	'STAGE_SETTINGS'			=> 'Settings',
+	'TABLE_PREFIX_SAME'			=> 'The table prefix needs to be the one used by the software you are converting from.<br />» Specified table prefix was %s.',
+	'DEFAULT_PREFIX_IS'			=> 'The convertor was not able to find tables with the specified prefix. Please make sure you have entered the correct details for the board you are converting from. The default table prefix for %1$s is <strong>%2$s</strong>.',
+	'SPECIFY_OPTIONS'			=> 'Specify conversion options',
+	'FORUM_PATH'				=> 'Board path',
+	'FORUM_PATH_EXPLAIN'		=> 'This is the <strong>relative</strong> path on disk to your former board from the <strong>root of this phpBB3 installation</strong>.',
+	'REFRESH_PAGE'				=> 'Refresh page to continue conversion',
+	'REFRESH_PAGE_EXPLAIN'		=> 'If set to yes, the convertor will refresh the page to continue the conversion after having finished a step. If this is your first conversion for testing purposes and to determine any errors in advance, we suggest to set this to No.',
+
+	// Conversion
+	'STAGE_IN_PROGRESS'			=> 'Conversion in progress',
+
+	'AUTHOR_NOTES'				=> 'Author notes<br />» %s',
+	'STARTING_CONVERT'			=> 'Starting conversion process',
+	'CONFIG_CONVERT'			=> 'Converting the configuration',
+	'DONE'						=> 'Done',
+	'PREPROCESS_STEP'			=> 'Executing pre-processing functions/queries',
+	'FILLING_TABLE'				=> 'Filling table <strong>%s</strong>',
+	'FILLING_TABLES'			=> 'Filling tables',
+	'DB_ERR_INSERT'				=> 'Error while processing <code>INSERT</code> query.',
+	'DB_ERR_LAST'				=> 'Error while processing <var>query_last</var>.',
+	'DB_ERR_QUERY_FIRST'		=> 'Error while executing <var>query_first</var>.',
+	'DB_ERR_QUERY_FIRST_TABLE'	=> 'Error while executing <var>query_first</var>, %s (“%s”).',
+	'DB_ERR_SELECT'				=> 'Error while running <code>SELECT</code> query.',
+	'STEP_PERCENT_COMPLETED'	=> 'Step <strong>%d</strong> of <strong>%d</strong>',
+	'FINAL_STEP'				=> 'Process final step',
+	'SYNC_FORUMS'				=> 'Starting to synchronise forums',
+	'SYNC_POST_COUNT'			=> 'Synchronising post_counts',
+	'SYNC_POST_COUNT_ID'		=> 'Synchronising post_counts from <var>entry</var> %1$s to %2$s.',
+	'SYNC_TOPICS'				=> 'Starting to synchronise topics',
+	'SYNC_TOPIC_ID'				=> 'Synchronising topics from <var>topic_id</var> %1$s to %2$s.',
+	'PROCESS_LAST'					=> 'Processing last statements',
+	'UPDATE_TOPICS_POSTED'		=> 'Generating topics posted information',
+	'UPDATE_TOPICS_POSTED_ERR'	=> 'An error occurred while generating topics posted information. You can retry this step in the ACP after the conversion process is completed.',
+	'CONTINUE_LAST'				=> 'Continue last statements',
+	'CLEAN_VERIFY'				=> 'Cleaning up and verifying the final structure',
+	'NOT_UNDERSTAND'			=> 'Could not understand %s #%d, table %s (“%s”)',
+	'NAMING_CONFLICT'			=> 'Naming conflict: %s and %s are both aliases<br /><br />%s',
+
+	// Finish conversion
+	'CONVERT_COMPLETE'			=> 'Conversion completed',
+	'CONVERT_COMPLETE_EXPLAIN'	=> 'You have now successfully converted your board to phpBB 3.2. You can now login and <a href="../">access your board</a>. Please ensure that the settings were transferred correctly before enabling your board by deleting the install directory. Remember that help on using phpBB is available online via the <a href="https://www.phpbb.com/support/docs/en/3.2/ug/">Documentation</a> and the <a href="https://www.phpbb.com/community/viewforum.php?f=466">support forums</a>.',
+
+	'CONV_ERROR_ATTACH_FTP_DIR'			=> 'FTP upload for attachments is enabled at the old board. Please disable the FTP upload option and make sure a valid upload directory is specified, then copy all attachment files to this new web accessible directory. Once you have done this, restart the convertor.',
+	'CONV_ERROR_CONFIG_EMPTY'			=> 'There is no configuration information available for the conversion.',
+	'CONV_ERROR_FORUM_ACCESS'			=> 'Unable to get forum access information.',
+	'CONV_ERROR_GET_CATEGORIES'			=> 'Unable to get categories.',
+	'CONV_ERROR_GET_CONFIG'				=> 'Could not retrieve your board configuration.',
+	'CONV_ERROR_COULD_NOT_READ'			=> 'Unable to access/read “%s”.',
+	'CONV_ERROR_GROUP_ACCESS'			=> 'Unable to get group authentication information.',
+	'CONV_ERROR_INCONSISTENT_GROUPS'	=> 'Inconsistency in groups table detected in add_bots() - you need to add all special groups if you do it manually.',
+	'CONV_ERROR_INSERT_BOT'				=> 'Unable to insert bot into users table.',
+	'CONV_ERROR_INSERT_BOTGROUP'		=> 'Unable to insert bot into bots table.',
+	'CONV_ERROR_INSERT_USER_GROUP'		=> 'Unable to insert user into user_group table.',
+	'CONV_ERROR_MESSAGE_PARSER'			=> 'Message parser error',
+	'CONV_ERROR_NO_AVATAR_PATH'			=> 'Note to developer: you must specify $convertor[\'avatar_path\'] to use %s.',
+	'CONV_ERROR_NO_FORUM_PATH'			=> 'The relative path to the source board has not been specified.',
+	'CONV_ERROR_NO_GALLERY_PATH'		=> 'Note to developer: you must specify $convertor[\'avatar_gallery_path\'] to use %s.',
+	'CONV_ERROR_NO_GROUP'				=> 'Group “%1$s” could not be found in %2$s.',
+	'CONV_ERROR_NO_RANKS_PATH'			=> 'Note to developer: you must specify $convertor[\'ranks_path\'] to use %s.',
+	'CONV_ERROR_NO_SMILIES_PATH'		=> 'Note to developer: you must specify $convertor[\'smilies_path\'] to use %s.',
+	'CONV_ERROR_NO_UPLOAD_DIR'			=> 'Note to developer: you must specify $convertor[\'upload_path\'] to use %s.',
+	'CONV_ERROR_PERM_SETTING'			=> 'Unable to insert/update permission setting.',
+	'CONV_ERROR_PM_COUNT'				=> 'Unable to select folder pm count.',
+	'CONV_ERROR_REPLACE_CATEGORY'		=> 'Unable to insert new forum replacing old category.',
+	'CONV_ERROR_REPLACE_FORUM'			=> 'Unable to insert new forum replacing old forum.',
+	'CONV_ERROR_USER_ACCESS'			=> 'Unable to get user authentication information.',
+	'CONV_ERROR_WRONG_GROUP'			=> 'Wrong group “%1$s” defined in %2$s.',
+	'CONV_OPTIONS_BODY'					=> 'This page collects the data required to access the source board. Enter the database details of your former board; the converter will not change anything in the database given below. The source board should be disabled to allow a consistent conversion.',
+	'CONV_SAVED_MESSAGES'				=> 'Saved messages',
+
+	'PRE_CONVERT_COMPLETE'			=> 'All pre-conversion steps have successfully been completed. You may now begin the actual conversion process. Please note that you may have to manually do and adjust several things. After conversion, especially check the permissions assigned, rebuild your search index which is not converted and also make sure files got copied correctly, for example avatars and smilies.',
+));

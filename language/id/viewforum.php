@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* viewforum [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: viewforum.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -36,36 +37,37 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ACTIVE_TOPICS'			=> 'Topik yang aktif',
-	'ANNOUNCEMENTS'			=> 'Pengumuman',
+	'ACTIVE_TOPICS'			=> 'Active topics',
+	'ANNOUNCEMENTS'			=> 'Announcements',
 
-	'FORUM_PERMISSIONS'		=> 'Perijinan Forum',
+	'FORUM_PERMISSIONS'		=> 'Forum permissions',
 
-	'ICON_ANNOUNCEMENT'		=> 'Pengumuman',
+	'ICON_ANNOUNCEMENT'		=> 'Announcement',
 	'ICON_STICKY'			=> 'Sticky',
 
-	'LOGIN_NOTIFY_FORUM'	=> 'Anda telah diberitahukan mengenai forum ini, silahan login untuk melihat.',
+	'LOGIN_NOTIFY_FORUM'	=> 'You have been notified about this forum, please login to view it.',
 
-	'MARK_TOPICS_READ'		=> 'Tandai topik sudah dibaca',
+	'MARK_TOPICS_READ'		=> 'Mark topics read',
 
-	'NEW_POSTS_HOT'         => 'Post baru [ Populer ]',   // Not used anymore
-	'NEW_POSTS_LOCKED'      => 'Post baru [ Dikunci ]',   // Not used anymore
-	'NO_NEW_POSTS_HOT'      => 'Tidak ada post baru [ Populer ]',   // Not used anymore
-	'NO_NEW_POSTS_LOCKED'   => 'Tidak ada post baru [ Dikunci ]',   // Not used anymore
-	'NO_READ_ACCESS'      	=> 'Anda tidak memiliki perijinan yang dibutuhkan untuk membaca topik di dalam forum ini.',
-	'NO_UNREAD_POSTS_HOT'      => 'Tidak ada pesan tak terbaca [ Populer ]',
-	'NO_UNREAD_POSTS_LOCKED'   => 'Tidak ada pesan tak terbaca [ Dikunci ]',
+	'NEW_POSTS_HOT'			=> 'New posts [ Popular ]',	// Not used anymore
+	'NEW_POSTS_LOCKED'		=> 'New posts [ Locked ]',	// Not used anymore
+	'NO_NEW_POSTS_HOT'		=> 'No new posts [ Popular ]',	// Not used anymore
+	'NO_NEW_POSTS_LOCKED'	=> 'No new posts [ Locked ]',	// Not used anymore
+	'NO_READ_ACCESS'		=> 'You do not have the required permissions to view or read topics within this forum.',
+	'NO_FORUMS_IN_CATEGORY'	=> 'This category has no forums.',
+	'NO_UNREAD_POSTS_HOT'		=> 'No unread posts [ Popular ]',
+	'NO_UNREAD_POSTS_LOCKED'	=> 'No unread posts [ Locked ]',
 
-	'POST_FORUM_LOCKED'     => 'Forum dikunci',
+	'POST_FORUM_LOCKED'		=> 'Forum is locked',
 
-	'TOPICS_MARKED'         => 'Topik untuk forum ini telah ditandai dibaca.',
+	'TOPICS_MARKED'			=> 'The topics for this forum have now been marked read.',
 
-	'UNREAD_POSTS_HOT'      => 'Post tak terbaca [ Populer ]',
-	'UNREAD_POSTS_LOCKED'   => 'Post tak terbaca [ Dikunci ]',
+	'UNREAD_POSTS_HOT'		=> 'Unread posts [ Popular ]',
+	'UNREAD_POSTS_LOCKED'	=> 'Unread posts [ Locked ]',
 
-	'VIEW_FORUM'			=> 'Lihat forum',
-	'VIEW_FORUM_TOPIC'		=> '1 topik',
-	'VIEW_FORUM_TOPICS'		=> '%d topik',
+	'VIEW_FORUM'			=> 'View forum',
+	'VIEW_FORUM_TOPICS'		=> array(
+		1	=> '%d topic',
+		2	=> '%d topics',
+	),
 ));
-
-?>

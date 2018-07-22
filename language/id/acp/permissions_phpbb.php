@@ -1,11 +1,14 @@
 <?php
 /**
-* acp_permissions_phpbb [Bahasa Indonesia]
 *
-* @package language
-* @version $Id: permissions_phpbb.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* This file is part of the phpBB Forum Software package.
+*
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
+*
 */
 
 /**
@@ -34,208 +37,178 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 /**
-*	MODDERS PLEASE NOTE
+*	EXTENSION-DEVELOPERS PLEASE NOTE
 *
-*	You are able to put your permission sets into a separate file too by
-*	prefixing the new file with permissions_ and putting it into the acp
-*	language folder.
-*
-*	An example of how the file could look like:
-*
-*	<code>
-*
-*	if (empty($lang) || !is_array($lang))
-*	{
-*		$lang = array();
-*	}
-*
-*	// Adding new category
-*	$lang['permission_cat']['bugs'] = 'Bugs';
-*
-*	// Adding new permission set
-*	$lang['permission_type']['bug_'] = 'Bug Permissions';
-*
-*	// Adding the permissions
-*	$lang = array_merge($lang, array(
-*		'acl_bug_view'		=> array('lang' => 'Can view bug reports', 'cat' => 'bugs'),
-*		'acl_bug_post'		=> array('lang' => 'Can post bugs', 'cat' => 'post'), // Using a phpBB category here
-*	));
-*
-*	</code>
+*	You are able to put your permission sets into your extension.
+*	The permissions logic should be added via the 'core.permissions' event.
+*	You can easily add new permission categories, types and permissions, by
+*	simply merging them into the respective arrays.
+*	The respective language strings should be added into a language file, that
+*	start with 'permissions_', so they are automatically loaded within the ACP.
 */
 
-// Define categories and permission types
 $lang = array_merge($lang, array(
-	'permission_cat'	=> array(
-		'actions'		=> 'Tindakan',
-		'content'		=> 'Konten',
-		'forums'		=> 'Forum',
-		'misc'			=> 'Lain-lain',
-		'permissions'	=> 'Perijinan',
-		'pm'			=> 'Pesan pribadi',
-		'polls'			=> 'Pemungutan suara',
-		'post'			=> 'Post',
-		'post_actions'	=> 'Tindakan post',
-		'posting'		=> 'Posting',
-		'profile'		=> 'Profil',
-		'settings'		=> 'Pengaturan',
-		'topic_actions'	=> 'Tindakan topik',
-		'user_group'	=> 'Pengguna &amp; Grup',
-	),
-
-	// With defining 'global' here we are able to specify what is printed out if the permission is within the global scope.
-	'permission_type'	=> array(
-		'u_'			=> 'Perijinan pengguna',
-		'a_'			=> 'Perijinan admin',
-		'm_'			=> 'Perijinan moderator',
-		'f_'			=> 'Perijinan forum',
-		'global'		=> array(
-			'm_'			=> 'Perijinan global moderator',
-		),
-	),
+	'ACL_CAT_ACTIONS'		=> 'Actions',
+	'ACL_CAT_CONTENT'		=> 'Content',
+	'ACL_CAT_FORUMS'		=> 'Forums',
+	'ACL_CAT_MISC'			=> 'Misc',
+	'ACL_CAT_PERMISSIONS'	=> 'Permissions',
+	'ACL_CAT_PM'			=> 'Private messages',
+	'ACL_CAT_POLLS'			=> 'Polls',
+	'ACL_CAT_POST'			=> 'Post',
+	'ACL_CAT_POST_ACTIONS'	=> 'Post actions',
+	'ACL_CAT_POSTING'		=> 'Posting',
+	'ACL_CAT_PROFILE'		=> 'Profile',
+	'ACL_CAT_SETTINGS'		=> 'Settings',
+	'ACL_CAT_TOPIC_ACTIONS'	=> 'Topic actions',
+	'ACL_CAT_USER_GROUP'	=> 'Users &amp; Groups',
 ));
 
 // User Permissions
 $lang = array_merge($lang, array(
-	'acl_u_viewprofile'	=> array('lang' => 'Dapat melihat profil, daftar anggota dan daftar online', 'cat' => 'profile'),
-	'acl_u_chgname'		=> array('lang' => 'Dapat mengganti nama pengguna', 'cat' => 'profile'),
-	'acl_u_chgpasswd'	=> array('lang' => 'Dapat mengubah kata sandi', 'cat' => 'profile'),
-	'acl_u_chgemail'	=> array('lang' => 'Dapat mengubah alamat e-mail', 'cat' => 'profile'),
-	'acl_u_chgavatar'	=> array('lang' => 'Dapat mengubah avatar', 'cat' => 'profile'),
-	'acl_u_chggrp'		=> array('lang' => 'Dapat mengubah grup default pengguna', 'cat' => 'profile'),
+	'ACL_U_VIEWPROFILE'	=> 'Can view profiles, memberlist and online list',
+	'ACL_U_CHGNAME'		=> 'Can change username',
+	'ACL_U_CHGPASSWD'	=> 'Can change password',
+	'ACL_U_CHGEMAIL'	=> 'Can change email address',
+	'ACL_U_CHGAVATAR'	=> 'Can change avatar',
+	'ACL_U_CHGGRP'		=> 'Can change default usergroup',
+	'ACL_U_CHGPROFILEINFO'	=> 'Can change profile field information',
 
-	'acl_u_attach'		=> array('lang' => 'Dapat melampirkan file-file', 'cat' => 'post'),
-	'acl_u_download'	=> array('lang' => 'Dapat mendownload file-file', 'cat' => 'post'),
-	'acl_u_savedrafts'	=> array('lang' => 'Dapat menyimpan naskah', 'cat' => 'post'),
-	'acl_u_chgcensors'	=> array('lang' => 'Dapat menonaktifkan sensor kata', 'cat' => 'post'),
-	'acl_u_sig'			=> array('lang' => 'Dapat menggunakan tanda tangan', 'cat' => 'post'),
+	'ACL_U_ATTACH'		=> 'Can attach files',
+	'ACL_U_DOWNLOAD'	=> 'Can download files',
+	'ACL_U_SAVEDRAFTS'	=> 'Can save drafts',
+	'ACL_U_CHGCENSORS'	=> 'Can disable word censors',
+	'ACL_U_SIG'			=> 'Can use signature',
 
-	'acl_u_sendpm'		=> array('lang' => 'Dapat mengirim pesan pribadi', 'cat' => 'pm'),
-	'acl_u_masspm'		=> array('lang' => 'Dapat mengirim pesan ke banyak pengguna', 'cat' => 'pm'),
-	'acl_u_masspm_group'=> array('lang' => 'Dapat mengirimkan pesan ke grup', 'cat' => 'pm'),
-	'acl_u_readpm'		=> array('lang' => 'Dapat membaca pesan pribadi', 'cat' => 'pm'),
-	'acl_u_pm_edit'		=> array('lang' => 'Dapat mengubah pesan pribadinya sendiri', 'cat' => 'pm'),
-	'acl_u_pm_delete'	=> array('lang' => 'Dapat menyingkirkan pesan pribadinya dari foldernya sendiri', 'cat' => 'pm'),
-	'acl_u_pm_forward'	=> array('lang' => 'Dapat mengalihkan pesan pribadi', 'cat' => 'pm'),
-	'acl_u_pm_emailpm'	=> array('lang' => 'Dapat mengirim e-mail pesan pribadi', 'cat' => 'pm'),
-	'acl_u_pm_printpm'	=> array('lang' => 'Dapat mencetak pesan pribadi', 'cat' => 'pm'),
-	'acl_u_pm_attach'	=> array('lang' => 'Dapat melampirkan file-file pada pesan pribadi', 'cat' => 'pm'),
-	'acl_u_pm_download'	=> array('lang' => 'Dapat mendownload file-file pada pesan pribadi', 'cat' => 'pm'),
-	'acl_u_pm_bbcode'	=> array('lang' => 'Dapat mempost BBCode pada pesan pribadi', 'cat' => 'pm'),
-	'acl_u_pm_smilies'	=> array('lang' => 'Dapat mempost tanda senyuman pada pesan pribadi', 'cat' => 'pm'),
-	'acl_u_pm_img'		=> array('lang' => 'Dapat mempost gambar pada pesan pribadi', 'cat' => 'pm'),
-	'acl_u_pm_flash'	=> array('lang' => 'Dapat mempost Flash pada pesan pribadi', 'cat' => 'pm'),
+	'ACL_U_SENDPM'		=> 'Can send private messages',
+	'ACL_U_MASSPM'		=> 'Can send messages to multiple users',
+	'ACL_U_MASSPM_GROUP'=> 'Can send messages to groups',
+	'ACL_U_READPM'		=> 'Can read private messages',
+	'ACL_U_PM_EDIT'		=> 'Can edit own private messages',
+	'ACL_U_PM_DELETE'	=> 'Can remove private messages from own folder',
+	'ACL_U_PM_FORWARD'	=> 'Can forward private messages',
+	'ACL_U_PM_EMAILPM'	=> 'Can email private messages',
+	'ACL_U_PM_PRINTPM'	=> 'Can print private messages',
+	'ACL_U_PM_ATTACH'	=> 'Can attach files in private messages',
+	'ACL_U_PM_DOWNLOAD'	=> 'Can download files in private messages',
+	'ACL_U_PM_BBCODE'	=> 'Can use BBCode in private messages',
+	'ACL_U_PM_SMILIES'	=> 'Can use smilies in private messages',
+	'ACL_U_PM_IMG'		=> 'Can use [img] BBCode tag in private messages',
+	'ACL_U_PM_FLASH'	=> 'Can use [flash] BBCode tag in private messages',
 
-	'acl_u_sendemail'	=> array('lang' => 'Dapat mengirim e-mail', 'cat' => 'misc'),
-	'acl_u_sendim'		=> array('lang' => 'Dapat mengirim pesan singkat', 'cat' => 'misc'),
-	'acl_u_ignoreflood'	=> array('lang' => 'Dapat mengabaikan batas flood', 'cat' => 'misc'),
-	'acl_u_hideonline'	=> array('lang' => 'Dapat menyembunyikan status online', 'cat' => 'misc'),
-	'acl_u_viewonline'	=> array('lang' => 'Dapat melihat pengguna tersembunyi yang online', 'cat' => 'misc'),
-	'acl_u_search'		=> array('lang' => 'Dapat mencari halaman', 'cat' => 'misc'),
+	'ACL_U_SENDEMAIL'	=> 'Can send emails',
+	'ACL_U_SENDIM'		=> 'Can send instant messages',
+	'ACL_U_IGNOREFLOOD'	=> 'Can ignore flood limit',
+	'ACL_U_HIDEONLINE'	=> 'Can hide online status',
+	'ACL_U_VIEWONLINE'	=> 'Can view hidden online users',
+	'ACL_U_SEARCH'		=> 'Can search board',
 ));
 
 // Forum Permissions
 $lang = array_merge($lang, array(
-	'acl_f_list'		=> array('lang' => 'Dapat melihat forum', 'cat' => 'post'),
-	'acl_f_read'		=> array('lang' => 'Dapat membaca forum', 'cat' => 'post'),
-	'acl_f_post'		=> array('lang' => 'Dapat memulai topik baru', 'cat' => 'post'),
-	'acl_f_reply'		=> array('lang' => 'Dapat membalas topik', 'cat' => 'post'),
-	'acl_f_icons'		=> array('lang' => 'Can use topic/post icons', 'cat' => 'post'),
-	'acl_f_announce'	=> array('lang' => 'Dapat mempost pengumuman', 'cat' => 'post'),
-	'acl_f_sticky'		=> array('lang' => 'Dapat mempost sticky', 'cat' => 'post'),
+	'ACL_F_LIST'		=> 'Can see forum',
+	'ACL_F_LIST_TOPICS' => 'Can see topics',
+	'ACL_F_READ'		=> 'Can read forum',
+	'ACL_F_SEARCH'		=> 'Can search the forum',
+	'ACL_F_SUBSCRIBE'	=> 'Can subscribe forum',
+	'ACL_F_PRINT'		=> 'Can print topics',
+	'ACL_F_EMAIL'		=> 'Can email topics',
+	'ACL_F_BUMP'		=> 'Can bump topics',
+	'ACL_F_USER_LOCK'	=> 'Can lock own topics',
+	'ACL_F_DOWNLOAD'	=> 'Can download files',
+	'ACL_F_REPORT'		=> 'Can report posts',
 
-	'acl_f_poll'		=> array('lang' => 'Dapat membuat pemungutan suara', 'cat' => 'polls'),
-	'acl_f_vote'		=> array('lang' => 'Dapat memberikan suara pada pemungutan suara', 'cat' => 'polls'),
-	'acl_f_votechg'		=> array('lang' => 'Dapat mengubah suara yang telah diberikan', 'cat' => 'polls'),
+	'ACL_F_POST'		=> 'Can start new topics',
+	'ACL_F_STICKY'		=> 'Can post stickies',
+	'ACL_F_ANNOUNCE'	=> 'Can post announcements',
+	'ACL_F_ANNOUNCE_GLOBAL'	=> 'Can post global announcements',
+	'ACL_F_REPLY'		=> 'Can reply to topics',
+	'ACL_F_EDIT'		=> 'Can edit own posts',
+	'ACL_F_DELETE'		=> 'Can permanently delete own posts',
+	'ACL_F_SOFTDELETE'	=> 'Can soft delete own posts<br /><em>Moderators, who have the approve posts permission, can restore soft deleted posts.</em>',
+	'ACL_F_IGNOREFLOOD' => 'Can ignore flood limit',
+	'ACL_F_POSTCOUNT'	=> 'Increment post counter<br /><em>Please note that this setting only affects new posts.</em>',
+	'ACL_F_NOAPPROVE'	=> 'Can post without approval',
 
-	'acl_f_attach'		=> array('lang' => 'Dapat melampirkan file-file', 'cat' => 'content'),
-	'acl_f_download'	=> array('lang' => 'Dapat mendownload file-file', 'cat' => 'content'),
-	'acl_f_sigs'		=> array('lang' => 'Dapat menggunakan tanda tangan', 'cat' => 'content'),
-	'acl_f_bbcode'		=> array('lang' => 'Dapat mempost BBCode', 'cat' => 'content'),
-	'acl_f_smilies'		=> array('lang' => 'Dapat mempost tanda senyuman', 'cat' => 'content'),
-	'acl_f_img'			=> array('lang' => 'Dapat mempost gambar', 'cat' => 'content'),
-	'acl_f_flash'		=> array('lang' => 'Dapat mempost Flash', 'cat' => 'content'),
+	'ACL_F_ATTACH'		=> 'Can attach files',
+	'ACL_F_ICONS'		=> 'Can use topic/post icons',
+	'ACL_F_BBCODE'		=> 'Can use BBCode',
+	'ACL_F_FLASH'		=> 'Can use [flash] BBCode tag',
+	'ACL_F_IMG'			=> 'Can use [img] BBCode tag',
+	'ACL_F_SIGS'		=> 'Can use signatures',
+	'ACL_F_SMILIES'		=> 'Can use smilies',
 
-	'acl_f_edit'		=> array('lang' => 'Dapat mengubah postnya sendiri', 'cat' => 'actions'),
-	'acl_f_delete'		=> array('lang' => 'Dapat menghapus postnya sendiri', 'cat' => 'actions'),
-	'acl_f_user_lock'	=> array('lang' => 'Dapat mengunci topiknya sendiri', 'cat' => 'actions'),
-	'acl_f_bump'		=> array('lang' => 'Dapat menggeser topik', 'cat' => 'actions'),
-	'acl_f_report'		=> array('lang' => 'Dapat melaporkan post', 'cat' => 'actions'),
-	'acl_f_subscribe'	=> array('lang' => 'Dapat berlangganan forum', 'cat' => 'actions'),
-	'acl_f_print'		=> array('lang' => 'Dapat mencetak post', 'cat' => 'actions'),
-	'acl_f_email'		=> array('lang' => 'Dapat menge-mail topik', 'cat' => 'actions'),
-
-	'acl_f_search'		=> array('lang' => 'Dapat mencari forum', 'cat' => 'misc'),
-	'acl_f_ignoreflood' => array('lang' => 'Dapat mengabaikan batas flood', 'cat' => 'misc'),
-	'acl_f_postcount'	=> array('lang' => 'Kenaikan penghitung post<br /><em>Mohon dicatat bahwa pengaturan ini hanya akan bekerja pada post baru.</em>', 'cat' => 'misc'),
-	'acl_f_noapprove'	=> array('lang' => 'Dapat mempost tanpa persetujuan', 'cat' => 'misc'),
+	'ACL_F_POLL'		=> 'Can create polls',
+	'ACL_F_VOTE'		=> 'Can vote in polls',
+	'ACL_F_VOTECHG'		=> 'Can change existing vote',
 ));
 
 // Moderator Permissions
 $lang = array_merge($lang, array(
-	'acl_m_edit'		=> array('lang' => 'Dapat mengubah post', 'cat' => 'post_actions'),
-	'acl_m_delete'		=> array('lang' => 'Dapat menghapus post', 'cat' => 'post_actions'),
-	'acl_m_approve'		=> array('lang' => 'Dapat menyetujui bos', 'cat' => 'post_actions'),
-	'acl_m_report'		=> array('lang' => 'Dapat menutup dan menghapus laporan', 'cat' => 'post_actions'),
-	'acl_m_chgposter'	=> array('lang' => 'Dapat mengubah pengarang post', 'cat' => 'post_actions'),
+	'ACL_M_EDIT'		=> 'Can edit posts',
+	'ACL_M_DELETE'		=> 'Can permanently delete posts',
+	'ACL_M_SOFTDELETE'	=> 'Can soft delete posts<br /><em>Moderators, who have the approve posts permission, can restore soft deleted posts.</em>',
+	'ACL_M_APPROVE'		=> 'Can approve and restore posts',
+	'ACL_M_REPORT'		=> 'Can close and delete reports',
+	'ACL_M_CHGPOSTER'	=> 'Can change post author',
 
-	'acl_m_move'	=> array('lang' => 'Dapat memindahkan topik', 'cat' => 'topic_actions'),
-	'acl_m_lock'	=> array('lang' => 'Dapat mengunci topik', 'cat' => 'topic_actions'),
-	'acl_m_split'	=> array('lang' => 'Dapat memisahkan topik', 'cat' => 'topic_actions'),
-	'acl_m_merge'	=> array('lang' => 'Dapat menggabungkan topik', 'cat' => 'topic_actions'),
+	'ACL_M_MOVE'	=> 'Can move topics',
+	'ACL_M_LOCK'	=> 'Can lock topics',
+	'ACL_M_SPLIT'	=> 'Can split topics',
+	'ACL_M_MERGE'	=> 'Can merge topics',
 
-	'acl_m_info'	=> array('lang' => 'Dapat melihat keterangan post', 'cat' => 'misc'),
-	'acl_m_warn'	=> array('lang' => 'Dapat memberikan peringatan<br /><em>Pengaturan ini hanya diberikan secara global. Bukan berdasarkan atas forum.</em>', 'cat' => 'misc'), // This moderator setting is only global (and not local)
-	'acl_m_ban'		=> array('lang' => 'Dapat mengatur larangan<br /><em>Pengaturan ini hanya diberikan secara global. Bukan berdasarkan atas forum.</em>', 'cat' => 'misc'), // This moderator setting is only global (and not local)
+	'ACL_M_INFO'		=> 'Can view post details',
+	'ACL_M_WARN'		=> 'Can issue warnings<br /><em>This setting is only assigned globally. It is not forum based.</em>', // This moderator setting is only global (and not local)
+	'ACL_M_PM_REPORT'	=> 'Can close and delete reports of private messages<br /><em>This setting is only assigned globally. It is not forum based.</em>', // This moderator setting is only global (and not local)
+	'ACL_M_BAN'			=> 'Can manage bans<br /><em>This setting is only assigned globally. It is not forum based.</em>', // This moderator setting is only global (and not local)
 ));
 
 // Admin Permissions
 $lang = array_merge($lang, array(
-	'acl_a_board'		=> array('lang' => 'Dapat mengubah pengaturan halaman/memeriksa pembaruan', 'cat' => 'settings'),
-	'acl_a_server'		=> array('lang' => 'Dapat mengubah server/pengaturan komunikasi', 'cat' => 'settings'),
-	'acl_a_jabber'		=> array('lang' => 'Dapat mengubah pengaturan Jabber', 'cat' => 'settings'),
-	'acl_a_phpinfo'		=> array('lang' => 'Dapat melihat pengaturan php', 'cat' => 'settings'),
+	'ACL_A_BOARD'		=> 'Can alter board settings/check for updates',
+	'ACL_A_SERVER'		=> 'Can alter server/communication settings',
+	'ACL_A_JABBER'		=> 'Can alter Jabber settings',
+	'ACL_A_PHPINFO'		=> 'Can view php settings',
 
-	'acl_a_forum'		=> array('lang' => 'Dapat mengatur forum', 'cat' => 'forums'),
-	'acl_a_forumadd'	=> array('lang' => 'Dapat menambahkan forum baru', 'cat' => 'forums'),
-	'acl_a_forumdel'	=> array('lang' => 'Dapat menghapus forum', 'cat' => 'forums'),
-	'acl_a_prune'		=> array('lang' => 'Dapat mengurangi forum', 'cat' => 'forums'),
+	'ACL_A_FORUM'		=> 'Can manage forums',
+	'ACL_A_FORUMADD'	=> 'Can add new forums',
+	'ACL_A_FORUMDEL'	=> 'Can delete forums',
+	'ACL_A_PRUNE'		=> 'Can prune forums',
 
-	'acl_a_icons'		=> array('lang' => 'Dapat mengubah topik/ikon post dan tanda senyuman', 'cat' => 'posting'),
-	'acl_a_words'		=> array('lang' => 'Dapat mengubah sensor kata', 'cat' => 'posting'),
-	'acl_a_bbcode'		=> array('lang' => 'Dapat menentukan tag BBCode', 'cat' => 'posting'),
-	'acl_a_attach'		=> array('lang' => 'Dapat mengubah pengaturan yang berhubungan dengan lampiran', 'cat' => 'posting'),
+	'ACL_A_ICONS'		=> 'Can alter topic/post icons and smilies',
+	'ACL_A_WORDS'		=> 'Can alter word censors',
+	'ACL_A_BBCODE'		=> 'Can define BBCode tags',
+	'ACL_A_ATTACH'		=> 'Can alter attachment related settings',
 
-	'acl_a_user'		=> array('lang' => 'Dapat mengatur pengguna<br /><em>Termasuk melihat agen browser pengguna pada daftar pengguna yang online.</em>', 'cat' => 'user_group'),
-	'acl_a_userdel'		=> array('lang' => 'Dapat menghapus/mengurangi pengguna', 'cat' => 'user_group'),
-	'acl_a_group'		=> array('lang' => 'Dapat mengatur grup', 'cat' => 'user_group'),
-	'acl_a_groupadd'	=> array('lang' => 'Dapat menambahkan grup baru', 'cat' => 'user_group'),
-	'acl_a_groupdel'	=> array('lang' => 'Dapat menghapus grup', 'cat' => 'user_group'),
-	'acl_a_ranks'		=> array('lang' => 'Dapat mengatur ranking', 'cat' => 'user_group'),
-	'acl_a_profile'		=> array('lang' => 'Dapat mengatur profil tambahan', 'cat' => 'user_group'),
-	'acl_a_names'		=> array('lang' => 'Dapat mengatur nama pengguna yang tidak diijinkan', 'cat' => 'user_group'),
-	'acl_a_ban'			=> array('lang' => 'Dapat mengatur larangan', 'cat' => 'user_group'),
+	'ACL_A_USER'		=> 'Can manage users<br /><em>This also includes seeing the users browser agent within the viewonline list.</em>',
+	'ACL_A_USERDEL'		=> 'Can delete/prune users',
+	'ACL_A_GROUP'		=> 'Can manage groups',
+	'ACL_A_GROUPADD'	=> 'Can add new groups',
+	'ACL_A_GROUPDEL'	=> 'Can delete groups',
+	'ACL_A_RANKS'		=> 'Can manage ranks',
+	'ACL_A_PROFILE'		=> 'Can manage custom profile fields',
+	'ACL_A_NAMES'		=> 'Can manage disallowed names',
+	'ACL_A_BAN'			=> 'Can manage bans',
 
-	'acl_a_viewauth'	=> array('lang' => 'Dapat melihat mask perijinan', 'cat' => 'permissions'),
-	'acl_a_authgroups'	=> array('lang' => 'Dapat mengubah perijinan untuk grup individu', 'cat' => 'permissions'),
-	'acl_a_authusers'	=> array('lang' => 'Dapat mengubah perijinan untuk pengguna individu', 'cat' => 'permissions'),
-	'acl_a_fauth'		=> array('lang' => 'Dapat mengubah kelas perijinan forum', 'cat' => 'permissions'),
-	'acl_a_mauth'		=> array('lang' => 'Dapat mengubah kelas perijinan moderator', 'cat' => 'permissions'),
-	'acl_a_aauth'		=> array('lang' => 'Dapat mengubah kelas perijinan admin', 'cat' => 'permissions'),
-	'acl_a_uauth'		=> array('lang' => 'Dapat mengubah kelas perijinan pengguna', 'cat' => 'permissions'),
-	'acl_a_roles'		=> array('lang' => 'Dapat mengatur peranan', 'cat' => 'permissions'),
-	'acl_a_switchperm'	=> array('lang' => 'Dapat menggunakan perijinan yang lain', 'cat' => 'permissions'),
+	'ACL_A_VIEWAUTH'	=> 'Can view permission masks',
+	'ACL_A_AUTHGROUPS'	=> 'Can alter permissions for individual groups',
+	'ACL_A_AUTHUSERS'	=> 'Can alter permissions for individual users',
+	'ACL_A_FAUTH'		=> 'Can alter forum permission class',
+	'ACL_A_MAUTH'		=> 'Can alter moderator permission class',
+	'ACL_A_AAUTH'		=> 'Can alter admin permission class',
+	'ACL_A_UAUTH'		=> 'Can alter user permission class',
+	'ACL_A_ROLES'		=> 'Can manage roles',
+	'ACL_A_SWITCHPERM'	=> 'Can use others permissions',
 
-	'acl_a_styles'		=> array('lang' => 'Dapat mengatur gaya', 'cat' => 'misc'),
-	'acl_a_viewlogs'	=> array('lang' => 'Dapat melihat log', 'cat' => 'misc'),
-	'acl_a_clearlogs'	=> array('lang' => 'Dapat membersihkan log', 'cat' => 'misc'),
-	'acl_a_modules'		=> array('lang' => 'Dapat mengatur module', 'cat' => 'misc'),
-	'acl_a_language'	=> array('lang' => 'Dapat mengatur paket bahasa', 'cat' => 'misc'),
-	'acl_a_email'		=> array('lang' => 'Dapat mengirim e-mail massa', 'cat' => 'misc'),
-	'acl_a_bots'		=> array('lang' => 'Dapat mengatur bots', 'cat' => 'misc'),
-	'acl_a_reasons'		=> array('lang' => 'Dapat mengatur laporan/alasan penolakan', 'cat' => 'misc'),
-	'acl_a_backup'		=> array('lang' => 'Dapat membackup/mengembalikan database', 'cat' => 'misc'),
-	'acl_a_search'		=> array('lang' => 'Dapat mengatur backend pencarian dan pengaturan', 'cat' => 'misc'),
+	'ACL_A_STYLES'		=> 'Can manage styles',
+	'ACL_A_EXTENSIONS'	=> 'Can manage extensions',
+	'ACL_A_VIEWLOGS'	=> 'Can view logs',
+	'ACL_A_CLEARLOGS'	=> 'Can clear logs',
+	'ACL_A_MODULES'		=> 'Can manage modules',
+	'ACL_A_LANGUAGE'	=> 'Can manage language packs',
+	'ACL_A_EMAIL'		=> 'Can send mass email',
+	'ACL_A_BOTS'		=> 'Can manage bots',
+	'ACL_A_REASONS'		=> 'Can manage report/denial reasons',
+	'ACL_A_BACKUP'		=> 'Can backup/restore database',
+	'ACL_A_SEARCH'		=> 'Can manage search backends and settings',
 ));
-
-?>

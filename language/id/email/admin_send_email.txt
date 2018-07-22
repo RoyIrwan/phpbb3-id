@@ -1,14 +1,13 @@
 
-Berikut ini adalah sebuah e-mail yang dikirimkan kepada anda oleh administrator "{SITENAME}". Jika pesan ini dianggap sebagai spam, mengandung penghinaan atau komentar lain yang anda temukan sebagai penyerangan, silahkan menghubungi webmaster pada alamat berikut ini:
+The following is an email sent to you by an administrator of "{SITENAME}". If this message is spam, contains abusive or other comments you find offensive please contact the webmaster of the board at the following address:
 
 {CONTACT_EMAIL}
 
-Mengikutsertakan keseluruhan e-mail ini (terutama judulnya). 
+Include this full email (particularly the headers). 
 
-Pesan dikirim kepada anda sebagai berikut:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Message sent to you follows:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 {MESSAGE}
-
 
 {EMAIL_SIG}

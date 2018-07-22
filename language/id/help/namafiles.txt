@@ -1,0 +1,3 @@
+bbcode.php
+faq.php
+namafiles.txt

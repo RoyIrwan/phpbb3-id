@@ -1,11 +1,11 @@
-Subject: Anda telah dimasukkan ke grup pengguna 
+Subject: You have been added to this usergroup
 
-Selamat,
+Congratulations,
 
-Anda telah dimasukkan ke grup pengguna "{GROUP_NAME}" di "{SITENAME}".
-Hal tersebut dilakukan oleh pemimpin grup atau administrator, silahkan hubungi mereka untuk informasi lebih lanjut.
+You have been added to the "{GROUP_NAME}" group on "{SITENAME}".
+This action was done by a group leader or the site administrator, contact them for more information.
 
-Anda dapat melihat informasi mengenai grup-grup anda di sini::
+You can view your groups information here:
 {U_GROUP}
 
 {EMAIL_SIG}

@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* viewtopic [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: viewtopic.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -36,82 +37,90 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ATTACHMENT'						=> 'Lampiran',
-	'ATTACHMENT_FUNCTIONALITY_DISABLED'	=> 'Fitur lampiran telah di-disable.',
+	'APPROVE'								=> 'Approve',
+	'ATTACHMENT'						=> 'Attachment',
+	'ATTACHMENT_FUNCTIONALITY_DISABLED'	=> 'The attachments feature has been disabled.',
 
-	'BOOKMARK_ADDED'		=> 'Topik telah berhasil ditandai.',
-	'BOOKMARK_ERR'			=> 'Topik gagal ditandai. Mohon dicoba lagi.',
-	'BOOKMARK_REMOVED'		=> 'Penandaan halaman topik telah berhasil dihilangkan.',
-	'BOOKMARK_TOPIC'		=> 'Tandai halaman topik',
-	'BOOKMARK_TOPIC_REMOVE'	=> 'Singkirkan penanda topik',
-	'BUMPED_BY'				=> 'Diambil terakhir kali oleh %1$s on %2$s.',
-	'BUMP_TOPIC'			=> 'Ambil topik',
+	'BOOKMARK_ADDED'		=> 'Bookmarked topic successfully.',
+	'BOOKMARK_ERR'			=> 'Bookmarking the topic failed. Please try again.',
+	'BOOKMARK_REMOVED'		=> 'Removed bookmarked topic successfully.',
+	'BOOKMARK_TOPIC'		=> 'Bookmark topic',
+	'BOOKMARK_TOPIC_REMOVE'	=> 'Remove from bookmarks',
+	'BUMPED_BY'				=> 'Last bumped by %1$s on %2$s.',
+	'BUMP_TOPIC'			=> 'Bump topic',
 
-	'CODE'					=> 'Kode',
-	'COLLAPSE_QR'			=> 'Sembunyikan Balas Cepat',
+	'CODE'					=> 'Code',
 
-	'DELETE_TOPIC'			=> 'Hapus topik',
-	'DOWNLOAD_NOTICE'		=> 'Anda tidak memiliki ijin yang dibutuhkan untuk melihat file yang dilampirkan ke post ini.',
+	'DELETE_TOPIC'			=> 'Delete topic',
+	'DELETED_INFORMATION'	=> 'Deleted by %1$s on %2$s',
+	'DISAPPROVE'					=> 'Disapprove',
+	'DOWNLOAD_NOTICE'		=> 'You do not have the required permissions to view the files attached to this post.',
 
-	'EDITED_TIMES_TOTAL'	=> 'Diubah terakhir kali oleh %1$s on %2$s, total pengubahan %3$d kali.',
-	'EDITED_TIME_TOTAL'		=> 'Diubah terakhir kali oleh %1$s on %2$s, total pengubahan %3$d kali.',
-	'EMAIL_TOPIC'			=> 'E-mail teman',
-	'ERROR_NO_ATTACHMENT'	=> 'Lampiran yang dipilih sudah tidak ada lagi.',
+	'EDITED_TIMES_TOTAL'	=> array(
+		1	=> 'Last edited by %2$s on %3$s, edited %1$d time in total.',
+		2	=> 'Last edited by %2$s on %3$s, edited %1$d times in total.',
+	),
+	'EMAIL_TOPIC'			=> 'Email topic',
+	'ERROR_NO_ATTACHMENT'	=> 'The selected attachment does not exist anymore.',
 
-	'FILE_NOT_FOUND_404'	=> 'File <strong>%s</strong> tidak ada.',
-	'FORK_TOPIC'			=> 'Salin topik',
-	'FULL_EDITOR'			=> 'Editor Lengkap',
+	'FILE_NOT_FOUND_404'	=> 'The file <strong>%s</strong> does not exist.',
+	'FORK_TOPIC'			=> 'Copy topic',
+	'FULL_EDITOR'			=> 'Full Editor &amp; Preview',
 
-	'LINKAGE_FORBIDDEN'		=> 'Anda tidak diijinkan untuk melihat, mendownload ataupun memberi link dari/ke situs ini.',
-	'LOGIN_NOTIFY_TOPIC'	=> 'Anda telah diberitahukan mengenai topik ini, silahkan login untuk melihat.',
-	'LOGIN_VIEWTOPIC'		=> 'Halaman ini membutuhkan anda untuk terdaftar dan logged-in guna melihat topik ini.',
+	'LINKAGE_FORBIDDEN'		=> 'You are not authorised to view, download or link from/to this site.',
+	'LOGIN_NOTIFY_TOPIC'	=> 'You have been notified about this topic, please login to view it.',
+	'LOGIN_VIEWTOPIC'		=> 'The board requires you to be registered and logged in to view this topic.',
 
-	'MAKE_ANNOUNCE'				=> 'Ubah menjadi “Pengumuman”',
-	'MAKE_GLOBAL'				=> 'Ubah menjadi “Global”',
-	'MAKE_NORMAL'				=> 'Ubah menjadi “Topik Standar”',
-	'MAKE_STICKY'				=> 'Ubah menjadi “Sticky”',
-	'MAX_OPTIONS_SELECT'		=> 'Anda boleh memilih sampai <strong>%d</strong> pilihan',
-	'MAX_OPTION_SELECT'			=> 'Anda boleh memilih <strong>1</strong> pilihan',
-	'MISSING_INLINE_ATTACHMENT'	=> 'Lampiran <strong>%s</strong> sudah tidak tersedia',
-	'MOVE_TOPIC'				=> 'Pindahkan topik',
+	'MAKE_ANNOUNCE'				=> 'Change to “Announcement”',
+	'MAKE_GLOBAL'				=> 'Change to “Global”',
+	'MAKE_NORMAL'				=> 'Change to “Standard Topic”',
+	'MAKE_STICKY'				=> 'Change to “Sticky”',
+	'MAX_OPTIONS_SELECT'		=> array(
+		1	=> 'You may select <strong>%d</strong> option',
+		2	=> 'You may select up to <strong>%d</strong> options',
+	),
+	'MISSING_INLINE_ATTACHMENT'	=> 'The attachment <strong>%s</strong> is no longer available',
+	'MOVE_TOPIC'				=> 'Move topic',
 
-	'NO_ATTACHMENT_SELECTED'=> 'Anda belum memilih lampiran untuk didownload atau dilihat.',
-	'NO_NEWER_TOPICS'		=> 'Tidak ada topik yang baru di forum ini.',
-	'NO_OLDER_TOPICS'		=> 'Tidak ada topik yang lama di forum ini.',
-	'NO_UNREAD_POSTS'		=> 'Tidak ada post yang belum dibaca untuk topik ini.',
-	'NO_VOTE_OPTION'		=> 'Anda harus menentukan pilihan pada saat pemungutan suara.',
-	'NO_VOTES'				=> 'Tidak ada suara',
+	'NO_ATTACHMENT_SELECTED'=> 'You haven’t selected an attachment to download or view.',
+	'NO_NEWER_TOPICS'		=> 'There are no newer topics in this forum.',
+	'NO_OLDER_TOPICS'		=> 'There are no older topics in this forum.',
+	'NO_UNREAD_POSTS'		=> 'There are no new unread posts for this topic.',
+	'NO_VOTE_OPTION'		=> 'You must specify an option when voting.',
+	'NO_VOTES'				=> 'No votes',
 
-	'POLL_ENDED_AT'			=> 'Pemberian suara diakhiri pada %s',
-	'POLL_RUN_TILL'			=> 'Pemberian suara berlangsung sampai %s',
-	'POLL_VOTED_OPTION'		=> 'Anda memberikan suara pada pilihan ini',
-	'PRINT_TOPIC'			=> 'Cetak topik',
+	'POLL_ENDED_AT'			=> 'Poll ended at %s',
+	'POLL_RUN_TILL'			=> 'Poll runs till %s',
+	'POLL_VOTED_OPTION'		=> 'You voted for this option',
+	'POST_DELETED_RESTORE'	=> 'This post has been deleted. It can be restored.',
+	'PRINT_TOPIC'			=> 'Print view',
 
-	'QUICK_MOD'				=> 'Alat mod cepat',
-	'QUICKREPLY'			=> 'Balas Cepat',
-	'QUOTE'					=> 'Kutipan',
+	'QUICK_MOD'				=> 'Quick-mod tools',
+	'QUICKREPLY'			=> 'Quick Reply',
+	'QUOTE'					=> 'Quote',
 
-	'REPLY_TO_TOPIC'		=> 'Balas ke topik',
-	'RETURN_POST'			=> '%sKembali ke post%s',
+	'REPLY_TO_TOPIC'		=> 'Reply to topic',
+	'RESTORE'				=> 'Restore',
+	'RESTORE_TOPIC'			=> 'Restore topic',
+	'RETURN_POST'			=> '%sReturn to the post%s',
 
-	'SHOW_QR'				=> 'Balas Cepat',
-	'SUBMIT_VOTE'			=> 'Ajukan suara',
+	'SUBMIT_VOTE'			=> 'Submit vote',
 
-	'TOTAL_VOTES'			=> 'Total suara',
+	'TOPIC_TOOLS'			=> 'Topic tools',
+	'TOTAL_VOTES'			=> 'Total votes',
 
-	'UNLOCK_TOPIC'			=> 'Buka topik',
+	'UNLOCK_TOPIC'			=> 'Unlock topic',
 
-	'VIEW_INFO'				=> 'Rincian post',
-	'VIEW_NEXT_TOPIC'		=> 'Topik selanjutnya',
-	'VIEW_PREVIOUS_TOPIC'	=> 'Topik sebelumnya',
-	'VIEW_RESULTS'			=> 'Tampilkan hasil',
-	'VIEW_TOPIC_POST'		=> '1 post',
-	'VIEW_TOPIC_POSTS'		=> '%d post',
-	'VIEW_UNREAD_POST'		=> 'Post pertama yang belum dibaca',
-	'VISIT_WEBSITE'			=> 'WWW',
-	'VOTE_SUBMITTED'		=> 'Suara anda telah dimasukkan.',
-	'VOTE_CONVERTED'		=> 'Pengubahan suara tidak didukung oleh pemilihan suara yang diubah ke bentuk lain.',
+	'VIEW_INFO'				=> 'Post details',
+	'VIEW_NEXT_TOPIC'		=> 'Next topic',
+	'VIEW_PREVIOUS_TOPIC'	=> 'Previous topic',
+	'VIEW_RESULTS'			=> 'View results',
+	'VIEW_TOPIC_POSTS'		=> array(
+		1	=> '%d post',
+		2	=> '%d posts',
+	),
+	'VIEW_UNREAD_POST'		=> 'First unread post',
+	'VOTE_SUBMITTED'		=> 'Your vote has been cast.',
+	'VOTE_CONVERTED'		=> 'Changing votes is not supported for converted polls.',
 
 ));
-
-?>

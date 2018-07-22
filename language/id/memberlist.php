@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* memberlist [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: memberlist.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -36,115 +37,118 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ABOUT_USER'			=> 'Profil',
-	'ACTIVE_IN_FORUM'		=> 'Aktif di forum',
-	'ACTIVE_IN_TOPIC'		=> 'Aktif di topik',
-	'ADD_FOE'				=> 'Jadikan lawan',
-	'ADD_FRIEND'			=> 'Jadikan teman',
-	'AFTER'					=> 'Setelah',
+	'ABOUT_USER'			=> 'Profile',
+	'ACTIVE_IN_FORUM'		=> 'Most active forum',
+	'ACTIVE_IN_TOPIC'		=> 'Most active topic',
+	'ADD_FOE'				=> 'Add foe',
+	'ADD_FRIEND'			=> 'Add friend',
+	'AFTER'					=> 'After',
 
-	'ALL'					=> 'Semua',
+	'ALL'					=> 'All',
 
-	'BEFORE'				=> 'Sebelum',
+	'BEFORE'				=> 'Before',
 
-	'CC_EMAIL'				=> 'Kirim salinan e-mail ini ke anda sendiri.',
-	'CONTACT_USER'			=> 'Hubungi',
+	'CC_SENDER'				=> 'Send a copy of this email to yourself.',
+	'CONTACT_ADMIN'			=> 'Contact a Board Administrator',
 
-	'DEST_LANG'				=> 'Bahasa',
-	'DEST_LANG_EXPLAIN'		=> 'Pilih bahasa yang sesuai (jika tersedia) untuk penerima pesan ini.',
+	'DEST_LANG'				=> 'Language',
+	'DEST_LANG_EXPLAIN'		=> 'Select an appropriate language (if available) for the recipient of this message.',
 
-	'EMAIL_BODY_EXPLAIN'	=> 'Pesan ini akan dikirimkan sebagai teks biasa, tidak mengikutsertakan HTML ataupun BBCode. Alamat pengirim untuk pesan ini akan diatur ke alamat e-mail anda.',
-	'EMAIL_DISABLED'		=> 'Maaf, semua fungsi yang berhubungan dengan e-mail tidak diperbolehkan.',
-	'EMAIL_SENT'			=> 'E-mail telah dikirim.',
-	'EMAIL_TOPIC_EXPLAIN'	=> 'Pesan ini akan dikirimkan sebagai teks biasa, tidak mengikutsertakan HTML ataupun BBCode. Harap dicatat bahwa informasi topik telah dimasukkan kedalam pesan. Alamat pengirim untuk pesan ini akan ditujukan ke alamat e-mail anda.',
-	'EMPTY_ADDRESS_EMAIL'	=> 'Anda harus memberikan alamat e-mail yang sah untuk penerima.',
-	'EMPTY_MESSAGE_EMAIL'	=> 'Anda harus menuliskan pesan untuk dikirim melalui e-mail.',
-	'EMPTY_MESSAGE_IM'		=> 'Anda harus menuliskan pesan untuk dikirimkan.',
-	'EMPTY_NAME_EMAIL'		=> 'Anda harus memasukkan nama lengkap penerima.',
-	'EMPTY_SUBJECT_EMAIL'	=> 'Anda harus menentukan subjek e-mail.',
-	'EQUAL_TO'				=> 'Sama dengan',
+	'EDIT_PROFILE'			=> 'Edit profile',
 
-	'FIND_USERNAME_EXPLAIN'	=> 'Gunakan halaman ini untuk mencari anggota. Anda tidak perlu melengkapi semua isian. Untuk mencocokkan hanya sebagian data saja, gunakan simbol * sebagai wildcard. Pada saat memasukkan tanggal gunakanlah format <kbd>TTTT-BB-HH</kbd>, contoh. <samp>2004-02-29</samp>. Gunakan tanda centang untuk memilih satu atau lebih nama pengguna (nama pengguna yang lain bisa dipilih sekaligus) dan klik Pilih untuk kembali kehalaman sebelumnya.',
-	'FLOOD_EMAIL_LIMIT'		=> 'Anda tidak dapat mengirimkan e-mail yang lain sekarang ini. Silahkan dicoba lagi dalam beberapa saat.',
+	'EMAIL_BODY_EXPLAIN'	=> 'This message will be sent as plain text, do not include any HTML or BBCode. The return address for this message will be set to your email address.',
+	'EMAIL_DISABLED'		=> 'Sorry but all email related functions have been disabled.',
+	'EMAIL_SENT'			=> 'The email has been sent.',
+	'EMAIL_TOPIC_EXPLAIN'	=> 'This message will be sent as plain text, do not include any HTML or BBCode. Please note that the topic information is already included in the message. The return address for this message will be set to your email address.',
+	'EMPTY_ADDRESS_EMAIL'	=> 'You must provide a valid email address for the recipient.',
+	'EMPTY_MESSAGE_EMAIL'	=> 'You must enter a message to be emailed.',
+	'EMPTY_MESSAGE_IM'		=> 'You must enter a message to be send.',
+	'EMPTY_NAME_EMAIL'		=> 'You must enter the real name of the recipient.',
+	'EMPTY_SENDER_EMAIL'	=> 'You must provide a valid email address.',
+	'EMPTY_SENDER_NAME'		=> 'You must provide a name.',
+	'EMPTY_SUBJECT_EMAIL'	=> 'You must specify a subject for the email.',
+	'EQUAL_TO'				=> 'Equal to',
 
-	'GROUP_LEADER'			=> 'Pemimpin grup',
+	'FIND_USERNAME_EXPLAIN'	=> 'Use this form to search for specific members. You do not need to fill out all fields. To match partial data use * as a wildcard. When entering dates use the format <kbd>YYYY-MM-DD</kbd>, e.g. <samp>2004-02-29</samp>. Use the mark checkboxes to select one or more usernames (several usernames may be accepted depending on the form itself) and click the Select Marked button to return to the previous form.',
+	'FLOOD_EMAIL_LIMIT'		=> 'You cannot send another email at this time. Please try again later.',
 
-	'HIDE_MEMBER_SEARCH'	=> 'Sembunyikan pencarian anggota',
+	'GROUP_LEADER'			=> 'Group leader',
 
-	'IM_ADD_CONTACT'		=> 'Tambahkan Contak',
-	'IM_AIM'				=> 'Mohon dicatat bahwa anda membutuhkan AOL Instant Messenger yang sudah diinstall untuk menggunakan layanan ini.',
-	'IM_AIM_EXPRESS'		=> 'AIM Express',
-	'IM_DOWNLOAD_APP'		=> 'Download aplikasi',
-	'IM_ICQ'				=> 'Mohon dicatat bahwa pengguna mungkin telah memilih untuk tidak menerima pesan-pesan singkat.',
-	'IM_JABBER'				=> 'Mohon dicatat bahwa pengguna mungkin telah memilih untuk tidak menerima pesan-pesan singkat.',
-	'IM_JABBER_SUBJECT'		=> 'Ini adalah pesan otomatis, mohon untuk tidak mengirimkan balasan! Pesan dari pengguna %1$s dari %2$s.',
-	'IM_MESSAGE'			=> 'Pesan anda',
-	'IM_MSNM'				=> 'Harap dicatat bahwa anda membutuhkan Windows Messenger yang sudah diinstal untuk menggunakan layanan ini.',
-	'IM_MSNM_BROWSER'		=> 'Browser anda tidak mendukung layanan ini.',
-	'IM_MSNM_CONNECT'		=> 'MSNM belum tersambung.\nAda harus menyambungkan ke MSNM untuk melanjutkan.',		
-	'IM_NAME'				=> 'Nama Anda',
-	'IM_NO_DATA'			=> 'Tidak ada informasi kontak dari yang sesuai dari pengguna ini.',
-	'IM_NO_JABBER'			=> 'Maaf, perpesanan secara langsung bagi pengguna-pengguna Jabber tidak didukung dihalaman ini. Anda membutuhkan klien Jabber yang sudah diinstal di sistem anda untuk menghubungi penerima di atas ini.',
-	'IM_RECIPIENT'			=> 'Penerima',
-	'IM_SEND'				=> 'Kirim pesan',
-	'IM_SEND_MESSAGE'		=> 'Kirim pesan',
-	'IM_SENT_JABBER'		=> 'Pesan anda yang ditujukan untuk %1$s telah berhasil dikirim.',
-	'IM_USER'				=> 'Kirim pesan singkat',
-	
-	'LAST_ACTIVE'				=> 'Terakhir aktif',
-	'LESS_THAN'					=> 'Lebih dari',
-	'LIST_USER'					=> '1 pengguna',
-	'LIST_USERS'				=> '%d pengguna',
-	'LOGIN_EXPLAIN_LEADERS'		=> 'Halaman ini membutuhkan anda untuk didaftarkan dan dimasukkan agar dapat melihat daftar tim.',
-	'LOGIN_EXPLAIN_MEMBERLIST'	=> 'Halaman ini membutuhkan anda untuk didaftarkan dan dimasukkan agar dapat mengakses daftar anggota.',
-	'LOGIN_EXPLAIN_SEARCHUSER'	=> 'Halaman ini membutuhkan anda untuk didaftarkan dan dimasukkan agar dapat mencari pengguna.',
-	'LOGIN_EXPLAIN_VIEWPROFILE'	=> 'Halaman ini membutuhkan anda untuk didaftarkan dan dimasukkan agar dapat melihat profil.',
+	'HIDE_MEMBER_SEARCH'	=> 'Hide member search',
 
-	'MORE_THAN'				=> 'Lebih dari',
+	'IM_ADD_CONTACT'		=> 'Add Contact',
+	'IM_DOWNLOAD_APP'		=> 'Download application',
+	'IM_JABBER'				=> 'Please note that users may have selected to not receive unsolicited instant messages.',
+	'IM_JABBER_SUBJECT'		=> 'This is an automated message please do not reply! Message from user %1$s at %2$s.',
+	'IM_MESSAGE'			=> 'Your message',
+	'IM_NAME'				=> 'Your Name',
+	'IM_NO_DATA'			=> 'There is no suitable contact information for this user.',
+	'IM_NO_JABBER'			=> 'Sorry, direct messaging of Jabber users is not supported on this board. You will need a Jabber client installed on your system to contact the recipient above.',
+	'IM_RECIPIENT'			=> 'Recipient',
+	'IM_SEND'				=> 'Send message',
+	'IM_SEND_MESSAGE'		=> 'Send message',
+	'IM_SENT_JABBER'		=> 'Your message to %1$s has been sent successfully.',
+	'IM_USER'				=> 'Send an instant message',
 
-	'NO_EMAIL'				=> 'Anda tidak diijinkan untuk mengirim e-mail kepengguna ini.',
-	'NO_VIEW_USERS'			=> 'Anda tidak berhak melihat daftar atau profil anggota.',
-
-	'ORDER'					=> 'Urutkan',
-	'OTHER'					=> 'Lainnya',
-
-	'POST_IP'				=> 'Posted dari IP/domain',
-
-	'RANK'					=> 'Ranking',
-	'REAL_NAME'				=> 'Nama penerima',
-	'RECIPIENT'				=> 'Penerima',
-	'REMOVE_FOE'			=> 'Singkirkan lawan',
-	'REMOVE_FRIEND'			=> 'Singkirkan teman',
-	
-	'SELECT_MARKED'			=> 'Pilih yang ditandai',
-	'SELECT_SORT_METHOD'	=> 'Pilih cara urutan',
-	'SEND_AIM_MESSAGE'		=> 'Kirim pesan AIM',
-	'SEND_ICQ_MESSAGE'		=> 'Kirim pesan ICQ',
-	'SEND_IM'				=> 'Perpesanan singkat',
-	'SEND_JABBER_MESSAGE'	=> 'Kirim pesan Jabber',
-	'SEND_MESSAGE'			=> 'Pesan',
-	'SEND_MSNM_MESSAGE'		=> 'Kirim pesan MSNM/WLM',
-	'SEND_YIM_MESSAGE'		=> 'Kirim pesan YIM',
-		
-	'SORT_EMAIL'			=> 'E-mail',
-	'SORT_LAST_ACTIVE'		=> 'Terakhir aktif',
-	'SORT_POST_COUNT'		=> 'Jumlah post',
-	
-	'USERNAME_BEGINS_WITH'	=> 'Nama pengguna yang dimulai dengan',
-	'USER_ADMIN'			=> 'Admin',
-	'USER_BAN'				=> 'Larang pengguna',
-	'USER_FORUM'			=> 'Statistik pengguna',
-	'USER_ONLINE'			=> 'Online',
-	'USER_PRESENCE'			=> 'kehadiran pengguna',
-	'USER_LAST_REMINDED'	=> array(
-		0		=> 'Tidak ada pengingat yang dikirim saat ini',
-		1		=> '%1$d pengingat dikirim<br />» %2$s',
+	'LAST_ACTIVE'				=> 'Last active',
+	'LESS_THAN'					=> 'Less than',
+	'LIST_USERS'				=> array(
+		1	=> '%d user',
+		2	=> '%d users',
 	),
+	'LOGIN_EXPLAIN_TEAM'		=> 'The board requires you to be registered and logged in to view the team listing.',
+	'LOGIN_EXPLAIN_MEMBERLIST'	=> 'The board requires you to be registered and logged in to access the memberlist.',
+	'LOGIN_EXPLAIN_SEARCHUSER'	=> 'The board requires you to be registered and logged in to search users.',
+	'LOGIN_EXPLAIN_VIEWPROFILE'	=> 'The board requires you to be registered and logged in to view profiles.',
 
-	'VIEWING_PROFILE'		=> 'Lihat profile - %s',
-	'VISITED'				=> 'Kunjungan terakhir',
+	'MANAGE_GROUP'			=> 'Manage Group',
+	'MORE_THAN'				=> 'More than',
 
-	'WWW'					=> 'Website',
+	'NO_CONTACT_FORM'		=> 'The board administrator contact form has been disabled.',
+	'NO_CONTACT_PAGE'		=> 'The board administrator contact page has been disabled.',
+	'NO_EMAIL'				=> 'You are not permitted to send email to this user.',
+	'NO_VIEW_USERS'			=> 'You are not authorised to view the member list or profiles.',
+
+	'ORDER'					=> 'Order',
+	'OTHER'					=> 'Other',
+
+	'POST_IP'				=> 'Posted from IP/domain',
+
+	'REAL_NAME'				=> 'Recipient name',
+	'RECIPIENT'				=> 'Recipient',
+	'REMOVE_FOE'			=> 'Remove foe',
+	'REMOVE_FRIEND'			=> 'Remove friend',
+
+	'SELECT_MARKED'			=> 'Select marked',
+	'SELECT_SORT_METHOD'	=> 'Select sort method',
+	'SENDER_EMAIL_ADDRESS'	=> 'Your email address',
+	'SENDER_NAME'			=> 'Your name',
+	'SEND_ICQ_MESSAGE'		=> 'Send ICQ message',
+	'SEND_IM'				=> 'Instant messaging',
+	'SEND_JABBER_MESSAGE'	=> 'Send Jabber message',
+	'SEND_MESSAGE'			=> 'Message',
+	'SEND_YIM_MESSAGE'		=> 'Send YIM message',
+	'SORT_EMAIL'			=> 'Email',
+	'SORT_LAST_ACTIVE'		=> 'Last active',
+	'SORT_POST_COUNT'		=> 'Post count',
+
+	'USERNAME_BEGINS_WITH'	=> 'Username begins with',
+	'USER_ADMIN'			=> 'Administer user',
+	'USER_BAN'				=> 'Banning',
+	'USER_FORUM'			=> 'User statistics',
+	'USER_LAST_REMINDED'	=> array(
+		0		=> 'No reminder sent at this time',
+		1		=> '%1$d reminder sent<br />» %2$s',
+		2		=> '%1$d reminder sent<br />» %2$s',
+	),
+	'USER_ONLINE'			=> 'Online',
+	'USER_PRESENCE'			=> 'Board presence',
+	'USERS_PER_PAGE'		=> 'Users per page',
+
+	'VIEWING_PROFILE'		=> 'Viewing profile - %s',
+	'VIEW_FACEBOOK_PROFILE'	=> 'View Facebook Profile',
+	'VIEW_SKYPE_PROFILE'	=> 'View Skype Profile',
+	'VIEW_TWITTER_PROFILE'	=> 'View Twitter Profile',
+	'VIEW_YOUTUBE_CHANNEL'	=> 'View YouTube Channel',
+	'VIEW_GOOGLEPLUS_PROFILE' => 'View Google+ Profile',
 ));
-
-?>

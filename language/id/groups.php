@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* group [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: groups.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -36,61 +37,59 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ALREADY_DEFAULT_GROUP'		=> 'Grup yang anda pilih sudah menjadi grup default anda.',
-	'ALREADY_IN_GROUP'			=> 'Anda sudah menjadi anggota dari grup yang dipilih.',
-	'ALREADY_IN_GROUP_PENDING'	=> 'Anda sudah meminta untuk bergabung dalam grup yang dipilih.',
+	'ALREADY_DEFAULT_GROUP'		=> 'The selected group is already your default group.',
+	'ALREADY_IN_GROUP'			=> 'You are already a member of the selected group.',
+	'ALREADY_IN_GROUP_PENDING'	=> 'You already requested joining the selected group.',
 
-	'CANNOT_JOIN_GROUP'			=> 'Anda tidak dapat bergabung dalam grup ini. Anda hanya dapat bergabung kedalam grup yang terbuka bebas.',
-	'CANNOT_RESIGN_GROUP'		=> 'anda tidak dapat berhenti dari grup ini. Anda hanya dapat berhenti dari grup yang terbuka bebas.',
-	'CHANGED_DEFAULT_GROUP'		=> 'Berhasil merubah default grup.',
+	'CANNOT_JOIN_GROUP'			=> 'You are not able to join this group. You are only able to join open and freely open groups.',
+	'CANNOT_RESIGN_GROUP'		=> 'You are not able to resign from this group. You are only able to resign from open and freely open groups.',
+	'CHANGED_DEFAULT_GROUP'		=> 'Successfully changed default group.',
 
-	'GROUP_AVATAR'						=> 'Avatar Grup',
-	'GROUP_CHANGE_DEFAULT'				=> 'Apakah anda yakin ingin mengubah keanggotaan default anda menjadi grup “%s”?',
-	'GROUP_CLOSED'						=> 'Tertutup',
-	'GROUP_DESC'						=> 'Keterangan grup',
-	'GROUP_HIDDEN'						=> 'Tersembunyi',
-	'GROUP_INFORMATION'					=> 'Informasi grup pengguna',
-	'GROUP_IS_CLOSED'					=> 'Ini adalah grup yang tertutup, anggota yang baru hanya dapat bergabung dengan undangan dari pimpinan grup.',
-	'GROUP_IS_FREE'						=> 'Ini adalah grup yang terbuka bebas, semua anggota yang baru akan disambut.',
-	'GROUP_IS_HIDDEN'					=> 'Ini adalah grup yang tersembunyi, hanya anggota dari grup ini yang dapat melihat keanggotaannya.',
-	'GROUP_IS_OPEN'						=> 'Ini adalah grup yang terbuka, anggota dapat bergabung.',
-	'GROUP_IS_SPECIAL'					=> 'Ini adalah grup spesial, grup spesial dikelola oleh administrator.',
-	'GROUP_JOIN'						=> 'Bergabung ke grup',
-	'GROUP_JOIN_CONFIRM'				=> 'apakah anda yakin ingin bergabung ke grup yang dipilih?',
-	'GROUP_JOIN_PENDING'				=> 'Minta untuk bergabung dengan grup',
-	'GROUP_JOIN_PENDING_CONFIRM'		=> 'Apakah anda yakin meminta untuk bergabung dengan grup yang dipilih?',
-	'GROUP_JOINED'						=> 'Berhasil digabungkan dengan grup yang dipilih.',
-	'GROUP_JOINED_PENDING'				=> 'Berhasil meminta keanggotaan grup. Mohon menunggu pimpinan grup untuk menyetujui keangotaan anda.',
-	'GROUP_LIST'						=> 'Pengaturan pengguna',
-	'GROUP_MEMBERS'						=> 'Anggota-angota grup',
-	'GROUP_NAME'						=> 'Nama grup',
-	'GROUP_OPEN'						=> 'Buka',
-	'GROUP_RANK'						=> 'Peringkat Grup',
-	'GROUP_RESIGN_MEMBERSHIP'			=> 'Berhenti dari keanggotaan grup',
-	'GROUP_RESIGN_MEMBERSHIP_CONFIRM'	=> 'Apakah anda yakin ingin menghentikan keanggotaan anda dari grup yang dipilih?',
-	'GROUP_RESIGN_PENDING'				=> 'Berhenti dari keanggotaan grup yang tertunda',
-	'GROUP_RESIGN_PENDING_CONFIRM'		=> 'Apakah anda yakin ingin menghentikan keanggotaan anda yang tertunda dari grup yang dipilih?',
-	'GROUP_RESIGNED_MEMBERSHIP'			=> 'Anda telah berhasil disingkirkan dari grup yang dipilih.',
-	'GROUP_RESIGNED_PENDING'			=> 'Keanggotaan anda yang tertunda telah berhasil disingkirkan dari grup yang dipilih.',
-	'GROUP_TYPE'						=> 'Jenis grup',
-	'GROUP_UNDISCLOSED'					=> 'Grup yang tersembunyi',
-	'FORUM_UNDISCLOSED'					=> 'Memoderat forum yang tersembunyi',
+	'GROUP_AVATAR'						=> 'Group avatar',
+	'GROUP_CHANGE_DEFAULT'				=> 'Are you sure you want to change your default membership to the group “%s”?',
+	'GROUP_CLOSED'						=> 'Closed',
+	'GROUP_DESC'						=> 'Group description',
+	'GROUP_HIDDEN'						=> 'Hidden',
+	'GROUP_INFORMATION'					=> 'Usergroup information',
+	'GROUP_IS_CLOSED'					=> 'This is a closed group, new members can only join upon invitation of a group leader.',
+	'GROUP_IS_FREE'						=> 'This is a freely open group, all new members are welcome.',
+	'GROUP_IS_HIDDEN'					=> 'This is a hidden group, only members of this group can view its membership.',
+	'GROUP_IS_OPEN'						=> 'This is an open group, members can apply to join.',
+	'GROUP_IS_SPECIAL'					=> 'This is a special group, special groups are managed by the board administrators.',
+	'GROUP_JOIN'						=> 'Join group',
+	'GROUP_JOIN_CONFIRM'				=> 'Are you sure you want to join the selected group?',
+	'GROUP_JOIN_PENDING'				=> 'Request to join group',
+	'GROUP_JOIN_PENDING_CONFIRM'		=> 'Are you sure you want to request joining the selected group?',
+	'GROUP_JOINED'						=> 'Successfully joined selected group.',
+	'GROUP_JOINED_PENDING'				=> 'Successfully requested group membership. Please wait for a group leader to approve your membership.',
+	'GROUP_LIST'						=> 'Manage users',
+	'GROUP_MEMBERS'						=> 'Group members',
+	'GROUP_NAME'						=> 'Group name',
+	'GROUP_OPEN'						=> 'Open',
+	'GROUP_RANK'						=> 'Group rank',
+	'GROUP_RESIGN_MEMBERSHIP'			=> 'Resign group membership',
+	'GROUP_RESIGN_MEMBERSHIP_CONFIRM'	=> 'Are you sure you want to resign your membership from the selected group?',
+	'GROUP_RESIGN_PENDING'				=> 'Resign a pending group membership',
+	'GROUP_RESIGN_PENDING_CONFIRM'		=> 'Are you sure you want to resign your pending membership from the selected group?',
+	'GROUP_RESIGNED_MEMBERSHIP'			=> 'You were successfully removed from the selected group.',
+	'GROUP_RESIGNED_PENDING'			=> 'Your pending membership was successfully removed from the selected group.',
+	'GROUP_TYPE'						=> 'Group type',
+	'GROUP_UNDISCLOSED'					=> 'Hidden group',
+	'FORUM_UNDISCLOSED'					=> 'Moderating hidden forum(s)',
 
-	'LOGIN_EXPLAIN_GROUP'	=> 'Anda harus masuk untuk dapat melihat keterangan grup ini.',
+	'LOGIN_EXPLAIN_GROUP'	=> 'You need to login to view group details.',
 
-	'NO_LEADERS'					=> 'Anda bukan pimpinan dari grup manapun.',
-	'NOT_LEADER_OF_GROUP'			=> 'Operasi yang dilakukan tidak dapat diterapkan karena anda bukan pimpinan grup dari grup yang dipilih.',
-	'NOT_MEMBER_OF_GROUP'			=> 'Operasi yang dilakukan tidak dapat diterapkan karena anda bukan anggota dari grup yang dipilih ataupun keanggotaan anda belum disetujui.',
-	'NOT_RESIGN_FROM_DEFAULT_GROUP'	=> 'Anda tidak diperkenankan untuk berhenti dari grup default anda.',
-	
-	'PRIMARY_GROUP'		=> 'Grup primer',
+	'NO_LEADERS'					=> 'You are not a leader of any group.',
+	'NOT_LEADER_OF_GROUP'			=> 'The requested operation cannot be taken because you are not a leader of the selected group.',
+	'NOT_MEMBER_OF_GROUP'			=> 'The requested operation cannot be taken because you are not a member of the selected group or your membership has not been approved yet.',
+	'NOT_RESIGN_FROM_DEFAULT_GROUP'	=> 'You are not allowed to resign from your default group.',
 
-	'REMOVE_SELECTED'		=> 'Singkirkan yang dipilih',
+	'PRIMARY_GROUP'		=> 'Primary group',
 
-	'USER_GROUP_CHANGE'			=> 'Dari grup “%1$s” ke “%2$s”',
-	'USER_GROUP_DEMOTE'			=> 'Turunkan pangkat pempinan',
-	'USER_GROUP_DEMOTE_CONFIRM'	=> 'Apakah anda yakin ingin menurunkan pangkat pempinan grup dari grup yang dipilih?',
-	'USER_GROUP_DEMOTED'		=> 'Berhasil menurunkan pangkat pempinan anda.',
+	'REMOVE_SELECTED'		=> 'Remove selected',
+
+	'USER_GROUP_CHANGE'			=> 'From “%1$s” group to “%2$s”',
+	'USER_GROUP_DEMOTE'			=> 'Demote leadership',
+	'USER_GROUP_DEMOTE_CONFIRM'	=> 'Are you sure you want to demote as group leader from the selected group?',
+	'USER_GROUP_DEMOTED'		=> 'Successfully demoted your leadership.',
 ));
-
-?>

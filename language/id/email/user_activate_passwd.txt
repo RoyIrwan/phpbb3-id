@@ -1,17 +1,17 @@
-Subject: Pengaktifan kata sandi yang baru
+Subject: New password activation
 
-Hallo {USERNAME}
+Hello {USERNAME}
 
-Anda menerima pemberitahuan ini karena anda telah (atau seseorang yang menganggap dirinya adalah anda) telah meminta sebuah kata sandi yang baru untuk account anda di "{SITENAME}". Jika anda tidak meminta pemberitahuan ini, mohon diabaikan saja, dan jika anda tetap menerima pemberitahuan ini silahkan menghubungi administrator.
+You are receiving this notification because you have (or someone pretending to be you has) requested a new password be sent for your account on "{SITENAME}". If you did not request this notification then please ignore it, if you keep receiving it please contact the board administrator.
 
-Untuk menggunakan kata sandi yang baru anda harus mengaktifkannya. Untuk mengaktifkan silahkan klik link yang diberikan di bawah ini.
+To use the new password you need to activate it. To do this click the link provided below.
 
 {U_ACTIVATE}
 
-Jika berhasil, maka anda akan dapat masuk menggunakan kata sandi berikut ini:
+If successful you will be able to login using the following password:
 
-Kata Sandi: {PASSWORD}
+Password: {PASSWORD}
 
-Tentunya anda dapat mengubah kata sandi tersebut melalui halaman profil. Jika anda mengalami kesulitan, silahkan menghubungi administrator.
+You can of course change this password yourself via the profile page. If you have any difficulties please contact the board administrator.
 
 {EMAIL_SIG}

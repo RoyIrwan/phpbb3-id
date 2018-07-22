@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* acp_moduls [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: modules.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -36,49 +37,47 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ACP_MODULE_MANAGEMENT_EXPLAIN'	=> 'Di halaman ini anda dapat mengatur semua jenis modul. Mohon diingat bahwa Papan Pengaturan Administrator memiliki tiga tingkat struktur menu (Kategori -> Kategori -> Modul) dimana yang lain memiliki dua tingkat struktur menu (Kategori -> Modul) yang harus dijaga. Mohon agar berhati-hati karena anda dapat mengunci diri sendiri jika anda menonaktifkan ataupun menghapus modul-modul yang digunakan untuk manajemen.',
-	'ADD_MODULE'					=> 'Tambah modul',
-	'ADD_MODULE_CONFIRM'			=> 'Apakah anda yakin ingin menambahkan modul yang dipilih dengan mode yang digunakan?',
-	'ADD_MODULE_TITLE'				=> 'Tambahkan modul',
+	'ACP_MODULE_MANAGEMENT_EXPLAIN'	=> 'Here you are able to manage all kind of modules. Please note that the ACP has a three-level menu structure (Category -> Category -> Module) whereby the others having a two-level menu structure (Category -> Module) which must be kept. Please also be aware that you may lock out yourself if you disable or delete the modules responsible for the module management itself.',
+	'ADD_MODULE'					=> 'Add module',
+	'ADD_MODULE_CONFIRM'			=> 'Are you sure you want to add the selected module with the selected mode?',
+	'ADD_MODULE_TITLE'				=> 'Add module',
 
-	'CANNOT_REMOVE_MODULE'	=> 'Modul tidak dapat disingkirkan karena memiliki modul bawahan. Silahkan singkirkan atau pindahkan Please remove or move all children before performing this action.',
-	'CATEGORY'				=> 'Kategori',
-	'CHOOSE_MODE'			=> 'Pilih mode modul',
-	'CHOOSE_MODE_EXPLAIN'	=> 'Pilih mode modul yang digunakan.',
-	'CHOOSE_MODULE'			=> 'Pilih modul',
-	'CHOOSE_MODULE_EXPLAIN'	=> 'Pilih file yang dipanggil oleh modul ini.',
-	'CREATE_MODULE'			=> 'Buat modul baru',
+	'CANNOT_REMOVE_MODULE'	=> 'Unable to remove module, it has assigned children. Please remove or move all children before performing this action.',
+	'CATEGORY'				=> 'Category',
+	'CHOOSE_MODE'			=> 'Choose module mode',
+	'CHOOSE_MODE_EXPLAIN'	=> 'Choose the modules mode being used.',
+	'CHOOSE_MODULE'			=> 'Choose module',
+	'CHOOSE_MODULE_EXPLAIN'	=> 'Choose the file being called by this module.',
+	'CREATE_MODULE'			=> 'Create new module',
 
-	'DEACTIVATED_MODULE'	=> 'Penonaktifan modul',
-	'DELETE_MODULE'			=> 'Hapus modul',
-	'DELETE_MODULE_CONFIRM'	=> 'Apakah anda yakin ingin menyingkirkan modul ini?',
+	'DEACTIVATED_MODULE'	=> 'Deactivated module',
+	'DELETE_MODULE'			=> 'Delete module',
+	'DELETE_MODULE_CONFIRM'	=> 'Are you sure you want to remove this module?',
 
-	'EDIT_MODULE'			=> 'Ubah modul',
-	'EDIT_MODULE_EXPLAIN'	=> 'Di sini anda bisa memasukkan pengaturan modul yang spesifik.',
+	'EDIT_MODULE'			=> 'Edit module',
+	'EDIT_MODULE_EXPLAIN'	=> 'Here you are able to enter module specific settings.',
 
-	'HIDDEN_MODULE'			=> 'Modul tersembunyi',
+	'HIDDEN_MODULE'			=> 'Hidden module',
 
-	'MODULE'					=> 'Modul',
-	'MODULE_ADDED'				=> 'Modul telah berhsil ditambah.',
-	'MODULE_DELETED'			=> 'Modul berhasil disingkirkan.',
-	'MODULE_DISPLAYED'			=> 'Modul ditampilkan',
-	'MODULE_DISPLAYED_EXPLAIN'	=> 'Jika anda tidak ingin untuk menampilkan modul ini, tapi masih ingin menggunkannya, buat ini menjadi tidak.',
-	'MODULE_EDITED'				=> 'Modul berhasil diubah.',
-	'MODULE_ENABLED'			=> 'Modul diaktifkan',
-	'MODULE_LANGNAME'			=> 'Nama bahasa modul',
-	'MODULE_LANGNAME_EXPLAIN'	=> 'Masukkan nama modul yang ditampilkan. Gunakan bahasa jika nama menggunakan file bahasa.',
-	'MODULE_TYPE'				=> 'Tipe modul',
+	'MODULE'					=> 'Module',
+	'MODULE_ADDED'				=> 'Module successfully added.',
+	'MODULE_DELETED'			=> 'Module successfully removed.',
+	'MODULE_DISPLAYED'			=> 'Module displayed',
+	'MODULE_DISPLAYED_EXPLAIN'	=> 'If you do not wish to display this module, but want to use it, set this to no.',
+	'MODULE_EDITED'				=> 'Module successfully edited.',
+	'MODULE_ENABLED'			=> 'Module enabled',
+	'MODULE_LANGNAME'			=> 'Module language name',
+	'MODULE_LANGNAME_EXPLAIN'	=> 'Enter the displayed module name. Use language constant if name is served from language file.',
+	'MODULE_TYPE'				=> 'Module type',
 
-	'NO_CATEGORY_TO_MODULE'	=> 'Tidak dapat membalikkan kategori ke modul. Silahkan singkirkan/pindahkan semua anakan sebelum melakukan tindakan ini.',
-	'NO_MODULE'				=> 'Tidak ada modul ditemukan.',
-	'NO_MODULE_ID'			=> 'Tidak ada id modul yang ditentukan.',
-	'NO_MODULE_LANGNAME'	=> 'Tidak ada nama bahasa modul yang ditentukan.',
-	'NO_PARENT'				=> 'Tidak ada induk',
+	'NO_CATEGORY_TO_MODULE'	=> 'Unable to turn category into module. Please remove/move all children before performing this action.',
+	'NO_MODULE'				=> 'No module found.',
+	'NO_MODULE_ID'			=> 'No module id specified.',
+	'NO_MODULE_LANGNAME'	=> 'No module language name specified.',
+	'NO_PARENT'				=> 'No Parent',
 
-	'PARENT'				=> 'Induk',
-	'PARENT_NO_EXIST'		=> 'Tidak ada induk.',
+	'PARENT'				=> 'Parent',
+	'PARENT_NO_EXIST'		=> 'Parent does not exist.',
 
-	'SELECT_MODULE'			=> 'Pilih modul',
+	'SELECT_MODULE'			=> 'Select a module',
 ));
-
-?>

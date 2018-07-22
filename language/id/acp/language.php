@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* acp_language [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: language.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -36,67 +37,42 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ACP_FILES'						=> 'File-file bahasa admin',
-	'ACP_LANGUAGE_PACKS_EXPLAIN'	=> 'Di sini anda bisa menginstal/menyingkirkan file bahasa.',
+	'ACP_FILES'						=> 'Admin language files',
+	'ACP_LANGUAGE_PACKS_EXPLAIN'	=> 'Here you are able to install/remove language packs. The default language pack is marked with an asterisk (*).',
 
-	'EMAIL_FILES'			=> 'Template E-mail',
+	'DELETE_LANGUAGE_CONFIRM'		=> 'Are you sure you wish to delete “%s”?',
 
-	'FILE_CONTENTS'				=> 'Isi file',
-	'FILE_FROM_STORAGE'			=> 'File dari folder penyimpanan',
+	'INSTALLED_LANGUAGE_PACKS'		=> 'Installed language packs',
 
-	'HELP_FILES'				=> 'File-file pertolongan',
-
-	'INSTALLED_LANGUAGE_PACKS'	=> 'Paket bahasa yang diinstall',
-	'INVALID_LANGUAGE_PACK'		=> 'Paket bahasa yang dipilih sepertinya rusak. Silahkan Please periksa file bahasa tersebut dan upload kembali bila diperlukan.',
-	'INVALID_UPLOAD_METHOD'		=> 'Cara upload yang dipilih salah, silahkan pilih cara yang lain.',
-
-	'LANGUAGE_DETAILS_UPDATED'			=> 'Keterangan-keterangan bahasa telah berhasil diperbarui.',
-	'LANGUAGE_ENTRIES'					=> 'Catatan bahasa',
-	'LANGUAGE_ENTRIES_EXPLAIN'			=> 'Di sini anda dapat mengganti paket bahasa yang sudah ada atau yang sudah diterjemahkan.<br /><strong>Catatan:</strong> Sekali anda mengubah file bahasa, maka pengubahan tersebut akan disimpan dalam folder terpisah untuk download. Pengubahan tersebut tidak dpat dilihat oleh pengguna lain sebelum anda menimpa file asli ke workspace anda (dengan mengupload).',
-	'LANGUAGE_FILES'					=> 'File-file bahasa',
-	'LANGUAGE_KEY'						=> 'Tanda bahasa',
-	'LANGUAGE_PACK_ALREADY_INSTALLED'	=> 'Paket bahasa ini telah diinstal.',
-	'LANGUAGE_PACK_DELETED'				=> 'Paket bahasa <strong>%s</strong> telah berhasil disingkirkan. Semua pengguna yang memakai bahasa ini akan diubah menjadi bahasa default halaman.',
-	'LANGUAGE_PACK_DETAILS'				=> 'Keterangan paket bahasa',
-	'LANGUAGE_PACK_INSTALLED'			=> 'Paket bahasa <strong>%s</strong> telah berhasil diinstal.',
+	'LANGUAGE_DETAILS_UPDATED'			=> 'Language details successfully updated.',
+	'LANGUAGE_PACK_ALREADY_INSTALLED'	=> 'This language pack is already installed.',
+	'LANGUAGE_PACK_DELETED'				=> 'The language pack “%s” has been removed successfully. All users using this language have been reset to the board’s default language.',
+	'LANGUAGE_PACK_DETAILS'				=> 'Language pack details',
+	'LANGUAGE_PACK_INSTALLED'			=> 'The language pack “%s” has been successfully installed.',
+	'LANGUAGE_PACK_CPF_UPDATE'			=> 'The custom profile fields’ language strings were copied from the default language. Please change them if necessary.',
 	'LANGUAGE_PACK_ISO'					=> 'ISO',
-	'LANGUAGE_PACK_LOCALNAME'			=> 'Nama lokal',
-	'LANGUAGE_PACK_NAME'				=> 'Nama',
-	'LANGUAGE_PACK_NOT_EXIST'			=> 'Paket bahasa yang dipilih tidak ada.',
-	'LANGUAGE_PACK_USED_BY'				=> 'Digunakan oleh (termasuk robot)',
-	'LANGUAGE_VARIABLE'					=> 'Variabel bahasa',
-	'LANG_AUTHOR'						=> 'Pencipta paket bahasa',
-	'LANG_ENGLISH_NAME'					=> 'Nama dalam bahasa Inggris',
-	'LANG_ISO_CODE'						=> 'Kode ISO',
-	'LANG_LOCAL_NAME'					=> 'Nama lokal',
+	'LANGUAGE_PACK_LOCALNAME'			=> 'Local name',
+	'LANGUAGE_PACK_NAME'				=> 'Name',
+	'LANGUAGE_PACK_NOT_EXIST'			=> 'The selected language pack does not exist.',
+	'LANGUAGE_PACK_USED_BY'				=> 'Used by (including robots)',
+	'LANGUAGE_VARIABLE'					=> 'Language variable',
+	'LANG_AUTHOR'						=> 'Language pack author',
+	'LANG_ENGLISH_NAME'					=> 'English name',
+	'LANG_ISO_CODE'						=> 'ISO code',
+	'LANG_LOCAL_NAME'					=> 'Local name',
 
-	'MISSING_LANGUAGE_FILE'		=> 'File bahasa hilang: <strong style="color:red">%s</strong>',
-	'MISSING_LANG_VARIABLES'	=> 'Variable bahasa hilang',
-	'MODS_FILES'				=> 'File-file bahasa MOD',
+	'MISSING_LANG_FILES'		=> 'Missing language files',
+	'MISSING_LANG_VARIABLES'	=> 'Missing language variables',
 
-	'NO_FILE_SELECTED'				=> 'Anda belum menentukan file bahasa.',
-	'NO_LANG_ID'					=> 'Anda belum menentukan paket bahasa.',
-	'NO_REMOVE_DEFAULT_LANG'		=> 'Anda tidak dapat menyingkirkan pake bahasa default.<br />Jika anda ingin menyingkirkan paket bahasa ini, silahkan ubah bahasa default halaman terlebih dahulu.',
-	'NO_UNINSTALLED_LANGUAGE_PACKS'	=> 'Tidak ada paket bahasa yang diuninstal',
+	'NO_FILE_SELECTED'				=> 'You haven’t specified a language file.',
+	'NO_LANG_ID'					=> 'You haven’t specified a language pack.',
+	'NO_REMOVE_DEFAULT_LANG'		=> 'You are not able to remove the default language pack.<br />If you want to remove this language pack, change your board’s default language first.',
+	'NO_UNINSTALLED_LANGUAGE_PACKS'	=> 'No uninstalled language packs',
 
-	'REMOVE_FROM_STORAGE_FOLDER'		=> 'Singkirkan dari folder penyimpanan',
+	'THOSE_MISSING_LANG_FILES'			=> 'The following language files are missing from the “%s” language folder',
+	'THOSE_MISSING_LANG_VARIABLES'		=> 'The following language variables are missing from the “%s” language pack',
 
-	'SELECT_DOWNLOAD_FORMAT'	=> 'Pilih format download',
-	'SUBMIT_AND_DOWNLOAD'		=> 'Ajukan dan download file',
-	'SUBMIT_AND_UPLOAD'			=> 'Ajukan dan upload file',
+	'UNINSTALLED_LANGUAGE_PACKS'	=> 'Uninstalled language packs',
 
-	'THOSE_MISSING_LANG_FILES'			=> 'File bahasa berikut ini hilang dari %s folder bahasa',
-	'THOSE_MISSING_LANG_VARIABLES'		=> 'Variabel bahasa berikut ini hilang dari <strong>%s</strong> paket bahasa',
-
-	'UNINSTALLED_LANGUAGE_PACKS'	=> 'Paket bahasa diuninstal',
-
-	'UNABLE_TO_WRITE_FILE'		=> 'File tersebut tidak dapat ditulis ke %s.',
-	'UPLOAD_COMPLETED'			=> 'Upload telah berhasil.',
-	'UPLOAD_FAILED'				=> 'Upload telah gagal dengan alasan yang tidak diketahui. Anda perlu mengganti file tersebut secara manual.',
-	'UPLOAD_METHOD'				=> 'Metode upload',
-	'UPLOAD_SETTINGS'			=> 'Upload pengaturan',
-
-	'WRONG_LANGUAGE_FILE'		=> 'File bahasa yang dipilih salah.',
+	'BROWSE_LANGUAGE_PACKS_DATABASE'	=> 'Browse language packs database',
 ));
-
-?>

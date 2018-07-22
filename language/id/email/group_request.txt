@@ -1,9 +1,9 @@
-Subject: Permintaan untuk bergabung dengan grup anda telah dibuat
+Subject: A request to join your group has been made
 
-Yang terhormat, {USERNAME},
+Dear {USERNAME},
 
-Pengguna "{REQUEST_USERNAME}" telah meminta untuk bergabung dengan grup "{GROUP_NAME}" yang anda moderasi di "{SITENAME}".
-Untuk menyetujui atau menolak permintaan ini silahkan kunjungi link berikut ini:
+The user "{REQUEST_USERNAME}" has requested to join the group "{GROUP_NAME}" you moderate on "{SITENAME}".
+To approve or deny this request for group membership please visit the following link:
 
 {U_PENDING}
 

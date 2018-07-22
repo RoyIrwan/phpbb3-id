@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* acp_posting [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: posting.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -38,245 +39,253 @@ if (empty($lang) || !is_array($lang))
 // BBCodes
 // Note to translators: you can translate everything but what's between { and }
 $lang = array_merge($lang, array(
-	'ACP_BBCODES_EXPLAIN'		=> 'BBCode adalah implementasi dari HTML yang menawarkan kontrol untuk atau bagaimana sesuatu ditampilkan. Dari halaman ini anda dapat menambahkan, menyingkirkan dan mengubah BBCode tambahan.',
-	'ADD_BBCODE'				=> 'Tambahkan sebuah BBCode yang baru',
+	'ACP_BBCODES_EXPLAIN'		=> 'BBCode is a special implementation of HTML offering greater control over what and how something is displayed. From this page you can add, remove and edit custom BBCodes.',
+	'ADD_BBCODE'				=> 'Add a new BBCode',
 
-	'BBCODE_DANGER'				=> 'BBCode yang anda coba tambahkan sepertinya menggunakan sebuah token {TEXT} di dalam sebuah atribut HTML. Hal ini memungkinkan masalah keamanan XSS. Coba gunakan yang lebih terbatas lagi seperti {SIMPLETEXT} atau {INTTEXT}. Silahkan proses jika anda mengerti resiko yang akan dihadapi jika {TEXT} harus digunakan.',
-	'BBCODE_DANGER_PROCEED'		=> 'Proses', //'I understand the risk',
+	'BBCODE_DANGER'				=> 'The BBCode you are trying to add seems to use a {TEXT} token inside a HTML attribute. This is a possible XSS security issue. Try using the more restrictive {SIMPLETEXT} or {INTTEXT} types instead. Only proceed if you understand the risks involved and you consider the use of {TEXT} absolutely unavoidable.',
+	'BBCODE_DANGER_PROCEED'		=> 'Proceed', //'I understand the risk',
 
-	'BBCODE_ADDED'				=> 'BBCode berhasil ditambahkan.',
-	'BBCODE_EDITED'				=> 'BBCode berhasil diubah.',
-	'BBCODE_NOT_EXIST'			=> 'BBCode yang anda pilih tidak ada.',
-	'BBCODE_HELPLINE'			=> 'Baris bantuan',
-	'BBCODE_HELPLINE_EXPLAIN'	=> 'Field ini berisi teks mouse over dari BBCode.',
-	'BBCODE_HELPLINE_TEXT'		=> 'Teks garis bantu',
-	'BBCODE_HELPLINE_TOO_LONG'	=> 'Garis bantu yang anda masukkan terlalu panjang.',
+	'BBCODE_ADDED'				=> 'BBCode added successfully.',
+	'BBCODE_EDITED'				=> 'BBCode edited successfully.',
+	'BBCODE_DELETED'			=> 'The BBCode has been removed successfully.',
+	'BBCODE_NOT_EXIST'			=> 'The BBCode you selected does not exist.',
+	'BBCODE_HELPLINE'			=> 'Help line',
+	'BBCODE_HELPLINE_EXPLAIN'	=> 'This field contains the mouse over text of the BBCode.',
+	'BBCODE_HELPLINE_TEXT'		=> 'Help line text',
+	'BBCODE_HELPLINE_TOO_LONG'	=> 'The help line you entered is too long.',
 
-	'BBCODE_INVALID_TAG_NAME'	=> 'Nama tag BBCode yang anda masukkan sudah ada.',
-	'BBCODE_INVALID'			=> 'BBCode anda dibangun dengan bentuk yang salah.',
-	'BBCODE_OPEN_ENDED_TAG'		=> 'BBCode custom anda harus mengandung tag pembuka dan penutup.',
+	'BBCODE_INVALID_TAG_NAME'	=> 'The BBCode tag name that you selected already exists.',
+	'BBCODE_INVALID'			=> 'Your BBCode is constructed in an invalid form.',
+	'BBCODE_OPEN_ENDED_TAG'		=> 'Your custom BBCode must contain both an opening and a closing tag.',
 	'BBCODE_TAG'				=> 'Tag',
-	'BBCODE_TAG_TOO_LONG'		=> 'Nama tag yang anda pilih terlalu panjang.',
-	'BBCODE_TAG_DEF_TOO_LONG'	=> 'Defenisi tag yang anda masukkan terlalu panjang, silahkan kurangi defenisi tag anda.',
-	'BBCODE_USAGE'				=> 'Penggunaan BBCode',
+	'BBCODE_TAG_TOO_LONG'		=> 'The tag name you selected is too long.',
+	'BBCODE_TAG_DEF_TOO_LONG'	=> 'The tag definition that you have entered is too long, please shorten your tag definition.',
+	'BBCODE_USAGE'				=> 'BBCode usage',
 	'BBCODE_USAGE_EXAMPLE'		=> '[highlight={COLOR}]{TEXT}[/highlight]<br /><br />[font={SIMPLETEXT1}]{SIMPLETEXT2}[/font]',
-	'BBCODE_USAGE_EXPLAIN'		=> 'Di sini anda dapat menentukan bagaimana cara menggunakan BBCode. Gantikan semua input varible dengan tanda yang berhubungan (%slihat di bawah ini%s).',
+	'BBCODE_USAGE_EXPLAIN'		=> 'Here you define how to use the BBCode. Replace any variable input by the corresponding token (%ssee below%s).',
 
-	'EXAMPLE'						=> 'Contoh:',
-	'EXAMPLES'						=> 'Contoh:',
+	'EXAMPLE'						=> 'Example:',
+	'EXAMPLES'						=> 'Examples:',
 
-	'HTML_REPLACEMENT'				=> 'Penggantian HTML',
+	'HTML_REPLACEMENT'				=> 'HTML replacement',
 	'HTML_REPLACEMENT_EXAMPLE'		=> '&lt;span style="background-color: {COLOR};"&gt;{TEXT}&lt;/span&gt;<br /><br />&lt;span style="font-family: {SIMPLETEXT1};"&gt;{SIMPLETEXT2}&lt;/span&gt;',
-	'HTML_REPLACEMENT_EXPLAIN'		=> 'Di sini anda menentukan penggantian HTML defaultnya. Jangan lupa untuk meletakkan tanda yang anda gunakan diatas!',
+	'HTML_REPLACEMENT_EXPLAIN'		=> 'Here you define the default HTML replacement. Do not forget to put back tokens you used above!',
 
-	'TOKEN'					=> 'Tanda',
-	'TOKENS'				=> 'Tanda-tanda',
-	'TOKENS_EXPLAIN'		=> 'Tanda adalah placeholder untuk masukan pengguna. Masukan tersebut akan divalidasi jika cocok dengan defenisi yang berhubungan. Jika dibutuhkan, anda dapat menomorinya dengan menambahkan angka sebagai karakter terakhir di dalam tanda kurung, contoh {TEXT1}, {TEXT2}.<br /><br />Dalam penggantian HTML, anda juga dapat menggunakan string bahasa apapun yang ada pada direktori bahasa anda/ seperti ini: {L_<em>&lt;STRINGNAME&gt;</em>} dimana <em>&lt;STRINGNAME&gt;</em> adalah nama yang diterjemahkan yang ingin anda tambahkan. Sebagai contoh, {L_WROTE} akan ditampilkan sebagai &quot;wrote&quot; ataupun terjemahannya sesuai dengan tempat pengguna.<br /><br /><strong>Mohon dicatat bahwa hanya tanda yang diberikan di bawah ini yang bisa digunakan untuk custom BBCode.</strong>',
-	'TOKEN_DEFINITION'		=> 'Defenisi tanda',
-	'TOO_MANY_BBCODES'		=> 'Anda tidak bisa lagi membuat BBCode yang lain. Silahkan singkirkan satu atau lebih BBCode dan coba lagi.',
+	'TOKEN'					=> 'Token',
+	'TOKENS'				=> 'Tokens',
+	'TOKENS_EXPLAIN'		=> 'Tokens are placeholders for user input. The input will be validated only if it matches the corresponding definition. If needed, you can number them by adding a number as the last character between the braces, e.g. {TEXT1}, {TEXT2}.<br /><br />Within the HTML replacement you can also use any language string present in your language/ directory like this: {L_<em>&lt;STRINGNAME&gt;</em>} where <em>&lt;STRINGNAME&gt;</em> is the name of the translated string you want to add. For example, {L_WROTE} will be displayed as “wrote” or its translation according to user’s locale.<br /><br /><strong>Please note that only tokens listed below are able to be used within custom BBCodes.</strong>',
+	'TOKEN_DEFINITION'		=> 'What can it be?',
+	'TOO_MANY_BBCODES'		=> 'You cannot create any more BBCodes. Please remove one or more BBCodes then try again.',
 
 	'tokens'	=>	array(
-		'TEXT'			=> 'Semua teks, termasuk karakter asing, nomor, dsb… Sebaiknya anda jangan menggunakan tanda ini di tag HTML, lebih baik menggunakan IDENTIFIER atau SIMPLETEXT.',
-		'SIMPLETEXT'	=> 'Karakter baru abjad latin (A-Z), nomor, spasi, koma, titik, kurang, tambah, tanda sambung dan garis bawah',
-		'INTTEXT'		=> 'Karakter abjad Unicode, nomor, spasi, koma, titik, minus, plus, tanda penghubung, garis bawah and spasi/whitespace.',
-		'IDENTIFIER'	=> 'Karakter baru abjad latin (A-Z), nomor, tanda sambung dan garis bawah',
-		'NUMBER'		=> 'Semua nomor',
-		'EMAIL'			=> 'Sebuah alamat e-mail yang benar',
-		'URL'			=> 'Sebuah URL yang benar menggunakan semua protokol (http, ftp, dsb… tidak dapat digunakan untuk javascript exploits). Jika tidak diisi, &quot;http://&quot; merupakan awalan.',
-		'LOCAL_URL'		=> 'Sebuah URL lokal. URL tersebut harus The URL harus relatif terhadap halaman topik dan tidak dapat mengandung nama server ataupun protokol.',
-		'COLOR'			=> 'Sebuah warna HTML, juga dapat dalam bentuk numerik <samp>#FF1234</samp> atau <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-color">CSS colour keyword</a> seperti <samp>fuchsia</samp> atau <samp>InactiveBorder</samp>'
-	)
+		'TEXT'			=> 'Any text, including foreign characters, numbers, etc… You should not use this token in HTML tags. Instead try to use IDENTIFIER, INTTEXT or SIMPLETEXT.',
+		'SIMPLETEXT'	=> 'Characters from the latin alphabet (A-Z), numbers, spaces, commas, dots, minus, plus, hyphen and underscore',
+		'INTTEXT'		=> 'Unicode letter characters, numbers, spaces, commas, dots, minus, plus, hyphen, underscore and whitespaces.',
+		'IDENTIFIER'	=> 'Characters from the latin alphabet (A-Z), numbers, hyphen and underscore',
+		'NUMBER'		=> 'Any series of digits',
+		'EMAIL'			=> 'A valid email address',
+		'URL'			=> 'A valid URL using any protocol (http, ftp, etc… cannot be used for javascript exploits). If none is given, “http://” is prefixed to the string.',
+		'LOCAL_URL'		=> 'A local URL. The URL must be relative to the topic page and cannot contain a server name or protocol, as links are prefixed with “%s”',
+		'RELATIVE_URL'	=> 'A relative URL. You can use this to match parts of a URL, but be careful: a full URL is a valid relative URL. When you want to use relative URLs of your board, use the LOCAL_URL token.',
+		'COLOR'			=> 'A HTML colour, can be either in the numeric form <samp>#FF1234</samp> or a <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-color">CSS colour keyword</a> such as <samp>fuchsia</samp> or <samp>InactiveBorder</samp>',
+	),
 ));
 
 // Smilies and topic icons
 $lang = array_merge($lang, array(
-	'ACP_ICONS_EXPLAIN'		=> 'Dari halaman ini anda dapat, menyingkirkan dan mengubah ikon yang mungkin bisa ditambahkan pengguna ke topik atau post mereka. Pada dasarnya, ikon ini selanjutnya ditampilkan ke judul topik di daftar forum, atau subjek dari post di daftar topik. Anda juga dapat menginstal dan membuat paket ikon yang baru.',
-	'ACP_SMILIES_EXPLAIN'	=> 'Tanda senyuman atau tanda emosi pada dasarnya kecil, kadang dalam bentuk gambar animasi yang digunakan untuk menyampaikan emosi ataupun perasaan. Dari halam ini anda dapat menambahkan, menyingkirkan dan mengubah ikon emosi pengguna tersebut pada post dan pesan pribadi. Anda juga dapat menginstal dan membuat sebuah paket tanda senyuman.',
-	'ADD_SMILIES'			=> 'Tambahkan beberapa tanda senyuman',
-	'ADD_SMILEY_CODE'		=> 'Tambahkan tambahan kode senyuman',
-	'ADD_ICONS'				=> 'Tambahkan beberap ikon',
-	'AFTER_ICONS'			=> 'Setelah %s',
-	'AFTER_SMILIES'			=> 'Setelah %s',
+	'ACP_ICONS_EXPLAIN'		=> 'From this page you can add, remove and edit the icons users may add to their topics or posts. These icons are generally displayed next to topic titles on the forum listing, or the post subjects in topic listings. You can also install and create new packages of icons.',
+	'ACP_SMILIES_EXPLAIN'	=> 'Smilies or emoticons are typically small, sometimes animated images used to convey an emotion or feeling. From this page you can add, remove and edit the emoticons users can use in their posts and private messages. You can also install and create new packages of smilies.',
+	'ADD_SMILIES'			=> 'Add multiple smilies',
+	'ADD_SMILEY_CODE'		=> 'Add additional smiley code',
+	'ADD_ICONS'				=> 'Add multiple icons',
+	'AFTER_ICONS'			=> 'After %s',
+	'AFTER_SMILIES'			=> 'After %s',
 
-	'CODE'						=> 'Kode',
-	'CURRENT_ICONS'				=> 'Ikon sekarang',
-	'CURRENT_ICONS_EXPLAIN'		=> 'Pilih tindakan apa yang ingin dilakukan terhadap ikon yang telah terinstal.',
-	'CURRENT_SMILIES'			=> 'Tanda senyuman sekarang',
-	'CURRENT_SMILIES_EXPLAIN'	=> 'Pilih tindakan apa yang ingin dilakukan terhadap tanda senyuman yang telah terinstal.',
+	'CODE'						=> 'Code',
+	'CURRENT_ICONS'				=> 'Current icons',
+	'CURRENT_ICONS_EXPLAIN'		=> 'Choose what to do with the currently installed icons.',
+	'CURRENT_SMILIES'			=> 'Current smilies',
+	'CURRENT_SMILIES_EXPLAIN'	=> 'Choose what to do with the currently installed smilies.',
 
-	'DISPLAY_ON_POSTING'		=> 'Tampilkan di halaman posting',
-	'DISPLAY_POSTING'			=> 'Pada halaman posting',
-	'DISPLAY_POSTING_NO'		=> 'Tidak pada halaman posting',
+	'DISPLAY_ON_POSTING'		=> 'Display on posting page',
+	'DISPLAY_POSTING'			=> 'On posting page',
+	'DISPLAY_POSTING_NO'		=> 'Not on posting page',
 
+	'EDIT_ICONS'				=> 'Edit icons',
+	'EDIT_SMILIES'				=> 'Edit smilies',
+	'EMOTION'					=> 'Emotion',
+	'EXPORT_ICONS'				=> 'Export and download icons.pak',
+	'EXPORT_ICONS_EXPLAIN'		=> '%sOn clicking this link, the configuration for your installed icons will be packaged into <samp>icons.pak</samp> which once downloaded can be used to create a <samp>.zip</samp> or <samp>.tgz</samp> file containing all of your icons plus this <samp>icons.pak</samp> configuration file%s.',
+	'EXPORT_SMILIES'			=> 'Export and download smilies.pak',
+	'EXPORT_SMILIES_EXPLAIN'	=> '%sOn clicking this link, the configuration for your installed smilies will be packaged into <samp>smilies.pak</samp> which once downloaded can be used to create a <samp>.zip</samp> or <samp>.tgz</samp> file containing all of your smilies plus this <samp>smilies.pak</samp> configuration file%s.',
 
+	'FIRST'			=> 'First',
 
-	'EDIT_ICONS'				=> 'Ubah ikon',
-	'EDIT_SMILIES'				=> 'Ubah tanda senyuman',
-	'EMOTION'					=> 'Emosi',
-	'EXPORT_ICONS'				=> 'Ekspor dan download icons.pak',
-	'EXPORT_ICONS_EXPLAIN'		=> '%sDengan mengklik link ini, konfigurasi untuk ikon anda yang terinstal akan dikemas menjadi <samp>icons.pak</samp> yang bisa digunakan untuk membuat sebuah file <samp>.zip</samp> atau <samp>.tgz</samp> yang mengandung semua ikon anda ditambah file konfigurasi <samp>icons.pak</samp> ini%s.',
-	'EXPORT_SMILIES'			=> 'Ekspor dan download icons.pak',
-	'EXPORT_SMILIES_EXPLAIN'	=> '%sDengan mengklik link ini, konfigurasi untuk tanda senyuman anda yang terinstal akan dikemas menjadi <samp>smilies.pak</samp> yang bisa digunakan untuk membuat sebuah file <samp>.zip</samp> atatu <samp>.tgz</samp> yang mengandung semua ikon anda ditambah file konfigurasi <samp>smilies.pak</samp> ini%s.',
+	'ICONS_ADD'				=> 'Add a new icon',
+	'ICONS_ADDED'			=> array(
+		0	=> 'No icons were added.',
+		1	=> 'The icon has been added successfully.',
+		2	=> 'The icons have been added successfully.',
+	),
+	'ICONS_CONFIG'			=> 'Icon configuration',
+	'ICONS_DELETED'			=> 'The icon has been removed successfully.',
+	'ICONS_EDIT'			=> 'Edit icon',
+	'ICONS_EDITED'			=> array(
+		0	=> 'No icons were updated.',
+		1	=> 'The icon has been updated successfully.',
+		2	=> 'The icons have been updated successfully.',
+	),
+	'ICONS_HEIGHT'			=> 'Icon height',
+	'ICONS_IMAGE'			=> 'Icon image',
+	'ICONS_IMPORTED'		=> 'The icons pack has been installed successfully.',
+	'ICONS_IMPORT_SUCCESS'	=> 'The icons pack was imported successfully.',
+	'ICONS_LOCATION'		=> 'Icon location',
+	'ICONS_NOT_DISPLAYED'	=> 'The following icons are not displayed on the posting page',
+	'ICONS_ORDER'			=> 'Icon order',
+	'ICONS_URL'				=> 'Icon image file',
+	'ICONS_WIDTH'			=> 'Icon width',
+	'IMPORT_ICONS'			=> 'Install icons package',
+	'IMPORT_SMILIES'		=> 'Install smilies package',
 
-	'FIRST'			=> 'Pertama',
+	'KEEP_ALL'			=> 'Keep all',
 
-	'ICONS_ADD'				=> 'Tambahkan ikon baru',
-	'ICONS_NONE_ADDED'		=> 'Tidak ada ikon yang ditambahkan.',
-	'ICONS_ONE_ADDED'		=> 'Ikon tersebut telah berhasil ditambahkan.',
-	'ICONS_ADDED'			=> 'Ikon tersebut telah berhasil ditambahkan.',
-	'ICONS_CONFIG'			=> 'Konfigurasi ikon',
-	'ICONS_DELETED'			=> 'Ikon tersebut telah berhasil disingkirkan.',
-	'ICONS_EDIT'			=> 'Ubah ikon',
-	'ICONS_ONE_EDITED'		=> 'Ikon tersebut telah berhasil diubah.',
-	'ICONS_NONE_EDITED'		=> 'Tidak ada ikon yang diperbarui.',
-	'ICONS_EDITED'			=> 'Ikon tersebut telah berhasil diperbarui.',
-	'ICONS_HEIGHT'			=> 'Tinggi ikon',
-	'ICONS_IMAGE'			=> 'Gambar ikon',
-	'ICONS_IMPORTED'		=> 'Paket ikon telah berhasil diinstal.',
-	'ICONS_IMPORT_SUCCESS'	=> 'Paket ikon telah berhasil diimport.',
-	'ICONS_LOCATION'		=> 'Lokasi ikon',
-	'ICONS_NOT_DISPLAYED'	=> 'Ikon-ikon berikut tidak ditampilkan pada halaman posting',
-	'ICONS_ORDER'			=> 'Susunan ikon',
-	'ICONS_URL'				=> 'File gambar ikon',
-	'ICONS_WIDTH'			=> 'Lebar ikon',
-	'IMPORT_ICONS'			=> 'Instal kemasan ikon',
-	'IMPORT_SMILIES'		=> 'Instal kemasan tanda senyuman',
+	'MASS_ADD_SMILIES'	=> 'Add multiple smilies',
 
-	'KEEP_ALL'			=> 'Simpan semua',
+	'NO_ICONS_ADD'		=> 'There are no icons available for adding.',
+	'NO_ICONS_EDIT'		=> 'There are no icons available for modifying.',
+	'NO_ICONS_EXPORT'	=> 'You have no icons with which to create a package.',
+	'NO_ICONS_PAK'		=> 'No icon packages found.',
+	'NO_SMILIES_ADD'	=> 'There are no smilies available for adding.',
+	'NO_SMILIES_EDIT'	=> 'There are no smilies available for modifying.',
+	'NO_SMILIES_EXPORT'	=> 'You have no smilies with which to create a package.',
+	'NO_SMILIES_PAK'	=> 'No smiley packages found.',
 
-	'MASS_ADD_SMILIES'	=> 'Tambahkan beberapa tanda senyuman',
+	'PAK_FILE_NOT_READABLE'		=> 'Could not read <samp>.pak</samp> file.',
 
-	'NO_ICONS_ADD'		=> 'Tidak ada ikon yang tersedia untuk ditambahkan.',
-	'NO_ICONS_EDIT'		=> 'Tidak ada ikon yang tersedia untuk dimodifikasikan.',
-	'NO_ICONS_EXPORT'	=> 'Anda tidak memiliki ikon untuk membuat sebuah paket.',
-	'NO_ICONS_PAK'		=> 'Tidak ada paket ikon ditemukan.',
-	'NO_SMILIES_ADD'	=> 'Tidak ada tanda senyuman yang tersedia untuk ditambahkan.',
-	'NO_SMILIES_EDIT'	=> 'Tidak ada tanda senyuman yang tersedia untuk diubah.',
-	'NO_SMILIES_EXPORT'	=> 'Anda tidak memiliki tanda senyuman untuk membuat paket.',
-	'NO_SMILIES_PAK'	=> 'Tidak ada paket tanda senyuman ditemukan.',
+	'REPLACE_MATCHES'	=> 'Replace matches',
 
-	'PAK_FILE_NOT_READABLE'		=> 'Tidak dapat membaca file <samp>.pak</samp>.',
+	'SELECT_PACKAGE'			=> 'Select a package file',
+	'SMILIES_ADD'				=> 'Add a new smiley',
+	'SMILIES_ADDED'				=> array(
+		0	=> 'No smilies were added.',
+		1	=> 'The smiley has been added successfully.',
+		2	=> 'The smilies have been added successfully.',
+	),
+	'SMILIES_CODE'				=> 'Smiley code',
+	'SMILIES_CONFIG'			=> 'Smiley configuration',
+	'SMILIES_DELETED'			=> 'The smiley has been removed successfully.',
+	'SMILIES_EDIT'				=> 'Edit smiley',
+	'SMILIE_NO_CODE'			=> 'The smiley “%s” was ignored, as there was no code entered.',
+	'SMILIE_NO_EMOTION'			=> 'The smiley “%s” was ignored, as there was no emotion entered.',
+	'SMILIE_NO_FILE'			=> 'The smiley “%s” was ignored, as the file is missing.',
+	'SMILIES_EDITED'			=> array(
+		0	=> 'No smilies were updated.',
+		1	=> 'The smiley has been updated successfully.',
+		2	=> 'The smilies have been updated successfully.',
+	),
+	'SMILIES_EMOTION'			=> 'Emotion',
+	'SMILIES_HEIGHT'			=> 'Smiley height',
+	'SMILIES_IMAGE'				=> 'Smiley image',
+	'SMILIES_IMPORTED'			=> 'The smilies pack has been installed successfully.',
+	'SMILIES_IMPORT_SUCCESS'	=> 'The smilies pack was imported successfully.',
+	'SMILIES_LOCATION'			=> 'Smiley location',
+	'SMILIES_NOT_DISPLAYED'		=> 'The following smilies are not displayed on the posting page',
+	'SMILIES_ORDER'				=> 'Smiley order',
+	'SMILIES_URL'				=> 'Smiley image file',
+	'SMILIES_WIDTH'				=> 'Smiley width',
 
-	'REPLACE_MATCHES'	=> 'Gantikan yang sama',
+	'TOO_MANY_SMILIES'			=> array(
+		1	=> 'Limit of %d smiley reached.',
+		2	=> 'Limit of %d smilies reached.',
+	),
 
-	'SELECT_PACKAGE'			=> 'Pilih sebuah paket file',
-	'SMILIES_ADD'				=> 'Tambahkan sebuah tanda senyuman yang baru',
-	'SMILIES_NONE_ADDED'		=> 'Tidak ada tanda senyuman yang ditambahkan.',
-	'SMILIES_ONE_ADDED'			=> 'Tanda senyuman telah berhasil ditambahkan.',
-	'SMILIES_ADDED'				=> 'Tanda senyuman telah berhasil ditambahkan.',
-	'SMILIES_CODE'				=> 'Kode tanda senyuman',
-	'SMILIES_CONFIG'			=> 'Konfigurasi tanda senyuman',
-	'SMILIES_DELETED'			=> 'Tanda senyuman telah berhasil disingkirkan.',
-	'SMILIES_EDIT'				=> 'Ubah tanda senyuman',
-	'SMILIE_NO_CODE'			=> 'Tanda senyuman “%s”  dibaikan, karena tidak ada kode yang dimasukkan.',
-	'SMILIE_NO_EMOTION'			=> 'Tanda senyuman “%s” dibaikan, karena tidak ada tanda emosi yang dimasukkan.',
-	'SMILIE_NO_FILE'         	=> 'Tanda senyuman “%s” diabaikan, kerena berkas hilang.',
-	'SMILIES_NONE_EDITED'		=> 'Tidak ada tanda senyuman yang diperbarui.',
-	'SMILIES_ONE_EDITED'		=> 'Tanda senyuman telah berhasil diperbarui.',
-	'SMILIES_EDITED'			=> 'Tanda senyuman telah berhasil diperbarui.',
-	'SMILIES_EMOTION'			=> 'Tanda emosi',
-	'SMILIES_HEIGHT'			=> 'Tinggi tanda senyuman',
-	'SMILIES_IMAGE'				=> 'Gambar tanda senyuman',
-	'SMILIES_IMPORTED'			=> 'Paket tanda senyuman telah berhasil diinstal.',
-	'SMILIES_IMPORT_SUCCESS'	=> 'Paket tanda bahasa telah berhasil diimport.',
-	'SMILIES_LOCATION'			=> 'Lokasi tanda senyuman',
-	'SMILIES_NOT_DISPLAYED'		=> 'Tanda senyuman berikut ini tidak akan ditampilkan pada halaman posting',
-	'SMILIES_ORDER'				=> 'Susunan tanda senyuman',
-	'SMILIES_URL'				=> 'File gambar tanda senyuman',
-	'SMILIES_WIDTH'				=> 'Lebar tanda senyuman',
-
-	'TOO_MANY_SMILIES'			=> 'batas jumlah %d tanda senyuman tercapai.',
-
-	'WRONG_PAK_TYPE'	=> 'Paket yang ditentukan tidak mengandung data yang sesuai.',
+	'WRONG_PAK_TYPE'	=> 'The specified package does not contain the appropriate data.',
 ));
 
 // Word censors
 $lang = array_merge($lang, array(
-    'ACP_WORDS_EXPLAIN'      => 'Dari papan pengaturan ini anda dapat menambahkan, mengubah, dan menyingkirkan kata-kata yang secara otomatis akan disensor pada forum anda. People are still allowed to register with usernames containing these words. Wildcard (*) bisa diterima pada baris kata, contohnya: *coba* akan sama dengan kata percobaan, coba* akan sama dengan kata cobaan, *coba akan sama dengan kata dicoba.',
-	'ADD_WORD'				=> 'Tambahkan kata baru',
+	'ACP_WORDS_EXPLAIN'		=> 'From this control panel you can add, edit, and remove words that will be automatically censored on your forums. People are still allowed to register with usernames containing these words. Wildcards (*) are accepted in the word field, e.g. *test* will match detestable, test* would match testing, *test would match detest.',
+	'ADD_WORD'				=> 'Add new word',
 
-	'EDIT_WORD'		=> 'Ubah sensor kata',
-	'ENTER_WORD'	=> 'Anda harus memasukkan sebuah kata dan penggantinya.',
+	'EDIT_WORD'		=> 'Edit word censor',
+	'ENTER_WORD'	=> 'You must enter a word and its replacement.',
 
-	'NO_WORD'	=> 'Tidak ada kata yang dipilih untuk diubah.',
+	'NO_WORD'	=> 'No word selected for editing.',
 
-	'REPLACEMENT'	=> 'Penggantian',
+	'REPLACEMENT'	=> 'Replacement',
 
-	'UPDATE_WORD'	=> 'Pebaharui sensor kata',
+	'UPDATE_WORD'	=> 'Update word censor',
 
-	'WORD'				=> 'Kata',
-	'WORD_ADDED'		=> 'Sensor kata tersebut telah berhasil ditambahkan.',
-	'WORD_REMOVED'		=> 'Sensor kata tersebut telah berhasil disingkirkan.',
-	'WORD_UPDATED'		=> 'Sensor kata tersebut telah berhasil diperbarui.',
+	'WORD'				=> 'Word',
+	'WORD_ADDED'		=> 'The word censor has been successfully added.',
+	'WORD_REMOVED'		=> 'The selected word censor has been successfully removed.',
+	'WORD_UPDATED'		=> 'The selected word censor has been successfully updated.',
 ));
 
 // Ranks
 $lang = array_merge($lang, array(
-	'ACP_RANKS_EXPLAIN'		=> 'Di sini anda dapat menambah, mengubah, melihat dan menghapus ranking. Anda juga dapat membuat ranking spesial yang dapat diterapkan kepada pengguna melalui fasilitas pengaturan manajemen pengguna.',
-	'ADD_RANK'				=> 'Tambahkan ranking baru',
+	'ACP_RANKS_EXPLAIN'		=> 'Using this form you can add, edit, view and delete ranks. You can also create special ranks which can be applied to a user via the user management facility.',
+	'ADD_RANK'				=> 'Add new rank',
 
-	'MUST_SELECT_RANK'		=> 'Anda harus memilih sebuah ranking.',
+	'MUST_SELECT_RANK'		=> 'You must select a rank.',
 
-	'NO_ASSIGNED_RANK'		=> 'Tidak ada ranking spesian yang diterapkan.',
-	'NO_RANK_TITLE'			=> 'Anda belum menentukan sebuah nama untuk ranking tersebut.',
-	'NO_UPDATE_RANKS'		=> 'Ranking telah berhasil dihapus. Akan tetapi account pengguna yang memakai ranking ini tidak akan diperbarui. Anda perlu mereset secara manual ranking tersebut untuk account ini.',
+	'NO_ASSIGNED_RANK'		=> 'No special rank assigned.',
+	'NO_RANK_TITLE'			=> 'You haven’t specified a title for the rank.',
+	'NO_UPDATE_RANKS'		=> 'The rank was successfully deleted. However user accounts using this rank were not updated. You will need to manually reset the rank on these accounts.',
 
-	'RANK_ADDED'			=> 'Ranking berhasil ditambahkan.',
-	'RANK_IMAGE'			=> 'Gambar ranking',
-	'RANK_IMAGE_EXPLAIN'	=> 'Gunakan ini untuk menentukan sebuah gambar kecil yang diasosiasikan dengan ranking tersebut. Lokasinya relatif pada direktori induk phpBB.',
-	'RANK_IMAGE_IN_USE'		=> '(Masih Digunakan)',
-	'RANK_MINIMUM'			=> 'Post minimum',
-	'RANK_REMOVED'			=> 'Ranking tersebut berhasil ditambahkan.',
-	'RANK_SPECIAL'			=> 'Jadikan sebagai ranking spesial',
-	'RANK_TITLE'			=> 'Nama ranking',
-	'RANK_UPDATED'			=> 'Ranking telah berhasil diperbarui.',
+	'RANK_ADDED'			=> 'The rank was successfully added.',
+	'RANK_IMAGE'			=> 'Rank image',
+	'RANK_IMAGE_EXPLAIN'	=> 'Use this to define a small image associated with the rank. The path is relative to the root phpBB directory.',
+	'RANK_IMAGE_IN_USE'		=> '(In use)',
+	'RANK_MINIMUM'			=> 'Minimum posts',
+	'RANK_REMOVED'			=> 'The rank was successfully deleted.',
+	'RANK_SPECIAL'			=> 'Set as special rank',
+	'RANK_TITLE'			=> 'Rank title',
+	'RANK_UPDATED'			=> 'The rank was successfully updated.',
 ));
 
 // Disallow Usernames
 $lang = array_merge($lang, array(
-	'ACP_DISALLOW_EXPLAIN'	=> 'Di sini anda dapat mengatur nama pengguna yang yang tidak akan diijinkan untuk digunakan. Nama pengguna yang tidak diijinkan boleh mengandung karakter wildcard *. Mohon dicatat bahwa anda tidak bisa menentukan nama pengguna yang sudah didaftarkan, anda harus menghapusnya terlebih dahulu kemudian mengijinkan nama tersebut.',
-	'ADD_DISALLOW_EXPLAIN'	=> 'Anda bisa tidak mengijinkan nama pengguna yang memakai karakter wildcard * untuk mencocokkan beberapa karakter.',
-	'ADD_DISALLOW_TITLE'	=> 'Tambahkan nama pengguna yang tidak diijinkan',
+	'ACP_DISALLOW_EXPLAIN'	=> 'Here you can control usernames which will not be allowed to be used. Disallowed usernames are allowed to contain a wildcard character of *.',
+	'ADD_DISALLOW_EXPLAIN'	=> 'You can disallow a username using the wildcard character * to match any character.',
+	'ADD_DISALLOW_TITLE'	=> 'Add a disallowed username',
 
-	'DELETE_DISALLOW_EXPLAIN'	=> 'Anda bisa menyingkirkan nama pengguna yang tidak diijinkan dengan memilih nama pengguna tersebut dari daftar dan mengklik tombol ajukan.',
-	'DELETE_DISALLOW_TITLE'		=> 'Singkirkan semua nama pengguna yang tidak diijinkan',
-	'DISALLOWED_ALREADY'		=> 'Nama yang anda masukkan sudah tidak boleh digunakan lagi.',
+	'DELETE_DISALLOW_EXPLAIN'	=> 'You can remove a disallowed username by selecting the username from this list and clicking submit.',
+	'DELETE_DISALLOW_TITLE'		=> 'Remove a disallowed username',
+	'DISALLOWED_ALREADY'		=> 'The name you entered is already disallowed.',
+	'DISALLOWED_DELETED'		=> 'The disallowed username has been successfully removed.',
+	'DISALLOW_SUCCESSFUL'		=> 'The disallowed username has been successfully added.',
 
-	'DISALLOWED_DELETED'		=> 'Nama pengguna yang tidak dibolehkan tersebut telah berhasil disingkirkan.',
-	'DISALLOW_SUCCESSFUL'		=> 'Nama pengguna yang tidak dibolehkan tersebut telah berhasil ditambahkan.',
-
-	'NO_DISALLOWED'				=> 'Tidak ada nama pengguna yang dilarang',
-	'NO_USERNAME_SPECIFIED'		=> 'Anda belum memilih ataupun memasukkan nama pengguna.',
+	'NO_DISALLOWED'				=> 'No disallowed usernames',
+	'NO_USERNAME_SPECIFIED'		=> 'You haven’t selected or entered a username to operate with.',
 ));
 
 // Reasons
 $lang = array_merge($lang, array(
-	'ACP_REASONS_EXPLAIN'	=> 'Di sini anda dapat mengatur alasan yang digunakan pada laporan dan pesan penolakan pada saat menolak post. Ada satu alasan default (ditandai dengan a *) yang tidak bisa anda singkirkan, alasan ini biasanya digunakan untuk pesan khusus jika tidak ada satu pun pesan yang cocok.',
-	'ADD_NEW_REASON'		=> 'Tambahkan pesan baru',
-	'AVAILABLE_TITLES'		=> 'Judul alasan yang tersedia',
+	'ACP_REASONS_EXPLAIN'	=> 'Here you can manage the reasons used in reports and denial messages when disapproving posts. There is one default reason (marked with a *) you are not able to remove, this reason is normally used for custom messages if no reason fits.',
+	'ADD_NEW_REASON'		=> 'Add new reason',
+	'AVAILABLE_TITLES'		=> 'Available localised reason titles',
 
-	'IS_NOT_TRANSLATED'			=> 'Alasan <strong>belum</strong> dilokalkan.',
-	'IS_NOT_TRANSLATED_EXPLAIN'	=> 'Alasan <strong>belum</strong> dilokalkan. Jika anda tidak dapat memberikan bentuk pelokalan, tentukan kunci yang benar dari file bahasa di bagian laporan alasan.',
-	'IS_TRANSLATED'				=> 'Alasan sudah dilokalkan.',
-	'IS_TRANSLATED_EXPLAIN'		=> 'Alasan sudah dilokalkan. Jika judul yang anda masukkan di sini ditentukan dalam file bahasa di bagian pelaporan alasan, bentuk yang dilokalkan dari keterangan dan judul yang akan digunkan.',
+	'IS_NOT_TRANSLATED'			=> 'Reason has <strong>not</strong> been localised.',
+	'IS_NOT_TRANSLATED_EXPLAIN'	=> 'Reason has <strong>not</strong> been localised. If you want to provide the localised form, specify the correct key from the language files report reasons section.',
+	'IS_TRANSLATED'				=> 'Reason has been localised.',
+	'IS_TRANSLATED_EXPLAIN'		=> 'Reason has been localised. If the title you enter here is specified within the language files report reasons section, the localised form of the title and description will be used.',
 
-	'NO_REASON'					=> 'Alasan tidak dapat ditemukan.',
-	'NO_REASON_INFO'			=> 'Anda harus menentukan judul dan keterangan untuk alasan ini.',
-	'NO_REMOVE_DEFAULT_REASON'	=> 'Anda tidak dapat menyingkirkan alasan defaultnya “Lainnya”.',
+	'NO_REASON'					=> 'Reason could not be found.',
+	'NO_REASON_INFO'			=> 'You have to specify a title and a description for this reason.',
+	'NO_REMOVE_DEFAULT_REASON'	=> 'You are not able to remove the default reason “Other”.',
 
-	'REASON_ADD'				=> 'Tambahkan laporan/alasan penolakan',
-	'REASON_ADDED'				=> 'Laporan/alasan penolakan berhasil ditambahkan.',
-	'REASON_ALREADY_EXIST'		=> 'Sebuah alasan untuk judul ini sudah ada, silahkan masukkan judul yang lain untuk alasan ini.',
-	'REASON_DESCRIPTION'		=> 'Keterangan alasan',
-	'REASON_DESC_TRANSLATED'	=> 'Keterangan alasan yang ditampilkan',
-	'REASON_EDIT'				=> 'Ubah laporan/alasan penyangkalan',
-	'REASON_EDIT_EXPLAIN'		=> 'Di sini anda dapat menambahkan ataupun mengubah alasan. Jika alasan yang yang diterjemahlan ke versi lokal digunakan sebagai ganti keterangan yang digantikan di sini.',
-	'REASON_REMOVED'			=> 'Laporan/alasan penolakan berhasil disingkirkan.',
-	'REASON_TITLE'				=> 'Judul alasan',
-	'REASON_TITLE_TRANSLATED'	=> 'Judul alasan yang ditampilkan',
-	'REASON_UPDATED'			=> 'Laporan/alasan penolakan berhasil diperbarui.',
+	'REASON_ADD'				=> 'Add report/denial reason',
+	'REASON_ADDED'				=> 'Report/denial reason successfully added.',
+	'REASON_ALREADY_EXIST'		=> 'A reason with this title already exist, please enter another title for this reason.',
+	'REASON_DESCRIPTION'		=> 'Reason description',
+	'REASON_DESC_TRANSLATED'	=> 'Displayed reason description',
+	'REASON_EDIT'				=> 'Edit report/denial reason',
+	'REASON_EDIT_EXPLAIN'		=> 'Here you are able to add or edit a reason. If the reason is translated the localised version is used instead of the description entered here.',
+	'REASON_REMOVED'			=> 'Report/denial reason successfully removed.',
+	'REASON_TITLE'				=> 'Reason title',
+	'REASON_TITLE_TRANSLATED'	=> 'Displayed reason title',
+	'REASON_UPDATED'			=> 'Report/denial reason successfully updated.',
 
-	'USED_IN_REPORTS'		=> 'Digunakan dilaporan',
+	'USED_IN_REPORTS'		=> 'Used in reports',
 ));
-
-?>

@@ -1,8 +1,8 @@
-Subject: Pengaktifan kembali account anda
+Subject: Reactivate your account
 
-Hallo {USERNAME},
+Hello {USERNAME},
 
-Account anda di "{SITENAME}" telah dinonaktifkan, kemungkinan dikarenakan oleh perubahan yang dibuat pada profil anda. Untuk mengaktifkan account anda kembali, anda harus mengklik link dibawah ini:
+Your account on "{SITENAME}" has been deactivated, most likely due to changes made to your profile. In order to reactivate your account you must click on the link below:
 
 {U_ACTIVATE}
 

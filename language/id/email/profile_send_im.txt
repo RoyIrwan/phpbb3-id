@@ -1,13 +1,13 @@
 
-Hallo {TO_USERNAME},
+Hello {TO_USERNAME},
 
-Berikut ini adalah e-mail yang dikirimkan kepada anda oleh {FROM_USERNAME} melalui account anda di "{SITENAME}". Jika pesan ini dianggap sebagai spam, mengandung penghinaan ataupun komentar lain yang anda temukan sebagai penyerangan, silahkan hubungi webmaster dengan alamat berikut ini:
+The following is a message sent to you by {FROM_USERNAME} via your account on "{SITENAME}". If this message is spam, contains abusive or other comments you find offensive please contact the webmaster of the board at the following address:
 
 {BOARD_CONTACT}
 
-Mengikutsertakan keseluruhan e-mail. Mohon dicatat bahwa alamat pengirim telah diatur ke IM account halaman.
+Include this full message. Please note that the sender address has been set to the boards IM account.
 
-Pesan dikirim kepada anda sebagai berikut:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Message sent to you follows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 {MESSAGE}

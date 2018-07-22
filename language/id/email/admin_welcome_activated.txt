@@ -1,7 +1,9 @@
-Subject: Account Aktif
+Subject: Account activated
 
-Hallo {USERNAME},
+Hello {USERNAME},
 
-Account anda pada situs "{SITENAME}" telah diaktifkan sekarang, anda boleh masuk dengan menggunakan nama pengguna dan kata sandi yang anda terima pada e-mail sebelumnya.
+Your account on "{SITENAME}" has been activated by an administrator, you may login now.
+
+Your password has been securely stored in our database and cannot be retrieved. In the event that it is forgotten, you will be able to reset it using the email address associated with your account.
 
 {EMAIL_SIG}

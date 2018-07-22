@@ -1,11 +1,11 @@
-Subject: Pemberitahuan account nonaktif
+Subject: Inactive account reminder
 
-Hallo {USERNAME},
+Hello {USERNAME},
 
-Pada tanggal {REGISTER_DATE} anda mendaftarkan sebuah account baru di "{SITENAME}". Sampai saat ini anda belum mengaktifkan account ini sebagai salah satu syarat untuk bisa masuk. Untuk kenyamanan anda link aktifasi diulangi di bawah ini.
+This notification is a reminder that your account at "{SITENAME}", created on {REGISTER_DATE}, remains inactive. If you would like to activate this account, please visit the following link:
 
 {U_ACTIVATE}
 
-Terima kasih atas pendaftarannya di "{SITENAME}", kami menantikan partisipasi anda.
+Thank you for registering at "{SITENAME}", we look forward to your participation.
 
 {EMAIL_SIG}

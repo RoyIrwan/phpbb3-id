@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* acp_bots [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: bots.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -37,37 +38,35 @@ if (empty($lang) || !is_array($lang))
 
 // Bot settings
 $lang = array_merge($lang, array(
-	'BOTS'				=> 'Atur bot',
-	'BOTS_EXPLAIN'		=> '“Bot”, “spider” atau “crawler” adalah agen otomatis yang sering digunakan untuk mesin pencari untuk mengperbaharui database mereka. Mereka juga bisa bisa mengubah jumlah pengunjung , meningkatkan load dan kadang gagal untuk membuat indeks secara baik untuk halaman ini. Di sini anda dapat mengatur tipe spesial untuk mereka untuk menghindari permasalahan ini.',
-	'BOT_ACTIVATE'		=> 'Aktifkan',
-	'BOT_ACTIVE'		=> 'Bot aktif',
-	'BOT_ADD'			=> 'Tambah bot',
-	'BOT_ADDED'			=> 'Bot baru telah berhasil ditambahkan.',
-	'BOT_AGENT'			=> 'Agen bot',
-	'BOT_AGENT_EXPLAIN'	=> 'Nama bot yang cocok untuk agen browser, hanya setengah yang cocok juga diperbolehkan.',
-	'BOT_DEACTIVATE'	=> 'Nonaktif',
-	'BOT_DELETED'		=> 'Bot berhasil dihapus.',
-	'BOT_EDIT'			=> 'Ubah bot',
-	'BOT_EDIT_EXPLAIN'	=> 'Di sini anda dpat menambah atupun merubah sebuah bot yang sudah ada. Anda dapat menentukan nama agen dan/atau satu atau lebih alamat IP (atau dalam rentang alamat IP) untuk mencocokkan. Mohon berhati-hati pada saat menentukan nama agen atau alamat yang cocok. Anda dapat menentukan gaya dan bahasa yang akan dilihat bot tersebut ketika menggunakan halaman. Ini bisa mengurangi pamakain bandwith dengan menggunakan gaya yang sederhana untuk bot tersebut. Mohon diingat untuk mengatur perijinan yang sesuai untuk bot-bot yang spesial.',
-	'BOT_LANG'			=> 'Bahasa bot',
-	'BOT_LANG_EXPLAIN'	=> 'Bahasa yang ditampilkan untuk pada saat bot menggunakn halaman.',
-	'BOT_LAST_VISIT'	=> 'Kunjungan terakhir',
-	'BOT_IP'			=> 'Alamat IP bot',
-	'BOT_IP_EXPLAIN'	=> 'Sebagian nomor IP yang cocok diijinkan, atau sebagian alamat dengan tanda koma.',
-	'BOT_NAME'			=> 'Nama bot',
-	'BOT_NAME_EXPLAIN'	=> 'Gunakan hanya untuk informasi anda sendiri.',
-	'BOT_NAME_TAKEN'	=> 'Nama telah digunakan padap halaman anda dan tidak dapat digunakan untuk bot tersebut.',
-	'BOT_NEVER'			=> 'Tidak pernah',
-	'BOT_STYLE'			=> 'Gaya bot',
-	'BOT_STYLE_EXPLAIN'	=> 'Gaya yang digunakan bot untuk melihat halaman.',
-	'BOT_UPDATED'		=> 'Bot telah berhasil diperbarui.',
+	'BOTS'				=> 'Manage bots',
+	'BOTS_EXPLAIN'		=> '“Bots”, “spiders” or “crawlers” are automated agents most commonly used by search engines to update their databases. Since they rarely make proper use of sessions they can distort visitor counts, increase load and sometimes fail to index sites correctly. Here you can define a special type of user to overcome these problems.',
+	'BOT_ACTIVATE'		=> 'Activate',
+	'BOT_ACTIVE'		=> 'Bot active',
+	'BOT_ADD'			=> 'Add bot',
+	'BOT_ADDED'			=> 'New bot successfully added.',
+	'BOT_AGENT'			=> 'Agent match',
+	'BOT_AGENT_EXPLAIN'	=> 'A string matching the bots browser agent, partial matches are allowed.',
+	'BOT_DEACTIVATE'	=> 'Deactivate',
+	'BOT_DELETED'		=> 'Bot deleted successfully.',
+	'BOT_EDIT'			=> 'Edit bots',
+	'BOT_EDIT_EXPLAIN'	=> 'Here you can add or edit an existing bot entry. You may define an agent string and/or one or more IP addresses (or range of addresses) to match. Be careful when defining matching agent strings or addresses. You may also specify a style and language that the bot will view the board using. This may allow you to reduce bandwidth use by setting a simple style for bots. Remember to set appropriate permissions for the special Bot usergroup.',
+	'BOT_LANG'			=> 'Bot language',
+	'BOT_LANG_EXPLAIN'	=> 'The language presented to the bot as it browses.',
+	'BOT_LAST_VISIT'	=> 'Last visit',
+	'BOT_IP'			=> 'Bot IP address',
+	'BOT_IP_EXPLAIN'	=> 'Partial matches are allowed, separate addresses with a comma.',
+	'BOT_NAME'			=> 'Bot name',
+	'BOT_NAME_EXPLAIN'	=> 'Used only for your own information.',
+	'BOT_NAME_TAKEN'	=> 'The name is already in use on your board and can’t be used for the Bot.',
+	'BOT_NEVER'			=> 'Never',
+	'BOT_STYLE'			=> 'Bot style',
+	'BOT_STYLE_EXPLAIN'	=> 'The style used for the board by the bot.',
+	'BOT_UPDATED'		=> 'Existing bot updated successfully.',
 
-	'ERR_BOT_AGENT_MATCHES_UA'	=> 'Agen bot yang anda sediakan sama seperti bot yang sudah anda gunakan sebelumnya. Mohon diatur agen bot ini.',
-	'ERR_BOT_NO_IP'				=> 'Alamat IP yang anda masukkan tidak benar dan nama host tidak dapat digunakan.',
-	'ERR_BOT_NO_MATCHES'		=> 'Anda harus menyediakan palilng sedikitnya satu agen atau alamat IP untuk bot yang cocok.',
+	'ERR_BOT_AGENT_MATCHES_UA'	=> 'The bot agent you supplied is similar to the one you are currently using. Please adjust the agent for this bot.',
+	'ERR_BOT_NO_IP'				=> 'The IP addresses you supplied were invalid or the hostname could not be resolved.',
+	'ERR_BOT_NO_MATCHES'		=> 'You must supply at least one of an agent or IP for this bot match.',
 
-	'NO_BOT'		=> 'Tidak ada bot yang ditemukan dengan identitas tersebut.',
-	'NO_BOT_GROUP'	=> 'Tidak ditemukan grup bot spesial.',
+	'NO_BOT'		=> 'Found no bot with the specified ID.',
+	'NO_BOT_GROUP'	=> 'Unable to find special bot group.',
 ));
-
-?>

@@ -1,12 +1,13 @@
 <?php
 /**
 *
-* Pencarian [Bahasa Indonesia]
+* This file is part of the phpBB Forum Software package.
 *
-* @package language
-* @version $Id: search.php 2010 Sastra Manurung zourbuth@gmail.com
-* @copyright (c) 2010 Zourbuth Studio
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
 
@@ -36,72 +37,88 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ALL_AVAILABLE'			=> 'Semua tersedia',
-	'ALL_RESULTS'			=> 'Semua hasil',
+	'ALL_AVAILABLE'			=> 'All available',
+	'ALL_RESULTS'			=> 'All results',
 
-	'DISPLAY_RESULTS'		=> 'Tampilkan hasil sebagai',
+	'DISPLAY_RESULTS'		=> 'Display results as',
 
-	'FOUND_SEARCH_MATCH'		=> 'Ditemukan %d pencarian yang cocok',
-	'FOUND_SEARCH_MATCHES'		=> 'Ditemukan %d pencarian yang cocok',
-	'FOUND_MORE_SEARCH_MATCHES'	=> 'Ditemukan lebih dari %d pencarian yang cocok',
+	'FOUND_SEARCH_MATCHES'		=> array(
+		1	=> 'Search found %d match',
+		2	=> 'Search found %d matches',
+	),
+	'FOUND_MORE_SEARCH_MATCHES'		=> array(
+		1	=> 'Search found more than %d match',
+		2	=> 'Search found more than %d matches',
+	),
 
-	'GLOBAL'				=> 'Pengumuman Global',
+	'GLOBAL'				=> 'Global announcement',
 
-	'IGNORED_TERMS'			=> 'diabaikan',
-	'IGNORED_TERMS_EXPLAIN'	=> 'Kata-kata yang ada di query pencarian anda diabaikan, karena merupakan kata-kata yang terlalu umum: <strong>%s</strong>.',
+	'IGNORED_TERMS'			=> 'ignored',
+	'IGNORED_TERMS_EXPLAIN'	=> 'The following words in your search query were ignored because they are too common words: <strong>%s</strong>.',
 
-	'JUMP_TO_POST'			=> 'Lompat ke post',
+	'JUMP_TO_POST'			=> 'Jump to post',
 
-	'LOGIN_EXPLAIN_EGOSEARCH'	=> 'Halaman membutuhkan anda untuk didaftarkan dan dimasukkan untuk melihat post anda sendiri.',
-	'LOGIN_EXPLAIN_UNREADSEARCH'=> 'Halaman membutuhkan anda untuk didaftarkan dan dimasukkan untuk melihat post anda yang belum terbaca.',
-	
-	'LOGIN_EXPLAIN_NEWPOSTS'   => 'Papan membutuhkan anda untuk terdaftar dan masuk untuk melihat post baru sejak kunjungan terakhir anda.',
+	'LOGIN_EXPLAIN_EGOSEARCH'	=> 'The board requires you to be registered and logged in to view your own posts.',
+	'LOGIN_EXPLAIN_UNREADSEARCH'=> 'The board requires you to be registered and logged in to view your unread posts.',
+	'LOGIN_EXPLAIN_NEWPOSTS'	=> 'The board requires you to be registered and logged in to view new posts since your last visit.',
 
-    'MAX_NUM_SEARCH_KEYWORDS_REFINE'   => 'Kata-kata yang anda masukkan terlalu banyak. Silahkan masukkan dengan tidak lebih dari %1$d kata.',
+	'MAX_NUM_SEARCH_KEYWORDS_REFINE'	=> array(
+		1	=> 'You specified too many words to search for. Please do not enter more than %1$d word.',
+		2	=> 'You specified too many words to search for. Please do not enter more than %1$d words.',
+	),
 
-	'NO_KEYWORDS'			=> 'Anda harus menetukan paling sedikitnya satu kata untuk dicari. Setiap kata paling sedikitnya harus terdiri dari %d karakter dan tidak melebihi %d karakter termasuk wildcard.',
-	'NO_RECENT_SEARCHES'	=> 'Tidak ada pencarian yang dimuat akhir ini.',
-	'NO_SEARCH'				=> 'Maaf, anda tidak diijinkan untuk menggunakan sistem pencarian.',
-	'NO_SEARCH_RESULTS'		=> 'Pencarian tidak ditemukan.',
-	'NO_SEARCH_TIME'		=> 'Maaf, anda tidak bisa menggunakan pencarian saat ini. Silahkan coba lagi dalam beberapa menit.',
-    'NO_SEARCH_UNREADS'     => 'Maaf, pencarian untuk post tak terbaca sudah dinonaktifkan di halaman ini.',
-	'WORD_IN_NO_POST'		=> 'Tidak ada post yang ditemukan karena kata pencarian <strong>%s</strong> tidak ditemukan di post lainnya.',
-	'WORDS_IN_NO_POST'		=> 'Tidak ada post yang ditemukan karena kata-kata pencarian <strong>%s</strong> tidak ditemukan di post lainnya.',
+	'NO_KEYWORDS'			=> 'You must specify at least one word to search for. Each word must consist of at least %s and must not contain more than %s excluding wildcards.',
+	'NO_RECENT_SEARCHES'	=> 'No searches have been carried out recently.',
+	'NO_SEARCH'				=> 'Sorry but you are not permitted to use the search system.',
+	'NO_SEARCH_RESULTS'		=> 'No suitable matches were found.',
+	'NO_SEARCH_LOAD'		=> 'Sorry but you cannot use search at this time. The server has high load. Please try again later.',
+	'NO_SEARCH_TIME'		=> array(
+		1	=> 'Sorry but you cannot use search at this time. Please try again in %d second.',
+		2	=> 'Sorry but you cannot use search at this time. Please try again in %d seconds.',
+	),
+	'NO_SEARCH_UNREADS'		=> 'Sorry but searching for unread posts has been disabled on this board.',
+	'WORD_IN_NO_POST'		=> 'No posts were found because the word <strong>%s</strong> is not contained in any post.',
+	'WORDS_IN_NO_POST'		=> 'No posts were found because the words <strong>%s</strong> are not contained in any post.',
 
-	'POST_CHARACTERS'		=> 'karakter post',
+	'POST_CHARACTERS'		=> 'characters of posts',
+	'PHRASE_SEARCH_DISABLED'	=> 'Searching by exact phrase is not supported on this board.',
 
-	'RECENT_SEARCHES'		=> 'Pencarian-pencarian terakhir',
-	'RESULT_DAYS'			=> 'Batas hasil',
-	'RESULT_SORT'			=> 'Urutkan hasil dengan',
-	'RETURN_FIRST'			=> 'Kembali ke awal',
-	'RETURN_TO_SEARCH_ADV'	=> 'Kembali ke pencarian lanjutan',
+	'RECENT_SEARCHES'		=> 'Recent searches',
+	'RESULT_DAYS'			=> 'Limit results to previous',
+	'RESULT_SORT'			=> 'Sort results by',
+	'RETURN_FIRST'			=> 'Return first',
+	'GO_TO_SEARCH_ADV'	=> 'Go to advanced search',
 
-	'SEARCHED_FOR'				=> 'Cari istilah yang digunakan',
-	'SEARCHED_TOPIC'			=> 'Topik tercari',
-	'SEARCH_ALL_TERMS'			=> 'Cari semua istilah atau gunakan query yang dimasukan',
-	'SEARCH_ANY_TERMS'			=> 'Cari semua istilah',
-	'SEARCH_AUTHOR'				=> 'Cari pengarang',
-	'SEARCH_AUTHOR_EXPLAIN'		=> 'Gunakan * sebagai wildcard untuk pencocokan bagian.',
-	'SEARCH_FIRST_POST'			=> 'Hanya post pertama dari topik',
-	'SEARCH_FORUMS'				=> 'Cari di forum',
-	'SEARCH_FORUMS_EXPLAIN'		=> 'Pilih forum atau forum yang ingin anda cari. Subforum dicari secara otomatis, jika anda tidak memakai “cari subforum“ dibawah ini.',
-	'SEARCH_IN_RESULTS'			=> 'Cari ini',
-	'SEARCH_KEYWORDS_EXPLAIN'	=> 'Tempatkan <strong>+</strong> di depan kata yang akan dicari dan <strong>-</strong> di depan kata yang harus ditemukan. Letakkan sebuah daftar yang dipisahkan dengan <strong>|</strong> kedalam kurung jika hanya satu dari kata-kata tersebut yang harus dicari. Gunakan tanda * untuk mencari secara perbagian saja.',
-	'SEARCH_MSG_ONLY'			=> 'Hanya pesan teks',
-	'SEARCH_OPTIONS'			=> 'Pilihan-pilihan pencarian',
-	'SEARCH_QUERY'				=> 'Cari query',
-	'SEARCH_SUBFORUMS'			=> 'Cari subforum',
-	'SEARCH_TITLE_MSG'			=> 'Subjek post dan pesan teks',
-	'SEARCH_TITLE_ONLY'			=> 'Hanya judul topik',
-	'SEARCH_WITHIN'				=> 'Cari di dalam',
-	'SORT_ASCENDING'			=> 'Urutkan menaik',
-	'SORT_AUTHOR'				=> 'Pengarang',
-	'SORT_DESCENDING'			=> 'Urutkan menurun',
+	'SEARCHED_FOR'				=> 'Search term used',
+	'SEARCHED_TOPIC'			=> 'Searched topic',
+	'SEARCHED_QUERY'			=> 'Searched query',
+	'SEARCH_ALL_TERMS'			=> 'Search for all terms or use query as entered',
+	'SEARCH_ANY_TERMS'			=> 'Search for any terms',
+	'SEARCH_AUTHOR'				=> 'Search for author',
+	'SEARCH_AUTHOR_EXPLAIN'		=> 'Use * as a wildcard for partial matches.',
+	'SEARCH_FIRST_POST'			=> 'First post of topics only',
+	'SEARCH_FORUMS'				=> 'Search in forums',
+	'SEARCH_FORUMS_EXPLAIN'		=> 'Select the forum or forums you wish to search in. Subforums are searched automatically if you do not disable “search subforums“ below.',
+	'SEARCH_IN_RESULTS'			=> 'Search these results',
+	'SEARCH_KEYWORDS_EXPLAIN'	=> 'Place <strong>+</strong> in front of a word which must be found and <strong>-</strong> in front of a word which must not be found. Put a list of words separated by <strong>|</strong> into brackets if only one of the words must be found. Use * as a wildcard for partial matches.',
+	'SEARCH_MSG_ONLY'			=> 'Message text only',
+	'SEARCH_OPTIONS'			=> 'Search options',
+	'SEARCH_QUERY'				=> 'Search query',
+	'SEARCH_SUBFORUMS'			=> 'Search subforums',
+	'SEARCH_TITLE_MSG'			=> 'Post subjects and message text',
+	'SEARCH_TITLE_ONLY'			=> 'Topic titles only',
+	'SEARCH_WITHIN'				=> 'Search within',
+	'SORT_ASCENDING'			=> 'Ascending',
+	'SORT_AUTHOR'				=> 'Author',
+	'SORT_DESCENDING'			=> 'Descending',
 	'SORT_FORUM'				=> 'Forum',
-	'SORT_POST_SUBJECT'			=> 'Subjek post',
-	'SORT_TIME'					=> 'Waktu post',
+	'SORT_POST_SUBJECT'			=> 'Post subject',
+	'SORT_TIME'					=> 'Post time',
+	'SPHINX_SEARCH_FAILED'		=> 'Search failed: %s',
+	'SPHINX_SEARCH_FAILED_LOG'	=> 'Sorry, search could not be performed. More information about this failure has been logged in the error log.',
 
-	'TOO_FEW_AUTHOR_CHARS'	=> 'Anda harus menentukan paling sedikitnya %d karakter dai nama pengarang.',
+	'TOO_FEW_AUTHOR_CHARS'	=> array(
+		1	=> 'You must specify at least %d character of the authors name.',
+		2	=> 'You must specify at least %d characters of the authors name.',
+	),
 ));
-
-?>
